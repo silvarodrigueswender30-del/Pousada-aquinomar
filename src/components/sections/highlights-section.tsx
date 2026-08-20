@@ -58,8 +58,8 @@ const paratyHighlights: CardItem[] = [
 
 export function HighlightsSection() {
   return (
-    <section className="w-full bg-white px-4 py-20 md:py-28">
-      <div className="mx-auto flex max-w-6xl flex-col items-center">
+    <section className="w-full overflow-x-hidden bg-white py-20 md:py-28">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
             Região
@@ -72,10 +72,10 @@ export function HighlightsSection() {
             partindo de um refúgio familiar em Cabore.
           </p>
         </div>
+      </div>
 
-        <div className="flex w-full justify-center">
-          <ExpandingCards items={paratyHighlights} defaultActiveIndex={0} />
-        </div>
+      <div className="flex w-full justify-center px-4 md:px-6">
+        <ExpandingCards items={paratyHighlights} defaultActiveIndex={0} />
       </div>
     </section>
   );

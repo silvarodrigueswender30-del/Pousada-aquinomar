@@ -57,7 +57,7 @@ export const ExpandingCards = React.forwardRef<
   return (
     <ul
       className={cn(
-        "w-full max-w-6xl gap-2",
+        "w-full gap-2",
         "grid",
         "h-[600px] md:h-[500px]",
         "transition-[grid-template-columns,grid-template-rows] duration-500 ease-out",
