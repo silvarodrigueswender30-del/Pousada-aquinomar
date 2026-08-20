@@ -3,24 +3,37 @@
 import React from "react";
 import { Marquee } from "@/components/ui/marquee";
 
+const pointsOfInterest = [
+  "Praia do Jabaquara",
+  "Praia do Cais",
+  "Praia do Pontal",
+  "Cachoeira do Tobogã",
+  "Igreja de Santa Rita",
+  "Centro Histórico de Paraty",
+];
+
 export function LogoMarquee() {
   return (
-    <div className="flex items-center w-full px-6 md:px-12 bg-transparent">
-      <div className="flex-shrink-0 border-r border-white/20 pr-6 mr-6 hidden md:block">
-        <p className="text-sm font-sans font-semibold tracking-wider text-white/60 uppercase whitespace-nowrap">
-          Destinos
+    // TODO: substituir gradiente por imagem real do mar/praia quando disponivel
+    <section className="flex w-full items-center bg-gradient-to-r from-[#063A45] via-[#0C6478] to-[#063A45] px-5 py-5 sm:px-8 md:px-12">
+      <div className="mr-5 shrink-0 border-r border-white/25 pr-5 max-sm:mr-4 max-sm:pr-4">
+        <p className="max-w-[8.5rem] whitespace-normal text-[0.6875rem] font-semibold uppercase leading-tight tracking-[0.18em] text-white/75 sm:max-w-none sm:whitespace-nowrap sm:text-xs">
+          Pontos de interesse
         </p>
       </div>
       <div className="flex-1 min-w-0">
-        <Marquee className="[--gap:3rem]" fade={true} fadeAmount={10}>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Ilha das Couves</span>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Ilha do Prumirim</span>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Ilha de Anchieta</span>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Praia do Português</span>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Ilha do Rachado</span>
-          <span className="mx-8 text-xl sm:text-2xl font-heading font-light tracking-[-0.025em] text-white/50 hover:text-white transition-colors cursor-pointer">Praia do Cedro</span>
+        <Marquee className="[--gap:2.25rem]" duration={28} fade={true} fadeAmount={10}>
+          {pointsOfInterest.map((point) => (
+            <span
+              key={point}
+              className="inline-flex items-center gap-9 whitespace-nowrap font-heading text-xl font-light leading-none text-white/70 transition-colors hover:text-white sm:text-2xl"
+            >
+              {point}
+              <span aria-hidden="true" className="h-7 w-px bg-white/35" />
+            </span>
+          ))}
         </Marquee>
       </div>
-    </div>
+    </section>
   );
 }
