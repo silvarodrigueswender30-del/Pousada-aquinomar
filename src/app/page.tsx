@@ -1,5 +1,6 @@
 import { AboutSection } from "@/components/sections/about-section"
 import { HeroSection } from "@/components/sections/hero-section"
+import { HighlightsSection } from "@/components/sections/highlights-section"
 import { LogoMarquee } from "@/components/sections/logo-marquee"
 import { RoomsGridSection } from "@/components/sections/rooms-grid-section"
 import { StatsBar } from "@/components/sections/stats-bar"
@@ -11,6 +12,7 @@ export default function Home() {
       <LogoMarquee />
       <StatsBar />
       <AboutSection />
+      <HighlightsSection />
       <RoomsGridSection />
     </main>
   )
