@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Plus, X } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
 
 const faqs = [
@@ -64,21 +63,26 @@ function FaqItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-5%" }}
       transition={{ duration: 0.45, delay: index * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
-      className="border-b border-[#DDE3EC]"
+      className="border-b border-[#063A45]/10"
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-4 py-7 md:py-8 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 rounded-sm"
+        className="group flex w-full items-center justify-between gap-4 rounded-sm py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9] focus-visible:ring-offset-2 md:py-7"
         aria-expanded={isOpen}
       >
-        <span className="font-mono text-xs text-sky-500 tracking-widest mr-4 md:mr-6 shrink-0">
-          {String(index + 1).padStart(2, "0")}
+        <span className="flex min-w-0 flex-1 items-start gap-4 md:gap-6">
+          <span className="pt-1 font-heading text-2xl font-semibold leading-none text-[#0C6478]/35 md:text-3xl">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className="font-heading text-lg font-medium leading-tight text-slate-950 transition-colors duration-200 group-hover:text-[#0C6478] md:text-xl">
+            {question}
+          </span>
         </span>
-        <span className="flex-1 font-heading font-semibold text-base md:text-lg leading-snug text-[#0B1D2E] group-hover:text-[#1F6FA3] transition-colors duration-200">
-          {question}
-        </span>
-        <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full border border-[#DDE3EC] text-[#1F6FA3] group-hover:bg-[#1F6FA3] group-hover:border-[#1F6FA3] group-hover:text-white transition-all duration-200">
-          {isOpen ? <X size={14} strokeWidth={2.5} /> : <Plus size={14} strokeWidth={2.5} />}
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#063A45]/10 bg-white text-[#0C6478] shadow-sm transition-colors duration-200 group-hover:border-[#0C6478]/30">
+          <ChevronDown
+            className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            strokeWidth={2.5}
+          />
         </span>
       </button>
 
@@ -92,7 +96,7 @@ function FaqItem({
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="font-sans text-[#5C6672] leading-relaxed pb-7 md:pb-8 text-sm md:text-base">
+            <p className="pb-6 pl-14 pt-1 text-base font-medium leading-7 text-slate-600 md:pb-7 md:pl-[4.5rem] md:text-lg">
               {answer}
             </p>
           </motion.div>
@@ -114,30 +118,53 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="w-full bg-white pt-8 pb-20 md:pt-12 md:pb-32 scroll-mt-24"
+      className="w-full scroll-mt-24 bg-[#F4FAFB] py-16 md:py-24"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <div className="mx-auto w-full px-7 md:px-10">
+        <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16 lg:gap-24">
+          <motion.div
+            ref={headingRef}
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+            className="md:sticky md:top-28 md:self-start"
+          >
+            <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
+              Perguntas frequentes
+            </p>
+            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
+              Tire suas dúvidas
+            </h2>
+            <p className="mt-6 max-w-xl text-base font-medium leading-7 text-slate-600 md:text-lg">
+              Tudo o que você precisa saber antes de se hospedar com a gente em Paraty.
+            </p>
 
-        <motion.div
-          ref={headingRef}
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex flex-col items-center text-center mb-12 md:mb-16"
-        >
-          <Badge variant="outline" className="font-sans mb-5">
-            Dúvidas Comuns
-          </Badge>
-          <h2 className="font-heading font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-[#0B1D2E] max-w-2xl">
-            Perguntas Frequentes
-          </h2>
-          <p className="font-sans font-light text-base md:text-xl leading-relaxed text-[#5C6672] mt-4 max-w-xl">
-            Tudo o que você precisa saber antes de se hospedar com a gente em Paraty.
-          </p>
-        </motion.div>
+            <div className="mt-10 rounded-2xl border border-[#063A45]/10 bg-white p-6 shadow-[0_18px_45px_rgba(6,58,69,0.10)] md:p-7">
+              <div className="flex items-start gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E4F6FA] text-[#0C6478]">
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div>
+                  <h3 className="font-heading text-xl font-semibold leading-tight text-slate-950">
+                    Não encontrou sua resposta?
+                  </h3>
+                  <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+                    Fale diretamente com a equipe da pousada para consultar disponibilidade e detalhes da estadia.
+                  </p>
+                </div>
+              </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="border-t border-[#DDE3EC]">
+              <CTAButton
+                href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Pousada%20Aquino%20Mar."
+                variant="on-light"
+                className="mt-6"
+              >
+                Fale com a gente
+              </CTAButton>
+            </div>
+          </motion.div>
+
+          <div className="border-t border-[#063A45]/10">
             {faqs.map((faq, index) => (
               <FaqItem
                 key={faq.question}
@@ -149,26 +176,7 @@ export function FaqSection() {
               />
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-5%" }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex flex-col items-center gap-5 mt-12 md:mt-16"
-          >
-            <p className="font-sans text-[#5C6672] text-sm md:text-base text-center">
-              Ainda tem dúvidas? Fale diretamente com nossa equipe.
-            </p>
-            <CTAButton
-              href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Pousada%20Aquino%20Mar."
-              variant="on-light"
-            >
-              Tirar dúvidas no WhatsApp
-            </CTAButton>
-          </motion.div>
         </div>
-
       </div>
     </section>
   );
