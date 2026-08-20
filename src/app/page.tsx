@@ -1,6 +1,7 @@
 import { AboutSection } from "@/components/sections/about-section"
 import { AmenitiesSection } from "@/components/sections/amenities-section"
 import { BreakfastSection } from "@/components/sections/breakfast-section"
+import { ClientMomentsSection } from "@/components/sections/client-moments-section"
 import { FaqSection } from "@/components/sections/faq-section"
 import { FinalCtaSection } from "@/components/sections/final-cta-section"
 import { HeroSection } from "@/components/sections/hero-section"
@@ -25,6 +26,7 @@ export default function Home() {
       <AmenitiesSection />
       <RoomsGridSection />
       <LocationSection />
+      <ClientMomentsSection />
       <FaqSection />
       <TestimonialsSection />
       <FinalCtaSection />
