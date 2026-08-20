@@ -2,6 +2,7 @@ import { AboutSection } from "@/components/sections/about-section"
 import { AmenitiesSection } from "@/components/sections/amenities-section"
 import { BreakfastSection } from "@/components/sections/breakfast-section"
 import { FaqSection } from "@/components/sections/faq-section"
+import { FinalCtaSection } from "@/components/sections/final-cta-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { HighlightsSection } from "@/components/sections/highlights-section"
 import { LocationSection } from "@/components/sections/location-section"
@@ -24,6 +25,7 @@ export default function Home() {
       <LocationSection />
       <FaqSection />
       <TestimonialsSection />
+      <FinalCtaSection />
     </main>
   )
 }
