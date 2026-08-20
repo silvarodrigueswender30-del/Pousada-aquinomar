@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
 import { FloatingWhatsappButton } from "@/components/ui/floating-whatsapp-button";
+import { Footer } from "@/components/sections/footer";
 
 const inter = localFont({
   src: [
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
+        <Footer />
         <FloatingWhatsappButton />
       </body>
     </html>

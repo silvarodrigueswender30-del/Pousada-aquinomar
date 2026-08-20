@@ -60,7 +60,7 @@ const secondRowTestimonials: TestimonialItem[] = [
 
 export function TestimonialsSection() {
   return (
-    <section className="w-full overflow-hidden bg-white py-16 md:py-24">
+    <section id="depoimentos" className="w-full scroll-mt-24 overflow-hidden bg-white py-16 md:py-24">
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">

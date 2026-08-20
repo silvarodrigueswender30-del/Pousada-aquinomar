@@ -27,7 +27,7 @@ const locationSteps = [
 
 export function LocationSection() {
   return (
-    <section className="w-full bg-white">
+    <section id="localizacao" className="w-full scroll-mt-24 bg-white">
       <div className="relative overflow-hidden bg-[#063A45] md:aspect-[1440/863] md:min-h-[43rem]">
         <img
           src="/images/location/rf-location-bg.jpg"

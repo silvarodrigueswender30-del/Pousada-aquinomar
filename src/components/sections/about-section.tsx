@@ -74,7 +74,7 @@ const logoReveal = {
 
 export function AboutSection() {
   return (
-    <section className="w-full bg-white py-20 text-slate-950 max-[479px]:pb-8 max-[479px]:pt-16">
+    <section id="sobre" className="w-full scroll-mt-24 bg-white py-20 text-slate-950 max-[479px]:pb-8 max-[479px]:pt-16">
       <div className="box-border w-full max-w-full px-10 max-[479px]:px-5">
         <div className="mb-16 max-[479px]:mb-8">
           <div className="-mx-4 flex max-[479px]:flex-col">
