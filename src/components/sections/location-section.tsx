@@ -37,7 +37,29 @@ export function LocationSection() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,58,69,0.50)_0%,rgba(6,58,69,0.24)_42%,rgba(6,58,69,0.92)_100%)]" />
 
-        <div className="relative z-10 px-7 pb-28 pt-14 text-white md:px-10 md:pb-0 md:pt-20">
+        <div
+          className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[50%]"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, 
+              #FFFFFF 0%, 
+              rgba(255,255,255,0.92) 12%,
+              rgba(255,255,255,0.35) 55%, 
+              transparent 100%)`,
+          }}
+        />
+
+        <div
+          className="pointer-events-none absolute bottom-0 left-0 right-0 z-30 h-[30%]"
+          style={{
+            backgroundImage: `linear-gradient(to top, 
+              #F4FAFB 0%, 
+              rgba(244,250,251,0.72) 22%, 
+              rgba(244,250,251,0.28) 62%, 
+              transparent 100%)`,
+          }}
+        />
+
+        <div className="relative z-20 px-7 pb-28 pt-14 text-white md:px-10 md:pb-0 md:pt-20">
           <h2 className="max-w-4xl font-heading text-5xl font-light leading-[0.98] md:text-7xl">
             Localização e como chegar
           </h2>
