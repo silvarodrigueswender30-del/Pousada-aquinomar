@@ -1,10 +1,18 @@
+import Image from "next/image"
 import { CTAButton } from "@/components/ui/cta-button"
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="relative flex min-h-screen w-full scroll-mt-24 items-center overflow-hidden bg-gradient-to-br from-[#063A45] via-[#094F5F] to-[#0C6478]">
-      {/* TODO: substituir por <video> ou <Image> real quando disponível */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,184,217,0.28),transparent_32%),linear-gradient(90deg,rgba(6,58,69,0.94),rgba(6,58,69,0.56))]" />
+    <section id="inicio" className="relative flex min-h-screen w-full scroll-mt-24 items-center overflow-hidden bg-[#063A45]">
+      <Image
+        src="/images/hero/hero01.avif"
+        alt="Piscina da Pousada Aquino Mar ao entardecer"
+        fill
+        priority
+        className="object-cover"
+        quality={80}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-28 text-white md:py-36">
         <div className="max-w-3xl">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#9FE8F7]">
@@ -27,3 +35,4 @@ export function HeroSection() {
     </section>
   )
 }
+
