@@ -58,8 +58,39 @@ const paratyHighlights: CardItem[] = [
 
 export function HighlightsSection() {
   return (
-    <section className="w-full overflow-x-hidden bg-white py-20 md:py-28">
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4">
+    <section className="relative w-full overflow-hidden bg-white py-20 md:py-28">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#E4F6FA_0%,#F8FAFC_52%,#CFF0F7_100%)]" />
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800"
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[40%]"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, 
+            #FFFFFF 0%, 
+            #FFFFFF 20%,
+            rgba(255,255,255,0.8) 45%, 
+            transparent 100%)`,
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[22%]"
+        style={{
+          backgroundImage: `linear-gradient(to top, 
+            #FFFFFF 0%, 
+            rgba(255,255,255,0.6) 45%, 
+            transparent 100%)`,
+        }}
+      />
+
+      <div className="relative z-20 mx-auto flex max-w-6xl flex-col items-center px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
             Região
@@ -74,7 +105,7 @@ export function HighlightsSection() {
         </div>
       </div>
 
-      <div className="flex w-full justify-center px-4 md:px-6">
+      <div className="relative z-20 flex w-full justify-center px-4 md:px-6">
         <ExpandingCards items={paratyHighlights} defaultActiveIndex={0} />
       </div>
     </section>
