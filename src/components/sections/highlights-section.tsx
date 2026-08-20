@@ -74,7 +74,7 @@ export function HighlightsSection() {
         </div>
       </div>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-16 md:py-20">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-32 md:py-40">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,#E4F6FA_0%,#F8FAFC_52%,#CFF0F7_100%)]" />
           <img
@@ -86,22 +86,23 @@ export function HighlightsSection() {
         </div>
 
         <div
-          className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[40%]"
+          className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[50%]"
           style={{
             backgroundImage: `linear-gradient(to bottom, 
               #FFFFFF 0%, 
-              #FFFFFF 20%,
-              rgba(255,255,255,0.8) 45%, 
+              rgba(255,255,255,0.92) 12%,
+              rgba(255,255,255,0.35) 55%, 
               transparent 100%)`,
           }}
         />
 
         <div
-          className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[22%]"
+          className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[30%]"
           style={{
             backgroundImage: `linear-gradient(to top, 
               #FFFFFF 0%, 
-              rgba(255,255,255,0.6) 45%, 
+              rgba(255,255,255,0.72) 22%, 
+              rgba(255,255,255,0.28) 62%, 
               transparent 100%)`,
           }}
         />
