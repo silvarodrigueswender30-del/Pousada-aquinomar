@@ -1,9 +1,13 @@
 import { AboutSection } from "@/components/sections/about-section"
+import { AmenitiesSection } from "@/components/sections/amenities-section"
+import { BreakfastSection } from "@/components/sections/breakfast-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { HighlightsSection } from "@/components/sections/highlights-section"
+import { LocationSection } from "@/components/sections/location-section"
 import { LogoMarquee } from "@/components/sections/logo-marquee"
 import { RoomsGridSection } from "@/components/sections/rooms-grid-section"
 import { StatsBar } from "@/components/sections/stats-bar"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
 
 export default function Home() {
   return (
@@ -13,7 +17,11 @@ export default function Home() {
       <StatsBar />
       <AboutSection />
       <HighlightsSection />
+      <BreakfastSection />
+      <AmenitiesSection />
       <RoomsGridSection />
+      <LocationSection />
+      <TestimonialsSection />
     </main>
   )
 }

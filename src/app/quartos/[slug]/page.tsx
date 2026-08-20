@@ -32,7 +32,7 @@ export default async function RoomDetailPage({
 
   return (
     <main className="min-h-screen bg-white pb-16 md:pb-24">
-      <section className="mx-auto w-full max-w-6xl px-4 pt-8 md:pt-12">
+      <section className="mx-auto w-full px-4 pt-8 md:px-10 md:pt-12">
         <Link href="/" className="text-sm font-medium text-[#0C6478] hover:text-[#063A45]">
           Voltar para o início
         </Link>
@@ -50,7 +50,7 @@ export default async function RoomDetailPage({
         </div>
       </section>
 
-      <section className="mx-auto mt-10 grid w-full max-w-6xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+      <section className="mx-auto mt-10 grid w-full gap-10 px-4 md:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:items-start xl:gap-12">
         <div className="space-y-12">
           <header className="border-b border-slate-200 pb-8">
             <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
