@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { HighlightsSection } from "@/components/sections/highlights-section"
 import { LocationSection } from "@/components/sections/location-section"
 import { LogoMarquee } from "@/components/sections/logo-marquee"
+import { OurStorySection } from "@/components/sections/our-story-section"
 import { RoomsGridSection } from "@/components/sections/rooms-grid-section"
 import { StatsBar } from "@/components/sections/stats-bar"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
@@ -18,6 +19,7 @@ export default function Home() {
       <LogoMarquee />
       <StatsBar />
       <AboutSection />
+      <OurStorySection />
       <HighlightsSection />
       <BreakfastSection />
       <AmenitiesSection />
