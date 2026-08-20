@@ -1,6 +1,7 @@
 import { AboutSection } from "@/components/sections/about-section"
 import { AmenitiesSection } from "@/components/sections/amenities-section"
 import { BreakfastSection } from "@/components/sections/breakfast-section"
+import { FaqSection } from "@/components/sections/faq-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import { HighlightsSection } from "@/components/sections/highlights-section"
 import { LocationSection } from "@/components/sections/location-section"
@@ -21,6 +22,7 @@ export default function Home() {
       <AmenitiesSection />
       <RoomsGridSection />
       <LocationSection />
+      <FaqSection />
       <TestimonialsSection />
     </main>
   )

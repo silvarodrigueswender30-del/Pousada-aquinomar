@@ -9,39 +9,39 @@ import { CTAButton } from "@/components/ui/cta-button";
 
 const faqs = [
   {
-    question: "Preciso levar crianças pequenas? Elas pagam passeio inteiro?",
+    question: "O café da manhã está incluído na diária?",
     answer:
-      "Crianças são bem-vindas a bordo! A taxa de embarque (R$30,00) se aplica normalmente — consulte condições especiais para crianças pequenas direto no WhatsApp.",
+      "Sim. O café da manhã está incluído e é servido das 8h às 10h, com mesa preparada pela família da pousada, opções frescas e aquele cuidado de casa que os hóspedes sempre elogiam.",
   },
   {
-    question: "O que está incluído no valor do passeio?",
+    question: "A pousada tem estacionamento?",
     answer:
-      "Navegação com tripulação habilitada, coletes salva-vidas, paradas conforme o roteiro escolhido e toda a estrutura de segurança da lancha. Itens como churrasco a bordo podem ser incluídos mediante consulta.",
+      "Temos estacionamento privativo gratuito para hóspedes. É um diferencial importante para quem quer ficar em um bairro tranquilo de Paraty sem depender de vagas disputadas no Centro Histórico.",
   },
   {
-    question: "Os passeios acontecem com qualquer condição de tempo?",
+    question: "Qual é a distância até o Centro Histórico de Paraty?",
     answer:
-      "Não. Todos os nossos roteiros são sujeitos às condições do mar e do clima. Caso não seja seguro navegar, remarcamos sua data sem custo adicional.",
+      "A Pousada Aquino Mar fica no Caboré, em uma rua residencial e tranquila. O trajeto até o Centro Histórico leva em média de 12 a 20 minutos a pé, em ritmo tranquilo.",
   },
   {
-    question: "Posso desembarcar na Ilha das Couves em qualquer roteiro?",
+    question: "Os quartos têm ar-condicionado e Wi-Fi?",
     answer:
-      "O desembarque na Ilha das Couves está disponível no Roteiro Norte Completo, sujeito à disponibilidade — somos uma das empresas credenciadas para esse desembarque.",
+      "Sim. As acomodações contam com ar-condicionado e Wi-Fi, além de enxoval de qualidade e limpeza diária para deixar a estadia mais confortável.",
   },
   {
-    question: "Qual a diferença entre passeio compartilhado e privativo?",
+    question: "A pousada tem piscina e áreas comuns?",
     answer:
-      "No compartilhado, você reserva assentos e divide a lancha com outros passageiros, num roteiro fixo. No privativo, a lancha é só do seu grupo — você escolhe o roteiro, o tempo em cada parada e o ritmo do passeio.",
+      "Sim. A pousada oferece piscina, jardim e áreas de convivência pensadas para uma experiência leve, familiar e acolhedora depois dos passeios por Paraty.",
   },
   {
-    question: "Quanto tempo dura o passeio?",
+    question: "Como faço para consultar disponibilidade ou reservar?",
     answer:
-      "Temos roteiros de 3h (Norte Express) e de 6h (Norte Completo e Sul Completo). A duração exata pode variar conforme condições do mar.",
+      "Você pode falar direto pelo WhatsApp da Pousada Aquino Mar. A equipe confirma disponibilidade, valores atualizados e ajuda a escolher o quarto mais adequado para sua viagem.",
   },
   {
-    question: "Como faço para reservar?",
+    question: "A pousada é indicada para famílias?",
     answer:
-      "É simples: fale com a gente pelo WhatsApp, escolha o roteiro e a lancha, confirme a data e pronto — te passamos todos os detalhes de embarque.",
+      "Sim. O atendimento familiar é um dos pontos mais fortes da pousada, com acolhimento próximo, quartos confortáveis e uma rotina pensada para quem busca hospitalidade de verdade em Paraty.",
   },
 ];
 
@@ -132,7 +132,7 @@ export function FaqSection() {
             Perguntas Frequentes
           </h2>
           <p className="font-sans font-light text-base md:text-xl leading-relaxed text-[#5C6672] mt-4 max-w-xl">
-            Tudo o que você precisa saber antes de embarcar com a gente.
+            Tudo o que você precisa saber antes de se hospedar com a gente em Paraty.
           </p>
         </motion.div>
 
