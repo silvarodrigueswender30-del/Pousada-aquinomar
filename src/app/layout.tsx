@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { FloatingWhatsappButton } from "@/components/ui/floating-whatsapp-button";
 import { Footer } from "@/components/sections/footer";
+import { Header } from "@/components/sections/header";
 
 const inter = localFont({
   src: [
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Header />
         {children}
         <Footer />
         <FloatingWhatsappButton />

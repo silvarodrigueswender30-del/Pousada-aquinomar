@@ -23,7 +23,7 @@ const breakfastItems = [
 
 export function BreakfastSection() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="cafe-da-manha" className="w-full scroll-mt-24 bg-white py-16 md:py-24">
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="grid gap-6 border-y border-[#063A45]/10 py-10 md:grid-cols-[22.5%_1fr] md:py-14">
           <div className="flex items-start gap-2">

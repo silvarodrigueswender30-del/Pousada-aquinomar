@@ -2,7 +2,7 @@ import { CTAButton } from "@/components/ui/cta-button"
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-gradient-to-br from-[#063A45] via-[#094F5F] to-[#0C6478]">
+    <section id="inicio" className="relative flex min-h-screen w-full scroll-mt-24 items-center overflow-hidden bg-gradient-to-br from-[#063A45] via-[#094F5F] to-[#0C6478]">
       {/* TODO: substituir por <video> ou <Image> real quando disponível */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,184,217,0.28),transparent_32%),linear-gradient(90deg,rgba(6,58,69,0.94),rgba(6,58,69,0.56))]" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-28 text-white md:py-36">

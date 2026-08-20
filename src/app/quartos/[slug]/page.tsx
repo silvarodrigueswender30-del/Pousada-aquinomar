@@ -31,7 +31,7 @@ export default async function RoomDetailPage({
   const suggestedRooms = rooms.filter((item) => item.slug !== room.slug).slice(0, 3)
 
   return (
-    <main className="min-h-screen bg-white pb-16 md:pb-24">
+    <main className="min-h-screen bg-white pb-16 pt-20 md:pb-24">
       <section className="mx-auto w-full px-4 pt-8 md:px-10 md:pt-12">
         <Link href="/" className="text-sm font-medium text-[#0C6478] hover:text-[#063A45]">
           Voltar para o início

@@ -58,7 +58,7 @@ const paratyHighlights: CardItem[] = [
 
 export function HighlightsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 md:py-28">
+    <section id="destaques" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-20 md:py-28">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
