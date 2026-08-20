@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 
-const WHATSAPP_NUMBER = "5512996125606"
-const MESSAGE = "Ficou com alguma dúvida? Fale com a RF Turismo pelo WhatsApp."
-const URL_MESSAGE = "Olá! Gostaria de tirar algumas dúvidas sobre os passeios de lancha."
+const WHATSAPP_NUMBER = "5524998280363"
+const MESSAGE = "Ficou com alguma dúvida? Fale com a Pousada Aquino Mar pelo WhatsApp."
+const URL_MESSAGE = "Olá! Vim pelo site e gostaria de saber mais sobre a Pousada Aquino Mar."
 
 export function FloatingWhatsappButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -45,15 +45,7 @@ export function FloatingWhatsappButton() {
 
   const encodedMessage = encodeURIComponent(URL_MESSAGE)
 
-  // Verificação simplificada de mobile
-  const isMobile =
-    typeof window !== "undefined" &&
-    (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-      window.innerWidth < 768)
-
-  const linkUrl = isMobile
-    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
-    : `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`
+  const linkUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
 
   const closeBalloon = (e: React.MouseEvent) => {
     e.preventDefault()

@@ -129,7 +129,7 @@ export function FooterSection() {
                 </li>
                 <li>
                   <a 
-                    href="https://wa.me/5512996125606?text=Ol%C3%A1!%20Quero%20reservar%20um%20passeio%20de%20lancha%20com%20a%20RF%20Turismo."
+                    href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Pousada%20Aquino%20Mar."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-sky-400 transition-colors duration-200 font-medium"
@@ -153,8 +153,8 @@ export function FooterSection() {
                 </p>
                 <p className="flex items-center gap-2">
                   <span>📱</span>
-                  <a href="https://wa.me/5512996125606" className="hover:text-sky-400 transition-colors duration-200">
-                    (12) 99612-5606
+                  <a href="https://wa.me/5524998280363" className="hover:text-sky-400 transition-colors duration-200">
+                    (24) 99828-0363
                   </a>
                 </p>
                 <p className="flex items-center gap-2">

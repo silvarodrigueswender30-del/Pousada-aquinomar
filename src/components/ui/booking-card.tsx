@@ -24,13 +24,13 @@ export function BookingCard({ room, className }: BookingCardProps) {
   const [guests, setGuests] = React.useState(1)
 
   const whatsappText = [
-    `Ola! Gostaria de reservar o quarto ${room.name}.`,
+    `Olá! Vim pelo site e gostaria de reservar o quarto ${room.name} na Pousada Aquino Mar.`,
     `Check-in: ${checkIn || "a definir"}`,
     `Check-out: ${checkOut || "a definir"}`,
     `Hospedes: ${guests}`,
   ].join("\n")
 
-  const whatsappUrl = `https://wa.me/5512996125606?text=${encodeURIComponent(whatsappText)}`
+  const whatsappUrl = `https://wa.me/5524998280363?text=${encodeURIComponent(whatsappText)}`
 
   return (
     <Card

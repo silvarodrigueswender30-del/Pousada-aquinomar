@@ -21,7 +21,7 @@ function PricingSection() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <CTAButton
-                href="https://wa.me/5512996125606?text=Ol%C3%A1!%20Quero%20reservar%20um%20passeio%20de%20lancha%20com%20a%20RF%20Turismo."
+                href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Pousada%20Aquino%20Mar."
                 variant="on-light"
               >
                 Reservar Agora

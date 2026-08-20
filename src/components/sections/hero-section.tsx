@@ -10,7 +10,7 @@ export function HeroSection() {
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#9FE8F7]">
             Pousada Aquino Mar
           </p>
-          <h1 className="mt-5 font-heading text-5xl font-bold leading-tight md:text-7xl">
+          <h1 className="mt-5 font-heading text-5xl font-light leading-tight md:text-7xl">
             Um refúgio em família à beira do mar em Paraty
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">

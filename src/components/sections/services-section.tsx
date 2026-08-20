@@ -290,7 +290,7 @@ export interface Service {
 
 // Sub-component for individual cards
 const ServiceCard = ({ service, index }: { service: Service; index: number }) => {
-  const whatsappUrl = `https://wa.me/5512996125606?text=${encodeURIComponent(service.whatsappText)}`;
+  const whatsappUrl = `https://wa.me/5524998280363?text=${encodeURIComponent(service.whatsappText)}`;
 
   return (
     <div

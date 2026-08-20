@@ -161,7 +161,7 @@ export function FaqSection() {
               Ainda tem dúvidas? Fale diretamente com nossa equipe.
             </p>
             <CTAButton
-              href="https://wa.me/5512996125606"
+              href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Pousada%20Aquino%20Mar."
               variant="on-light"
             >
               Tirar dúvidas no WhatsApp
