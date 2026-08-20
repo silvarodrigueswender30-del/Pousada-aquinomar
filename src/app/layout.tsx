@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import localFont from "next/font/local";
 import "./globals.css";
 import { FloatingWhatsappButton } from "@/components/ui/floating-whatsapp-button";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
+const inter = localFont({
+  src: [
+    {
+      path: "./fonts/inter/Inter-Regular.woff2",
+      weight: "300 500",
+      style: "normal",
+    },
+  ],
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  display: "swap",
 });
 
 const siteDescription =
@@ -61,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full scroll-smooth antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
