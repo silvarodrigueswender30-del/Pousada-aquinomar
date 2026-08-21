@@ -4,19 +4,19 @@ const breakfastItems = [
   {
     title: "Buffet da manhã",
     meta: "/ servido das 8h às 10h",
-    image: "/images/hero-carousel/slide-1.avif",
+    image: "/images/cafe-03.avif",
     alt: "Área da Pousada Aquino Mar usada como imagem temporária para a vitrine do café da manhã",
   },
   {
     title: "Sabores de casa",
     meta: "/ bolos, pães e frutas",
-    image: "/images/hero-carousel/slide-2.avif",
+    image: "/images/cafe-02.avif",
     alt: "Foto da pousada usada como imagem temporária para representar o café da manhã artesanal",
   },
   {
     title: "Experiência em família",
     meta: "/ cuidado da Rose e equipe",
-    image: "/images/hero-carousel/slide-4.avif",
+    image: "/images/cafe-aquino.avif",
     alt: "Foto da pousada usada como imagem temporária para representar o acolhimento familiar no café da manhã",
   },
 ]

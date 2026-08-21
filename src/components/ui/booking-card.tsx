@@ -12,12 +12,6 @@ interface BookingCardProps {
   className?: string
 }
 
-const currencyFormatter = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-  maximumFractionDigits: 0,
-})
-
 export function BookingCard({ room, className }: BookingCardProps) {
   const [checkIn, setCheckIn] = React.useState("")
   const [checkOut, setCheckOut] = React.useState("")
@@ -42,12 +36,12 @@ export function BookingCard({ room, className }: BookingCardProps) {
       <div className="space-y-6">
         <div>
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
-            a partir de
+            reserva direta
           </p>
           <p className="mt-1 font-heading text-3xl font-semibold text-[#063A45] md:text-4xl">
-            {currencyFormatter.format(room.pricePerNight)}
+            Consulte valores
           </p>
-          <p className="mt-1 text-sm text-slate-500">por noite</p>
+          <p className="mt-1 text-sm text-slate-500">fale com a pousada para ver precos e disponibilidade</p>
         </div>
 
         <div className="space-y-4 text-sm text-slate-700">
@@ -100,6 +94,11 @@ export function BookingCard({ room, className }: BookingCardProps) {
             />
             <span className="text-slate-600">ate {room.capacity} hospedes</span>
           </label>
+
+          <div className="flex items-start gap-3">
+            <Users className="h-5 w-5 shrink-0 text-[#0C6478]" />
+            <span>{room.roomCount} quarto - {room.bedSetup}</span>
+          </div>
         </div>
 
         <div className="flex items-start gap-3 rounded-lg bg-[#E4F6FA] p-4 text-sm text-[#063A45]">

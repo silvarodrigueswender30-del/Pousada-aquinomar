@@ -6,12 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { rooms } from "@/data/rooms"
 
-const currencyFormatter = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-  maximumFractionDigits: 0,
-})
-
 export function generateStaticParams() {
   return rooms.map((room) => ({ slug: room.slug }))
 }
@@ -39,7 +33,7 @@ export default async function RoomDetailPage({
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {room.images.slice(0, 2).map((image, index) => (
-            <div key={image} className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100 md:aspect-[16/11]">
+            <div key={`${image}-${index}`} className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100 md:aspect-[16/11]">
               <img
                 src={image}
                 alt={`${room.name} - imagem ${index + 1}`}
@@ -70,6 +64,9 @@ export default async function RoomDetailPage({
             <h1 className="mt-4 font-heading text-4xl font-light leading-tight text-slate-950 md:text-6xl">
               {room.name}
             </h1>
+            <p className="mt-4 text-base font-medium text-slate-600">
+              {room.roomCount} quarto - {room.bedSetup} - Wi-Fi gratis
+            </p>
           </header>
 
           <section className="space-y-4">
@@ -143,7 +140,7 @@ export default async function RoomDetailPage({
                   <div className="space-y-3 p-4">
                     <h3 className="font-heading text-lg font-semibold text-slate-950">{suggestedRoom.name}</h3>
                     <p className="text-sm text-slate-600">
-                      A partir de {currencyFormatter.format(suggestedRoom.pricePerNight)}
+                      Acomoda {suggestedRoom.capacity} - {suggestedRoom.bedSetup}
                     </p>
                     <Button asChild className="w-full rounded-full bg-[#094F5F] text-white hover:bg-[#0C6478]">
                       <Link href={`/quartos/${suggestedRoom.slug}`}>Ver Quarto</Link>
