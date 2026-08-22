@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { BedDouble, Images, MapPin, Users, Wifi } from "lucide-react"
 import { rooms } from "@/data/rooms"
+import { RoomImageCarousel } from "@/components/ui/room-image-carousel"
 
 export function RoomsGridSection() {
   return (
@@ -25,38 +26,30 @@ export function RoomsGridSection() {
         <div className="flex items-center justify-between border-b border-[#063A45]/10 py-4 text-sm font-medium text-slate-600">
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full border border-[#063A45]/10 px-3 py-1 text-[#063A45]">
-              Todos os quartos
+              Nossas Categorias
             </span>
             <span className="rounded-full border border-[#063A45]/10 px-3 py-1">
-              1 cama
+              Casal
             </span>
             <span className="rounded-full border border-[#063A45]/10 px-3 py-1">
-              2 camas
+              Múltipla
             </span>
           </div>
-          <span>Mostrando 17 de 17 quartos</span>
+          <span>Mostrando as {rooms.length} categorias (18 suítes no total)</span>
         </div>
 
-        <div className="-mx-4 grid border-b border-[#063A45]/10 lg:grid-cols-3">
+        <div className="-mx-4 grid border-b border-[#063A45]/10 lg:grid-cols-2">
         {rooms.map((room) => (
           <article
             key={room.slug}
-            className="group flex flex-col border-t border-[#063A45]/10 px-4 py-8 md:p-5 lg:border-r lg:border-[#063A45]/10 lg:[&:nth-child(3n)]:border-r-0"
+            className="group flex flex-col border-t border-[#063A45]/10 px-4 py-8 md:p-5 lg:border-r lg:border-[#063A45]/10 lg:[&:nth-child(2n)]:border-r-0"
           >
-            <Link
-              href={`/quartos/${room.slug}`}
-              className="relative block aspect-[4/3] overflow-hidden rounded-t-lg bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9]"
-            >
-              <img
-                src={room.images[0]}
-                alt={room.name}
-                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-              <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-[#063A45]/85 px-3 py-1.5 text-xs font-semibold text-white">
-                <Images className="h-3.5 w-3.5" />
-                {room.photoCount}
-              </span>
-            </Link>
+            <RoomImageCarousel
+              images={room.images}
+              slug={room.slug}
+              name={room.name}
+              photoCount={room.photoCount}
+            />
 
             <div className="flex min-h-[18rem] flex-1 flex-col justify-between gap-8 rounded-b-lg border-x border-b border-[#063A45]/10 bg-white p-5">
               <div className="space-y-5">
