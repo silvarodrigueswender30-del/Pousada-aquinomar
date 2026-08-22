@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useCallback, useEffect, useRef, useState } from "react"
+import { useSafeInView } from "@/hooks/use-safe-in-view"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -38,9 +39,8 @@ export function AnimatedTestimonials({
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
-  // ── Framer Motion scroll-reveal ──────────────────────────────────────────
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  // ── Framer Motion scroll-reveal ─────────────────────────────────────────
+  const { ref: sectionRef, isInView } = useSafeInView(400);
   const controls = useAnimation()
 
   const containerVariants = {

@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Info, Mail, MapPin, MessageCircle, Navigation } from "lucide-react"
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
+import { useSafeInView } from "@/hooks/use-safe-in-view"
 
 const navigationLinks = [
   { label: "Início", href: "/" },
@@ -18,6 +19,8 @@ const whatsappMessage =
 const whatsappHref = `https://wa.me/5524998280363?text=${encodeURIComponent(whatsappMessage)}`
 
 export function Footer() {
+  const { ref, isInView } = useSafeInView();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,10 +82,10 @@ export function Footer() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-8 pt-24 md:px-12 lg:px-16">
         <motion.div
+          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
+          animate={isInView ? "visible" : "hidden"}
           className="flex flex-col gap-12 md:gap-16"
         >
           <motion.div

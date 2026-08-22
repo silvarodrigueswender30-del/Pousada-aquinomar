@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useMotionValue, useSpring } from "framer-motion";
+import { useSafeInView } from "@/hooks/use-safe-in-view";
 
 interface CountingNumberProps {
   target: number;
@@ -10,8 +11,7 @@ interface CountingNumberProps {
 }
 
 export function CountingNumber({ target, decimals = 0, formatLocale = true }: CountingNumberProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const { ref, isInView } = useSafeInView(400);
   const [displayValue, setDisplayValue] = useState(0);
 
   const motionValue = useMotionValue(0);

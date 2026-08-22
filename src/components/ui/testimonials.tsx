@@ -27,11 +27,14 @@ interface TestimonialSectionProps {
  * Desktop (lg+): static 3-column grid.
  * Framer Motion stagger-reveal preserved on vertical scroll.
  */
+import { useSafeInView } from "@/hooks/use-safe-in-view";
+
 export const TestimonialSection = ({
   title,
   subtitle,
   testimonials,
 }: TestimonialSectionProps) => {
+  const { ref, isInView } = useSafeInView();
   // ─── Framer Motion variants (stagger reveal) ─────────────────────────
   const containerVariants = {
     hidden: {},
@@ -119,6 +122,7 @@ export const TestimonialSection = ({
           motion.div preserves the stagger-reveal animation on vertical scroll.
         */}
         <motion.div
+          ref={ref}
           className={[
             // ── Mobile: horizontal scroll-snap carousel ──
             "flex overflow-x-auto snap-x snap-mandatory gap-5 -mx-4 px-4 pb-4 scrollbar-hide",
@@ -129,8 +133,7 @@ export const TestimonialSection = ({
           ].join(" ")}
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          animate={isInView ? "visible" : "hidden"}
         >
           {testimonials.map((testimonial, idx) => (
             <motion.div

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
+import { useSafeInView } from "@/hooks/use-safe-in-view";
 
 const faqs = [
   {
@@ -57,11 +57,13 @@ function FaqItem({
   onToggle: () => void;
   index: number;
 }) {
+  const { ref, isInView } = useSafeInView();
+
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-5%" }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.45, delay: index * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
       className="border-b border-[#063A45]/10"
     >
@@ -108,8 +110,7 @@ function FaqItem({
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(headingRef, { once: true, margin: "-10%" });
+  const { ref, isInView } = useSafeInView();
 
   const handleToggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
@@ -123,7 +124,7 @@ export function FaqSection() {
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16 lg:gap-24">
           <motion.div
-            ref={headingRef}
+            ref={ref}
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
