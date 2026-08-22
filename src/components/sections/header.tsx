@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
@@ -52,13 +53,22 @@ export function Header() {
       <div className="mx-auto flex h-20 w-full items-center justify-between px-5 md:px-10">
         <Link
           href="/#inicio"
-          className={cn(
-            "font-heading text-xl font-light tracking-normal transition-colors duration-300 md:text-2xl",
-            isHomeTop ? "text-white" : "text-[#063A45]",
-          )}
+          className="relative flex items-center justify-center transition-opacity duration-300 hover:opacity-80"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Início - Pousada Aquino Mar"
         >
-          Pousada Aquino Mar
+          <div className="relative h-8 w-[91px] md:h-10 md:w-[114px]">
+            <Image
+              src="/logo-pousada1.png"
+              alt="Pousada Aquino Mar"
+              fill
+              priority
+              className={cn(
+                "object-contain transition-all duration-300",
+                isHomeTop ? "brightness-0 invert" : ""
+              )}
+            />
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
