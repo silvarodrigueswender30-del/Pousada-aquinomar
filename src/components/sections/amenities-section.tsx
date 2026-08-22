@@ -25,14 +25,14 @@ const amenities = [
 
 export function AmenitiesSection() {
   return (
-    <section id="comodidades" className="w-full scroll-mt-24 bg-[#E4F6FA] py-16 md:py-24">
+    <section id="comodidades" className="w-full scroll-mt-24 bg-brand-surface py-16 md:py-24">
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="grid gap-8 md:grid-cols-2 md:items-end">
-          <h2 className="font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
+          <h2 className="font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
             Estrutura e comodidades para uma estadia sem preocupação
           </h2>
 
-          <p className="max-w-xl text-base font-medium leading-7 text-slate-600 md:justify-self-end md:text-lg">
+          <p className="max-w-xl text-base font-medium leading-7 text-brand-text md:justify-self-end md:text-lg">
             Da chegada com estacionamento privativo ao cuidado diário com o quarto, tudo foi pensado para você aproveitar Paraty com mais leveza.
           </p>
         </div>
@@ -44,20 +44,20 @@ export function AmenitiesSection() {
             return (
               <article
                 key={amenity.title}
-                className="flex min-h-[15rem] flex-col justify-between gap-16 border-t border-[#063A45]/10 pt-7 md:min-h-[18rem]"
+                className="flex min-h-[15rem] flex-col justify-between gap-16 border-t border-brand-gold/20 pt-7 md:min-h-[18rem]"
               >
                 <div className="flex items-start gap-3">
-                  <Icon className="h-12 w-12 text-[#063A45]" strokeWidth={1.6} aria-hidden="true" />
-                  <span className="font-heading text-[0.625rem] font-semibold leading-3 text-[#0C6478]/60">
+                  <Icon className="h-12 w-12 text-brand-gold" strokeWidth={1.6} aria-hidden="true" />
+                  <span className="font-heading text-[0.625rem] font-semibold leading-3 text-brand-gold/60">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="font-heading text-base font-semibold leading-tight text-slate-950">
+                  <h3 className="font-heading text-base font-semibold leading-tight text-brand-text">
                     {amenity.title}
                   </h3>
-                  <p className="text-base font-medium leading-[1.3] text-slate-600">
+                  <p className="text-base font-medium leading-[1.3] text-brand-text">
                     {amenity.description}
                   </p>
                 </div>
