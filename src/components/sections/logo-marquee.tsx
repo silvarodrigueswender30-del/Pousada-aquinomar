@@ -15,7 +15,7 @@ const pointsOfInterest = [
 export function LogoMarquee() {
   return (
     // TODO: substituir gradiente por imagem real do mar/praia quando disponivel
-    <section id="pontos-de-interesse" className="flex w-full scroll-mt-24 items-center bg-gradient-to-r from-[#063A45] via-[#0C6478] to-[#063A45] px-5 py-5 sm:px-8 md:px-12">
+    <section id="pontos-de-interesse" className="flex w-full scroll-mt-24 items-center bg-gradient-to-r from-brand-primary via-brand-primary-dark to-brand-primary px-5 py-5 sm:px-8 md:px-12">
       <div className="mr-5 shrink-0 border-r border-white/25 pr-5 max-sm:mr-4 max-sm:pr-4">
         <p className="max-w-[8.5rem] whitespace-normal text-[0.6875rem] font-semibold uppercase leading-tight tracking-[0.18em] text-white/75 sm:max-w-none sm:whitespace-nowrap sm:text-xs">
           Pontos de interesse
