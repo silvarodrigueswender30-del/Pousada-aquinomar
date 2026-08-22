@@ -47,7 +47,7 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isHomeTop
           ? "bg-transparent text-white"
-          : "bg-white/95 text-slate-950 shadow-sm shadow-[#063A45]/10 backdrop-blur-md",
+          : "bg-brand-surface-alt/95 text-brand-primary shadow-sm shadow-brand-primary/10 backdrop-blur-md",
       )}
     >
       <div className="mx-auto flex h-20 w-full items-center justify-between px-5 md:px-10">
@@ -79,8 +79,8 @@ export function Header() {
               className={cn(
                 "text-sm font-semibold transition-colors duration-200",
                 isHomeTop
-                  ? "text-white/82 hover:text-white"
-                  : "text-slate-700 hover:text-[#0C6478]",
+                  ? "border-b border-transparent text-white/82 hover:border-brand-gold hover:text-white"
+                  : "border-b border-transparent text-brand-text/80 hover:border-brand-gold hover:text-brand-primary",
               )}
             >
               {link.label}
@@ -89,7 +89,12 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <CTAButton href="/#quartos" target="_self" variant={ctaVariant}>
+          <CTAButton
+            href="/#quartos"
+            target="_self"
+            variant={ctaVariant}
+            className="[&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
+          >
             Ver Quartos
           </CTAButton>
         </div>
@@ -97,10 +102,10 @@ export function Header() {
         <button
           type="button"
           className={cn(
-            "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9] focus-visible:ring-offset-2 lg:hidden",
+            "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 lg:hidden",
             isHomeTop
               ? "border-white/25 bg-white/10 text-white"
-              : "border-[#063A45]/10 bg-white text-[#063A45] shadow-sm",
+              : "border-brand-primary/10 bg-brand-surface-alt text-brand-primary shadow-sm",
           )}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isMenuOpen}
@@ -112,7 +117,7 @@ export function Header() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-[#063A45]/10 bg-white text-slate-950 shadow-lg shadow-[#063A45]/10 transition-all duration-300 lg:hidden",
+          "overflow-hidden border-t border-brand-primary/10 bg-brand-surface-alt text-brand-primary shadow-lg shadow-brand-primary/10 transition-all duration-300 lg:hidden",
           isMenuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0",
         )}
       >
@@ -121,7 +126,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="border-b border-[#063A45]/10 py-4 font-heading text-lg font-medium text-slate-950 transition-colors hover:text-[#0C6478]"
+              className="border-b border-brand-primary/10 py-4 font-heading text-lg font-medium text-brand-primary transition-colors hover:border-brand-gold hover:text-brand-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -132,7 +137,7 @@ export function Header() {
             href="/#quartos"
             target="_self"
             variant="on-light"
-            className="mt-5"
+            className="mt-5 [&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
           >
             Ver Quartos
           </CTAButton>
