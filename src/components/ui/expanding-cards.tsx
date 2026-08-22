@@ -9,7 +9,7 @@ export interface CardItem {
   description: string;
   imgSrc: string;
   icon: React.ReactNode;
-  linkHref: string;
+  linkHref?: string;
 }
 
 interface ExpandingCardsProps extends React.HTMLAttributes<HTMLUListElement> {

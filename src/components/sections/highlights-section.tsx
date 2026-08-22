@@ -11,9 +11,8 @@ const paratyHighlights: CardItem[] = [
     description:
       "A cerca de 1,3 km da pousada, uma das praias mais próximas e tranquilas de Paraty.",
     imgSrc:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200",
+      "/images/passeio/praia-do-jabaquara.avif",
     icon: <MapPin size={24} />,
-    linkHref: "#",
   },
   {
     id: "centro-historico",
@@ -21,9 +20,8 @@ const paratyHighlights: CardItem[] = [
     description:
       "Ruas de pedra colonial, igrejas históricas e a Praça da Matriz, a poucos minutos da pousada.",
     imgSrc:
-      "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200",
+      "/images/passeio/centro-historico.avif",
     icon: <Landmark size={24} />,
-    linkHref: "#",
   },
   {
     id: "cachoeira-tobo",
@@ -31,18 +29,16 @@ const paratyHighlights: CardItem[] = [
     description:
       "Um escorregador natural de pedra, ideal para um passeio refrescante em família.",
     imgSrc:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200",
+      "/images/passeio/cachoeira-toboga.avif",
     icon: <Mountain size={24} />,
-    linkHref: "#",
   },
   {
     id: "praia-cais",
     title: "Praia do Cais",
     description: "A cerca de 1,9 km, uma praia charmosa junto ao centro histórico.",
     imgSrc:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200",
+      "/images/passeio/praia-do-cais.avif",
     icon: <Waves size={24} />,
-    linkHref: "#",
   },
   {
     id: "praia-pontal",
@@ -50,35 +46,34 @@ const paratyHighlights: CardItem[] = [
     description:
       "A cerca de 2 km da pousada, com boa estrutura de bares e restaurantes.",
     imgSrc:
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200",
+      "/images/passeio/praia-do-pontal.avif",
     icon: <Umbrella size={24} />,
-    linkHref: "#",
   },
 ];
 
 export function HighlightsSection() {
   return (
-    <section id="destaques" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-20 md:py-28">
+    <section id="destaques" className="relative w-full scroll-mt-24 overflow-hidden bg-white pt-16 md:pt-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-4">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
             Região
           </p>
           <h2 className="mt-3 font-heading text-4xl font-light text-slate-950 md:text-6xl">
             O que explorar perto da pousada
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
             Praias, cachoeiras e ruas históricas para aproveitar Paraty com calma,
             partindo de um refúgio familiar em Cabore.
           </p>
         </div>
       </div>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-32 md:py-40">
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-12 md:py-20">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,#E4F6FA_0%,#F8FAFC_52%,#CFF0F7_100%)]" />
           <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800"
+            src="/images/passeio/praia-do-cais.avif"
             alt=""
             aria-hidden="true"
             className="h-full w-full object-cover"

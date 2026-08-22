@@ -152,13 +152,13 @@ export function Footer() {
                 </p>
                 <div className="flex items-center gap-4 pt-1">
                   {/* TODO: adicionar links reais das redes sociais quando fornecidos */}
-                  <a href="#" aria-label="Instagram da Pousada Aquino Mar" className="text-[#9FE8F7] transition-colors hover:text-white">
+                  <span aria-label="Instagram da Pousada Aquino Mar" className="text-[#9FE8F7]">
                     <FaInstagram size={20} />
-                  </a>
+                  </span>
                   {/* TODO: adicionar links reais das redes sociais quando fornecidos */}
-                  <a href="#" aria-label="Facebook da Pousada Aquino Mar" className="text-[#9FE8F7] transition-colors hover:text-white">
+                  <span aria-label="Facebook da Pousada Aquino Mar" className="text-[#9FE8F7]">
                     <FaFacebookF size={18} />
-                  </a>
+                  </span>
                 </div>
               </div>
             </motion.div>
