@@ -29,8 +29,8 @@ export function HeroSection() {
             <CTAButton
               href="#quartos"
               target="_self"
-              variant="on-dark"
-              className="[&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
+              variant="brand"
+              className="focus-visible:ring-brand-cta-light"
             >
               Ver Quartos
             </CTAButton>

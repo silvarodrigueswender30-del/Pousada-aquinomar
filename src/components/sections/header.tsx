@@ -39,7 +39,7 @@ export function Header() {
   }, [pathname])
 
   const isHomeTop = pathname === "/" && !isScrolled && !isMenuOpen
-  const ctaVariant = isHomeTop ? "on-dark" : "on-light"
+  const ctaVariant = isHomeTop ? "brand" : "on-light"
 
   return (
     <header

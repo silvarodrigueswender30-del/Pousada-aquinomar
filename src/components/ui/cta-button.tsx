@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type Variant = "on-light" | "on-dark" | "secondary-light" | "secondary-dark"
+type Variant = "on-light" | "on-dark" | "brand" | "secondary-light" | "secondary-dark"
 
 interface CTAButtonProps {
   href: string
@@ -21,6 +21,8 @@ const variantStyles: Record<Variant, string> = {
     "bg-[#0B1D2E] text-white hover:bg-[#1F6FA3]",
   "on-dark":
     "bg-white text-[#0B1D2E] hover:bg-[#EEF2F8]",
+  brand:
+    "bg-brand-cta text-white hover:brightness-90 hover:shadow-lg hover:shadow-brand-primary/20",
   "secondary-light":
     "bg-transparent text-[#0B1D2E] border border-[#0B1D2E]/30 hover:bg-[#0B1D2E]/5",
   "secondary-dark":
@@ -30,6 +32,7 @@ const variantStyles: Record<Variant, string> = {
 const chevronStyles: Record<Variant, string> = {
   "on-light": "text-white",
   "on-dark": "text-[#0B1D2E]",
+  brand: "text-white",
   "secondary-light": "text-[#0B1D2E]",
   "secondary-dark": "text-white",
 }
