@@ -28,14 +28,14 @@ const locationSteps = [
 export function LocationSection() {
   return (
     <section id="localizacao" className="w-full scroll-mt-24 bg-white">
-      <div className="relative overflow-hidden bg-[#063A45] md:aspect-[1440/863] md:min-h-[43rem]">
+      <div className="relative overflow-hidden bg-brand-primary md:aspect-[1440/863] md:min-h-[43rem]">
         <img
           src="/images/location/rf-location-bg.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover max-md:object-[48%_top]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,58,69,0.50)_0%,rgba(6,58,69,0.24)_42%,rgba(6,58,69,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_50%,transparent)_0%,color-mix(in_oklab,var(--color-primary)_24%,transparent)_42%,color-mix(in_oklab,var(--color-primary-dark)_92%,transparent)_100%)]" />
 
         <div
           className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[50%]"
@@ -52,9 +52,9 @@ export function LocationSection() {
           className="pointer-events-none absolute bottom-0 left-0 right-0 z-30 h-[30%]"
           style={{
             backgroundImage: `linear-gradient(to top, 
-              #F4FAFB 0%, 
-              rgba(244,250,251,0.72) 22%, 
-              rgba(244,250,251,0.28) 62%, 
+              var(--color-surface) 0%, 
+              color-mix(in oklab, var(--color-surface) 72%, transparent) 22%, 
+              color-mix(in oklab, var(--color-surface) 28%, transparent) 62%, 
               transparent 100%)`,
           }}
         />
@@ -65,13 +65,13 @@ export function LocationSection() {
           </h2>
 
           <div className="mt-8 flex flex-col gap-1 font-heading text-3xl font-semibold leading-none md:text-5xl">
-            <p><span className="text-[#9FE8F7]">+</span> Endereço completo</p>
-            <p><span className="text-[#9FE8F7]">+</span> Mapa incorporado</p>
-            <p><span className="text-[#9FE8F7]">+</span> 12-20 min do Centro</p>
+            <p><span className="text-brand-gold-light">+</span> Endereço completo</p>
+            <p><span className="text-brand-gold-light">+</span> Mapa incorporado</p>
+            <p><span className="text-brand-gold-light">+</span> 12-20 min do Centro</p>
           </div>
         </div>
 
-        <div className="relative z-20 grid border-t border-white/15 bg-[#052430]/72 text-white backdrop-blur-md md:absolute md:inset-x-0 md:bottom-0 md:grid-cols-6">
+        <div className="relative z-20 grid border-t border-white/15 bg-brand-primary-dark/72 text-white backdrop-blur-md md:absolute md:inset-x-0 md:bottom-0 md:grid-cols-6">
           <div className="border-b border-white/15 p-7 md:col-span-2 md:border-b-0 md:border-r md:p-10">
             <p className="max-w-sm text-base font-semibold leading-tight md:text-lg">
               No Caboré, a pousada fica em uma rua residencial e tranquila, com acesso fácil ao Centro Histórico e aos principais passeios de Paraty.
