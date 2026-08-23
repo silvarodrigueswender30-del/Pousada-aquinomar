@@ -43,7 +43,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
+            className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 active:scale-90 active:transition-transform active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
             aria-label="Imagem anterior"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -51,7 +51,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
           
           <button
             onClick={goToNext}
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
+            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 active:scale-90 active:transition-transform active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
             aria-label="Próxima imagem"
           >
             <ChevronRight className="h-5 w-5" />
