@@ -65,22 +65,22 @@ function FaqItem({
       initial={{ opacity: 0, y: 16 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.45, delay: index * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
-      className="border-b border-[#063A45]/10"
+      className="border-b border-brand-gold/20"
     >
       <button
         onClick={onToggle}
-        className="group flex w-full items-center justify-between gap-4 rounded-sm py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9] focus-visible:ring-offset-2 md:py-7"
+        className="group flex w-full items-center justify-between gap-4 rounded-sm py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 md:py-7"
         aria-expanded={isOpen}
       >
         <span className="flex min-w-0 flex-1 items-start gap-4 md:gap-6">
-          <span className="pt-1 font-heading text-2xl font-semibold leading-none text-[#0C6478]/35 md:text-3xl">
+          <span className="pt-1 font-heading text-2xl font-semibold leading-none text-brand-gold md:text-3xl">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="font-heading text-lg font-medium leading-tight text-slate-950 transition-colors duration-200 group-hover:text-[#0C6478] md:text-xl">
+          <span className="font-heading text-lg font-medium leading-tight text-brand-primary transition-colors duration-200 group-hover:text-brand-primary md:text-xl">
             {question}
           </span>
         </span>
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#063A45]/10 bg-white text-[#0C6478] shadow-sm transition-colors duration-200 group-hover:border-[#0C6478]/30">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand-gold/20 bg-white text-brand-gold shadow-sm transition-colors duration-200 group-hover:border-brand-gold">
           <ChevronDown
             className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
             strokeWidth={2.5}
@@ -98,7 +98,7 @@ function FaqItem({
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-6 pl-14 pt-1 text-base font-medium leading-7 text-slate-600 md:pb-7 md:pl-[4.5rem] md:text-lg">
+            <p className="pb-6 pl-14 pt-1 text-base font-medium leading-7 text-brand-text md:pb-7 md:pl-[4.5rem] md:text-lg">
               {answer}
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="w-full scroll-mt-24 bg-[#F4FAFB] py-16 md:py-24"
+      className="w-full scroll-mt-24 bg-brand-surface py-16 md:py-24"
     >
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-16 lg:gap-24">
@@ -130,26 +130,26 @@ export function FaqSection() {
             transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
             className="md:sticky md:top-28 md:self-start"
           >
-            <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
+            <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
               Perguntas frequentes
             </p>
-            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
+            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
               Tire suas dúvidas
             </h2>
-            <p className="mt-6 max-w-xl text-base font-medium leading-7 text-slate-600 md:text-lg">
+            <p className="mt-6 max-w-xl text-base font-medium leading-7 text-brand-text md:text-lg">
               Tudo o que você precisa saber antes de se hospedar com a gente em Paraty.
             </p>
 
-            <div className="mt-10 rounded-2xl border border-[#063A45]/10 bg-white p-6 shadow-[0_18px_45px_rgba(6,58,69,0.10)] md:p-7">
+            <div className="mt-10 rounded-2xl border border-brand-gold/20 bg-brand-surface p-6 shadow-[0_18px_45px_color-mix(in_oklab,var(--color-primary)_10%,transparent)] md:p-7">
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E4F6FA] text-[#0C6478]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-brand-gold">
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold leading-tight text-slate-950">
+                  <h3 className="font-heading text-xl font-semibold leading-tight text-brand-primary">
                     Não encontrou sua resposta?
                   </h3>
-                  <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+                  <p className="mt-2 text-sm font-medium leading-6 text-brand-text">
                     Fale diretamente com a equipe da pousada para consultar disponibilidade e detalhes da estadia.
                   </p>
                 </div>
@@ -158,14 +158,14 @@ export function FaqSection() {
               <CTAButton
                 href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Pousada%20Aquino%20Mar."
                 variant="on-light"
-                className="mt-6"
+                className="mt-6 [&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 focus-visible:ring-brand-cta-light"
               >
                 Fale com a gente
               </CTAButton>
             </div>
           </motion.div>
 
-          <div className="border-t border-[#063A45]/10">
+          <div className="border-t border-brand-gold/20">
             {faqs.map((faq, index) => (
               <FaqItem
                 key={faq.question}
