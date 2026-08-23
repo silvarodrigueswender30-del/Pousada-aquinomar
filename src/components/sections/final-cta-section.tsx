@@ -8,8 +8,8 @@ const whatsappHref = `https://wa.me/5524998280363?text=${encodeURIComponent(what
 
 export function FinalCtaSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#063A45] via-[#094F5F] to-[#0C6478] py-20 md:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,184,217,0.28),transparent_32%),linear-gradient(90deg,rgba(6,58,69,0.94),rgba(6,58,69,0.56))]" />
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-brand-primary-dark py-20 md:py-28">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,color-mix(in_oklab,var(--color-cta)_24%,transparent),transparent_32%),linear-gradient(90deg,color-mix(in_oklab,var(--color-primary-dark)_94%,transparent),color-mix(in_oklab,var(--color-primary)_56%,transparent))]" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-7 text-center text-white md:px-10">
         <p className="font-heading text-sm font-medium uppercase tracking-wide text-white/70">
