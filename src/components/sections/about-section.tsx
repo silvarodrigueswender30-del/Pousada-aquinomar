@@ -87,9 +87,9 @@ export function AboutSection() {
                 variants={fadeUp40}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
-                className="mb-0 flex items-center gap-2 font-heading text-base font-medium leading-[130%] text-[#0C6478] max-[479px]:mb-6 max-[479px]:text-sm max-[479px]:font-normal"
+                className="mb-0 flex items-center gap-2 font-heading text-base font-medium leading-[130%] text-brand-gold max-[479px]:mb-6 max-[479px]:text-sm max-[479px]:font-normal"
               >
-                <Heart className="h-[1.125rem] w-[1.125rem] fill-[#2FB8D9]/20 text-[#0C6478]" />
+                <Heart className="h-[1.125rem] w-[1.125rem] fill-brand-cta/20 text-brand-gold" />
                 <span>Sobre nós</span>
               </motion.div>
             </div>
@@ -99,7 +99,7 @@ export function AboutSection() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, ease: power3Out, delay: 0.1 }}
-                  className="font-heading text-[3.75rem] font-light leading-[110%] text-slate-950 max-[479px]:text-4xl max-[479px]:leading-[120%]"
+                  className="font-heading text-[3.75rem] font-light leading-[110%] text-brand-primary max-[479px]:text-4xl max-[479px]:leading-[120%]"
                 >
                   Mais que hospedagem,
                   <br />
@@ -115,7 +115,7 @@ export function AboutSection() {
             variants={illustrationReveal}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="aspect-[1336/1088] overflow-hidden bg-[linear-gradient(135deg,#E4F6FA_0%,#F8FAFC_52%,#CFF0F7_100%)] max-[479px]:aspect-[335/366]"
+            className="aspect-[1336/1088] overflow-hidden bg-[linear-gradient(135deg,var(--color-surface)_0%,var(--color-surface)_52%,var(--color-surface)_100%)] max-[479px]:aspect-[335/366]"
             style={{ transform: "translateZ(0)" }}
           />
 
@@ -125,7 +125,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, ease: power3Out, delay: 0.45 }}
-                className="text-[1.375rem] font-medium leading-[120%] text-slate-600 max-[479px]:text-[1.375rem] max-[479px]:leading-[120%]"
+                className="text-[1.375rem] font-medium leading-[120%] text-brand-text max-[479px]:text-[1.375rem] max-[479px]:leading-[120%]"
               >
                 A Pousada Aquino Mar é tocada pela Rose, seu esposo e sua filha — uma gestão
                 genuinamente familiar que se reflete em cada detalhe do atendimento. Em Cabore,
@@ -145,10 +145,10 @@ export function AboutSection() {
                 className="flex flex-col justify-between gap-8 pb-[1.875rem] max-[479px]:gap-[8.75rem]"
               >
                 <div className="flex flex-col gap-5 max-[479px]:gap-2">
-                  <p className="font-heading text-[2.8125rem] font-semibold leading-none text-[#063A45]">
+                  <p className="font-heading text-[2.8125rem] font-semibold leading-none text-brand-primary">
                     5.0
                   </p>
-                  <p className="text-[1.125rem] font-medium leading-[130%] text-slate-600">
+                  <p className="text-[1.125rem] font-medium leading-[130%] text-brand-text">
                     Nota no Google
                     <br />
                     (411 avaliações)
@@ -164,10 +164,10 @@ export function AboutSection() {
                 className="flex flex-col justify-between gap-8 pb-[1.875rem] max-[479px]:gap-[8.75rem]"
               >
                 <div className="flex flex-col gap-5 max-[479px]:gap-2">
-                  <p className="font-heading text-[2.8125rem] font-semibold leading-none text-[#063A45]">
+                  <p className="font-heading text-[2.8125rem] font-semibold leading-none text-brand-primary">
                     9.8/10
                   </p>
-                  <p className="text-[1.125rem] font-medium leading-[130%] text-slate-600">
+                  <p className="text-[1.125rem] font-medium leading-[130%] text-brand-text">
                     Nota no
                     <br />
                     Hotels.com
@@ -183,7 +183,7 @@ export function AboutSection() {
                       variants={logoReveal}
                       className="inline-flex items-center gap-2 text-sm font-medium leading-[130%] text-slate-500"
                     >
-                      <Star className="h-3.5 w-3.5 fill-[#0C6478]/20 text-[#0C6478]" />
+                      <Star className="h-3.5 w-3.5 fill-brand-gold/20 text-brand-gold" />
                       {badge}
                     </motion.span>
                   ))}
