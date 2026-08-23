@@ -47,7 +47,7 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isHomeTop
           ? "bg-transparent text-white"
-          : "bg-brand-surface-alt/95 text-brand-primary shadow-sm shadow-brand-primary/10 backdrop-blur-md",
+          : "border-b border-brand-gold/10 bg-brand-surface-alt/95 text-brand-primary shadow-sm shadow-brand-primary/10 backdrop-blur-md saturate-150",
       )}
     >
       <div className="mx-auto flex h-20 w-full items-center justify-between px-5 md:px-10">
@@ -77,7 +77,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-semibold transition-colors duration-200",
+                "text-sm font-semibold transition-colors duration-200 active:opacity-70",
                 isHomeTop
                   ? "border-b border-transparent text-white/82 hover:border-brand-gold hover:text-white"
                   : "border-b border-transparent text-brand-text/80 hover:border-brand-gold hover:text-brand-primary",
@@ -102,7 +102,7 @@ export function Header() {
         <button
           type="button"
           className={cn(
-            "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 lg:hidden",
+            "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 active:scale-[0.97] active:transition-transform active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 lg:hidden",
             isHomeTop
               ? "border-white/25 bg-white/10 text-white"
               : "border-brand-primary/10 bg-brand-surface-alt text-brand-primary shadow-sm",
@@ -126,7 +126,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="border-b border-brand-primary/10 py-4 font-heading text-lg font-medium text-brand-primary transition-colors hover:border-brand-gold hover:text-brand-primary"
+              className="border-b border-brand-primary/10 py-4 font-heading text-lg font-medium text-brand-primary transition-colors hover:border-brand-gold hover:text-brand-primary active:opacity-70"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
