@@ -47,7 +47,7 @@ export function ClientMomentsSection() {
   }
 
   .pam-moments-swiper .swiper-pagination-bullet {
-    background-color: rgba(12, 100, 120, 0.20);
+    background-color: rgba(18, 42, 69, 0.20);
     opacity: 1;
     width: 8px;
     height: 8px;
@@ -56,7 +56,7 @@ export function ClientMomentsSection() {
     margin: 0 4px !important;
   }
   .pam-moments-swiper .swiper-pagination-bullet-active {
-    background-color: #2FB8D9;
+    background-color: var(--color-cta);
     width: 28px;
     border-radius: 999px;
   }
@@ -77,17 +77,17 @@ export function ClientMomentsSection() {
   `
 
   return (
-    <section id="momentos" className="relative w-full scroll-mt-24 overflow-hidden bg-white pb-10 pt-16 md:pb-12 md:pt-24">
+    <section id="momentos" className="relative w-full scroll-mt-24 overflow-hidden bg-brand-surface pb-10 pt-16 md:pb-12 md:pt-24">
       <div
         className="pointer-events-none absolute left-0 right-0 top-0 z-0 h-32 md:h-48"
         style={{
-          background: "linear-gradient(to bottom, #FFFFFF 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, var(--color-surface) 0%, transparent 100%)",
         }}
       />
       <style>{css}</style>
 
       <div className="relative z-10 mx-auto mb-8 w-full px-7 text-center md:mb-12 md:px-10">
-        <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
+        <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
           Momentos reais
         </p>
         <h2 className="mx-auto mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
@@ -95,7 +95,7 @@ export function ClientMomentsSection() {
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-slate-600 md:text-lg">
           Cada foto aqui é de uma família que se hospedou na Pousada Aquino Mar —{" "}
-          <span className="text-[#0C6478]">momentos reais</span>, sorrisos reais.
+          <span className="text-brand-gold">momentos reais</span>, sorrisos reais.
         </p>
       </div>
 
