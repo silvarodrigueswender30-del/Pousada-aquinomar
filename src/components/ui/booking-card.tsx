@@ -29,57 +29,57 @@ export function BookingCard({ room, className }: BookingCardProps) {
   return (
     <Card
       className={cn(
-        "sticky top-24 overflow-hidden border-[#063A45]/10 bg-white p-5 shadow-xl shadow-[#063A45]/10 md:p-6",
+        "sticky top-24 overflow-hidden border-brand-gold/20 bg-white p-5 shadow-xl shadow-brand-primary/10 md:p-6",
         className,
       )}
     >
       <div className="space-y-6">
         <div>
-          <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
+          <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
             reserva direta
           </p>
-          <p className="mt-1 font-heading text-3xl font-semibold text-[#063A45] md:text-4xl">
+          <p className="mt-1 font-heading text-3xl font-semibold text-brand-primary md:text-4xl">
             Consulte valores
           </p>
-          <p className="mt-1 text-sm text-slate-500">fale com a pousada para ver precos e disponibilidade</p>
+          <p className="mt-1 text-sm text-brand-text">fale com a pousada para ver precos e disponibilidade</p>
         </div>
 
-        <div className="space-y-4 text-sm text-slate-700">
+        <div className="space-y-4 text-sm text-brand-text">
           <div className="flex items-start gap-3">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#0C6478]" />
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-gold" />
             <span>{room.location}</span>
           </div>
 
           <div className="flex items-start gap-3">
-            <Calendar className="mt-2 h-5 w-5 shrink-0 text-[#0C6478]" />
+            <Calendar className="mt-2 h-5 w-5 shrink-0 text-brand-gold" />
             <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <label className="space-y-1">
-                <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                <span className="text-xs font-medium uppercase tracking-wide text-brand-text/70">
                   Check-in
                 </span>
                 <input
                   type="date"
                   value={checkIn}
                   onChange={(event) => setCheckIn(event.target.value)}
-                  className="h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none transition focus:border-[#2FB8D9] focus:ring-2 focus:ring-[#2FB8D9]/20"
+                  className="h-11 w-full rounded-md border border-brand-gold/20 bg-white px-3 text-sm text-brand-text outline-none transition focus:border-brand-cta focus:ring-2 focus:ring-brand-cta-light/20"
                 />
               </label>
               <label className="space-y-1">
-                <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                <span className="text-xs font-medium uppercase tracking-wide text-brand-text/70">
                   Check-out
                 </span>
                 <input
                   type="date"
                   value={checkOut}
                   onChange={(event) => setCheckOut(event.target.value)}
-                  className="h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none transition focus:border-[#2FB8D9] focus:ring-2 focus:ring-[#2FB8D9]/20"
+                  className="h-11 w-full rounded-md border border-brand-gold/20 bg-white px-3 text-sm text-brand-text outline-none transition focus:border-brand-cta focus:ring-2 focus:ring-brand-cta-light/20"
                 />
               </label>
             </div>
           </div>
 
           <label className="flex items-center gap-3">
-            <Users className="h-5 w-5 shrink-0 text-[#0C6478]" />
+            <Users className="h-5 w-5 shrink-0 text-brand-gold" />
             <span className="sr-only">Numero de hospedes</span>
             <input
               type="number"
@@ -90,21 +90,21 @@ export function BookingCard({ room, className }: BookingCardProps) {
                 const nextGuests = Number(event.target.value)
                 setGuests(Math.min(Math.max(nextGuests || 1, 1), room.capacity))
               }}
-              className="h-11 w-24 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none transition focus:border-[#2FB8D9] focus:ring-2 focus:ring-[#2FB8D9]/20"
+              className="h-11 w-24 rounded-md border border-brand-gold/20 bg-white px-3 text-sm text-brand-text outline-none transition focus:border-brand-cta focus:ring-2 focus:ring-brand-cta-light/20"
             />
-            <span className="text-slate-600">ate {room.capacity} hospedes</span>
+            <span className="text-brand-text">ate {room.capacity} hospedes</span>
           </label>
 
           <div className="flex items-start gap-3">
-            <Users className="h-5 w-5 shrink-0 text-[#0C6478]" />
+            <Users className="h-5 w-5 shrink-0 text-brand-gold" />
             <span>{room.roomCount} quarto - {room.bedSetup}</span>
           </div>
         </div>
 
-        <div className="flex items-start gap-3 rounded-lg bg-[#E4F6FA] p-4 text-sm text-[#063A45]">
+        <div className="flex items-start gap-3 rounded-lg bg-brand-surface p-4 text-sm text-brand-primary">
           <div className="flex shrink-0 gap-0.5 pt-0.5" aria-label={`${room.rating} de 5 estrelas`}>
             {Array.from({ length: 5 }).map((_, index) => (
-              <Star key={index} className="h-4 w-4 fill-[#2FB8D9] text-[#2FB8D9]" />
+              <Star key={index} className="h-4 w-4 fill-brand-gold text-brand-gold" />
             ))}
           </div>
           <span className="font-medium">
@@ -112,7 +112,11 @@ export function BookingCard({ room, className }: BookingCardProps) {
           </span>
         </div>
 
-        <CTAButton href={whatsappUrl} className="w-full justify-center" variant="on-light">
+        <CTAButton
+          href={whatsappUrl}
+          className="w-full justify-center [&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 focus-visible:ring-brand-cta-light"
+          variant="on-light"
+        >
           Reservar Agora
         </CTAButton>
       </div>
