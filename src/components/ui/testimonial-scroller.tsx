@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useReducedMotion } from "framer-motion"
 import { Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -37,8 +38,11 @@ export const HorizontalScroller = ({
   speed?: string
   direction?: "left" | "right"
 }) => {
+  const shouldReduceMotion = useReducedMotion()
   const animationClass =
-    direction === "right" ? "animate-scroll-horizontal-reverse" : "animate-scroll-horizontal"
+    shouldReduceMotion
+      ? ""
+      : direction === "right" ? "animate-scroll-horizontal-reverse" : "animate-scroll-horizontal"
   const style = { "--scroll-duration": speed } as React.CSSProperties
 
   return (

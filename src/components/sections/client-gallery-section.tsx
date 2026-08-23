@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { useReducedMotion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
@@ -32,6 +33,7 @@ const baseImages = [
 const clientImages = [...baseImages, ...baseImages, ...baseImages]
 
 export function ClientGallerySection() {
+  const shouldReduceMotion = useReducedMotion()
   const css = `
   .rf-gallery-swiper {
     width: 100%;
@@ -124,7 +126,7 @@ export function ClientGallerySection() {
           modifier: 1.5,
           slideShadows: false,
         }}
-        autoplay={{
+        autoplay={shouldReduceMotion ? false : {
           delay: 2500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,

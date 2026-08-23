@@ -1,6 +1,7 @@
 "use client"
 
 import { Swiper, SwiperSlide } from "swiper/react"
+import { useReducedMotion } from "framer-motion"
 
 import "swiper/css"
 import "swiper/css/effect-coverflow"
@@ -23,6 +24,7 @@ const baseImages = [
 const clientImages = [...baseImages, ...baseImages, ...baseImages]
 
 export function ClientMomentsSection() {
+  const shouldReduceMotion = useReducedMotion()
   const css = `
   .pam-moments-swiper {
     width: 100%;
@@ -116,7 +118,7 @@ export function ClientMomentsSection() {
           modifier: 1.5,
           slideShadows: false,
         }}
-        autoplay={{
+        autoplay={shouldReduceMotion ? false : {
           delay: 2500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
