@@ -66,7 +66,7 @@ export function TestimonialsSection() {
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
             Depoimentos
           </p>
-          <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
+          <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
             O que nossos hóspedes dizem
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-brand-text md:text-lg">

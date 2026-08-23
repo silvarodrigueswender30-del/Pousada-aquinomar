@@ -57,7 +57,7 @@ export function OurStorySection() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               transition={revealTransition(0.1)}
-              className="mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl"
+              className="mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl"
             >
               Um sobrenome, uma família, uma pousada
             </motion.h2>

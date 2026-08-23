@@ -16,7 +16,7 @@ export function FinalCtaSection() {
           Reserva direta
         </p>
 
-        <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-white md:text-6xl">
+        <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-white md:text-6xl">
           Pronta para sua próxima estadia?
         </h2>
 

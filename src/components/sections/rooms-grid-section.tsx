@@ -12,7 +12,7 @@ export function RoomsGridSection() {
             <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
               Acomodacoes
             </p>
-            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
+            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
               Opcoes de quarto
             </h2>
           </div>

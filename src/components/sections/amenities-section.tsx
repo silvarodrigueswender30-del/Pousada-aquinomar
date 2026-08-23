@@ -28,7 +28,7 @@ export function AmenitiesSection() {
     <section id="comodidades" className="w-full scroll-mt-24 bg-brand-surface py-16 md:py-24">
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="grid gap-8 md:grid-cols-2 md:items-end">
-          <h2 className="font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
+          <h2 className="font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
             Estrutura e comodidades para uma estadia sem preocupação
           </h2>
 

@@ -60,7 +60,7 @@ export function LocationSection() {
         />
 
         <div className="relative z-20 px-7 pb-28 pt-14 text-white md:px-10 md:pb-0 md:pt-20">
-          <h2 className="max-w-4xl font-heading text-5xl font-light leading-[0.98] md:text-7xl">
+          <h2 className="max-w-4xl font-heading text-5xl font-light leading-[0.98] tracking-tight md:text-7xl">
             Localização e como chegar
           </h2>
 

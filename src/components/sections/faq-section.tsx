@@ -145,7 +145,7 @@ export function FaqSection() {
             <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
               Perguntas frequentes
             </p>
-            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
+            <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
               Tire suas dúvidas
             </h2>
             <p className="mt-6 max-w-xl text-base font-medium leading-7 text-brand-text md:text-lg">

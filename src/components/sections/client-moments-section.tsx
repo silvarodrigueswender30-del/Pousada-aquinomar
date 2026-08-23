@@ -92,7 +92,7 @@ export function ClientMomentsSection() {
         <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
           Momentos reais
         </p>
-        <h2 className="mx-auto mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
+        <h2 className="mx-auto mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] tracking-tight text-slate-950 md:text-6xl">
           Momentos que Nossos Hóspedes Viveram na Pousada
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-slate-600 md:text-lg">

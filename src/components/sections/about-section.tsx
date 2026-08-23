@@ -105,7 +105,7 @@ export function AboutSection() {
                   initial={{ opacity: 0, y: revealY }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
                   transition={revealTransition(0.1)}
-                  className="font-heading text-[3.75rem] font-light leading-[110%] text-brand-primary max-[479px]:text-4xl max-[479px]:leading-[120%]"
+                  className="font-heading text-[3.75rem] font-light leading-[110%] tracking-tight text-brand-primary max-[479px]:text-4xl max-[479px]:leading-[120%]"
                 >
                   Mais que hospedagem,
                   <br />
