@@ -37,6 +37,8 @@ const chevronStyles: Record<Variant, string> = {
   "secondary-dark": "text-white",
 }
 
+const MotionLink = motion.create(Link)
+
 export function CTAButton({
   href,
   children,
@@ -47,10 +49,12 @@ export function CTAButton({
   const [hovered, setHovered] = React.useState(false)
 
   return (
-    <Link
+    <MotionLink
       href={href}
       target={target}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", bounce: 0, duration: 0.15 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
@@ -90,6 +94,6 @@ export function CTAButton({
           strokeWidth={2.5}
         />
       </motion.div>
-    </Link>
+    </MotionLink>
   )
 }
