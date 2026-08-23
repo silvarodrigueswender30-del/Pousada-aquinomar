@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { HeartHandshake } from "lucide-react"
 
 const power3Out = [0.22, 1, 0.36, 1] as const
@@ -11,7 +11,7 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: power3Out },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
   },
 }
 
@@ -20,7 +20,7 @@ const imageReveal = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: power3Out, delay: 0.2 },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4, delay: 0.2 },
   },
 }
 
@@ -28,6 +28,12 @@ import { useSafeInView } from "@/hooks/use-safe-in-view"
 
 export function OurStorySection() {
   const { ref, isInView } = useSafeInView();
+  const shouldReduceMotion = useReducedMotion();
+  const revealY = shouldReduceMotion ? 0 : 30;
+  const revealTransition = (delay: number) =>
+    shouldReduceMotion
+      ? { duration: 0.2, delay }
+      : { type: "spring" as const, bounce: 0, duration: 0.4, delay };
 
   return (
     <section id="nossa-historia" ref={ref} className="w-full scroll-mt-24 bg-white py-16 md:py-24">
@@ -50,7 +56,7 @@ export function OurStorySection() {
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.8, ease: power3Out, delay: 0.1 }}
+              transition={revealTransition(0.1)}
               className="mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl"
             >
               Um sobrenome, uma família, uma pousada
@@ -59,9 +65,9 @@ export function OurStorySection() {
             <div className="mt-8 max-w-3xl space-y-6">
               <motion.p
                 variants={fadeUp}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                transition={{ duration: 0.8, ease: power3Out, delay: 0.2 }}
+                initial={{ opacity: 0, y: revealY }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+                transition={revealTransition(0.2)}
                 className="text-lg font-medium leading-8 text-brand-text"
               >
                 O nome Aquino Mar carrega o sobrenome da família que também está por trás da Aquinotour, agência de passeios náuticos da região. Não é uma rede, não é um grupo hoteleiro — é a Rose, o esposo e a filha, tocando o negócio com as próprias mãos e recebendo cada hóspede como se fosse visita de casa.
@@ -69,9 +75,9 @@ export function OurStorySection() {
 
               <motion.p
                 variants={fadeUp}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                transition={{ duration: 0.8, ease: power3Out, delay: 0.3 }}
+                initial={{ opacity: 0, y: revealY }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+                transition={revealTransition(0.3)}
                 className="text-lg font-medium leading-8 text-brand-text"
               >
                 Essa proximidade aparece em cada detalhe: no café da manhã feito com carinho e servido todos os dias, na atenção redobrada na limpeza dos quartos, na disposição de indicar o melhor passeio ou a praia mais tranquila para quem está de passagem por Paraty.
@@ -79,9 +85,9 @@ export function OurStorySection() {
 
               <motion.p
                 variants={fadeUp}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                transition={{ duration: 0.8, ease: power3Out, delay: 0.4 }}
+                initial={{ opacity: 0, y: revealY }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+                transition={revealTransition(0.4)}
                 className="text-lg font-medium leading-8 text-brand-text"
               >
                 O resultado está nas mais de 400 avaliações cinco estrelas deixadas por quem já passou por aqui — e na vontade repetida de voltar.
@@ -90,9 +96,9 @@ export function OurStorySection() {
 
             <motion.blockquote
               variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.8, ease: power3Out, delay: 0.5 }}
+              initial={{ opacity: 0, y: revealY }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+              transition={revealTransition(0.5)}
               className="mt-10 border-l-4 border-brand-gold bg-brand-surface px-6 py-5 shadow-sm shadow-brand-primary/5"
             >
               <p className="font-heading text-2xl font-light italic leading-tight text-brand-primary">

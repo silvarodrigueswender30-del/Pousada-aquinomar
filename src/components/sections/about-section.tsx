@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { Heart, Star } from "lucide-react"
 
 const trustBadges = ["Google", "Booking", "Hotels.com"]
@@ -12,7 +12,7 @@ const fadeUp40 = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: power3Out },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
   },
 }
 
@@ -21,7 +21,7 @@ const fadeUp30 = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: power3Out },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
   },
 }
 
@@ -30,7 +30,7 @@ const illustrationReveal = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: power3Out, delay: 0.25 },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4, delay: 0.25 },
   },
 }
 
@@ -49,7 +49,7 @@ const statItemReveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: power3Out },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
   },
 }
 
@@ -68,7 +68,7 @@ const logoReveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: power3Out },
+    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
   },
 }
 
@@ -76,6 +76,12 @@ import { useSafeInView } from "@/hooks/use-safe-in-view"
 
 export function AboutSection() {
   const { ref, isInView } = useSafeInView();
+  const shouldReduceMotion = useReducedMotion();
+  const revealY = shouldReduceMotion ? 0 : 30;
+  const revealTransition = (delay: number) =>
+    shouldReduceMotion
+      ? { duration: 0.2, delay }
+      : { type: "spring" as const, bounce: 0, duration: 0.4, delay };
 
   return (
     <section id="sobre" ref={ref} className="w-full scroll-mt-24 bg-white py-20 text-slate-950 max-[479px]:pb-8 max-[479px]:pt-16">
@@ -96,9 +102,9 @@ export function AboutSection() {
             <div className="w-3/4 px-4 max-[479px]:w-full">
               <div className="flex flex-col gap-10 max-[479px]:gap-8">
                 <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.8, ease: power3Out, delay: 0.1 }}
+                  initial={{ opacity: 0, y: revealY }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+                  transition={revealTransition(0.1)}
                   className="font-heading text-[3.75rem] font-light leading-[110%] text-brand-primary max-[479px]:text-4xl max-[479px]:leading-[120%]"
                 >
                   Mais que hospedagem,
@@ -122,9 +128,9 @@ export function AboutSection() {
           <div className="flex flex-col gap-10 max-[479px]:gap-8">
             <div>
               <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.8, ease: power3Out, delay: 0.45 }}
+                initial={{ opacity: 0, y: revealY }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
+                transition={revealTransition(0.45)}
                 className="text-[1.375rem] font-medium leading-[120%] text-brand-text max-[479px]:text-[1.375rem] max-[479px]:leading-[120%]"
               >
                 A Pousada Aquino Mar é tocada pela Rose, seu esposo e sua filha — uma gestão
