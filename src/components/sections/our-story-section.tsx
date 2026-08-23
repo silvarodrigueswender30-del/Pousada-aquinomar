@@ -119,7 +119,7 @@ export function OurStorySection() {
           >
             {/* TODO: substituir por foto real da família/fachada da pousada quando disponível */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_20%,color-mix(in_oklab,var(--color-cta)_36%,transparent),transparent_34%),radial-gradient(circle_at_75%_74%,color-mix(in_oklab,var(--color-primary)_18%,transparent),transparent_42%)]" />
-            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/55 bg-white/82 p-5 shadow-xl shadow-brand-primary/10 backdrop-blur-md">
+            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-brand-gold/20 bg-white/82 p-5 shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150">
               <p className="font-heading text-xl font-semibold leading-tight text-brand-primary">
                 Rose, esposo e filha
               </p>

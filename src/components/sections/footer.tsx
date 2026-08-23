@@ -168,7 +168,7 @@ export function Footer() {
                 <MapPin size={20} className="shrink-0 text-brand-gold-light" />
                 Onde estamos
               </h3>
-              <div className="aspect-video w-full rounded-2xl border border-brand-gold/20 bg-brand-primary-dark p-2 shadow-[0_8px_32px_rgba(0,0,0,0.45)]">
+              <div className="aspect-video w-full rounded-2xl border border-brand-gold/20 bg-brand-primary-dark/80 p-2 shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150">
                 <iframe
                   src="https://maps.google.com/maps?q=R.%20Guapuruvu%2C%20371%20-%20Cabore%2C%20Paraty%20-%20RJ%2C%2023970-000&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"

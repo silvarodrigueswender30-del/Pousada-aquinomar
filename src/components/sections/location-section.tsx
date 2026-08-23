@@ -71,7 +71,7 @@ export function LocationSection() {
           </div>
         </div>
 
-        <div className="relative z-20 grid border-t border-white/15 bg-brand-primary-dark/72 text-white backdrop-blur-md md:absolute md:inset-x-0 md:bottom-0 md:grid-cols-6">
+        <div className="relative z-20 grid border border-brand-gold/20 bg-brand-primary-dark/72 text-white shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150 md:absolute md:inset-x-0 md:bottom-0 md:grid-cols-6">
           <div className="border-b border-white/15 p-7 md:col-span-2 md:border-b-0 md:border-r md:p-10">
             <p className="max-w-sm text-base font-semibold leading-tight md:text-lg">
               No Caboré, a pousada fica em uma rua residencial e tranquila, com acesso fácil ao Centro Histórico e aos principais passeios de Paraty.
