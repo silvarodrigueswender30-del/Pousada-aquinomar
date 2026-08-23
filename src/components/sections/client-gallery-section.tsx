@@ -57,7 +57,7 @@ export function ClientGallerySection() {
 
   /* Custom Pagination — tokens RF Turismo */
   .rf-gallery-swiper .swiper-pagination-bullet {
-    background-color: rgba(12, 100, 120, 0.20);
+    background-color: rgba(18, 42, 69, 0.20);
     opacity: 1;
     width: 8px;
     height: 8px;
@@ -66,7 +66,7 @@ export function ClientGallerySection() {
     margin: 0 4px !important;
   }
   .rf-gallery-swiper .swiper-pagination-bullet-active {
-    background-color: #2FB8D9;
+    background-color: var(--color-cta);
     width: 28px;
     border-radius: 999px;
   }
@@ -92,18 +92,18 @@ export function ClientGallerySection() {
       <div 
         className="absolute top-0 left-0 right-0 h-32 md:h-48 pointer-events-none z-0"
         style={{
-          background: 'linear-gradient(to bottom, #FFFFFF 0%, transparent 100%)'
+          background: 'linear-gradient(to bottom, var(--color-surface) 0%, transparent 100%)'
         }}
       />
       <style>{css}</style>
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 mb-8 md:mb-12 relative z-10">
-        <h2 className="font-heading font-light tracking-[-0.025em] text-3xl sm:text-4xl md:text-5xl text-[#0B2530] text-center leading-[1.1] mb-4">
+        <h2 className="font-heading font-light tracking-[-0.025em] text-3xl sm:text-4xl md:text-5xl text-brand-primary text-center leading-[1.1] mb-4">
           Momentos que Nossos Clientes Viveram no Mar
         </h2>
-        <p className="font-sans text-base md:text-lg text-[#4B6570] text-center max-w-2xl mx-auto">
+        <p className="font-sans text-base md:text-lg text-brand-text text-center max-w-2xl mx-auto">
           Cada foto aqui é de uma família que embarcou com a RF Turismo —{" "}
-          <span className="text-[#2FB8D9]">momentos reais</span>, sorrisos reais.
+          <span className="text-brand-gold">momentos reais</span>, sorrisos reais.
         </p>
       </div>
 
