@@ -13,16 +13,16 @@ export interface TestimonialItem {
 
 export const TestimonialCard = ({ author, text, source }: TestimonialItem) => {
   return (
-    <div className="flex w-80 flex-shrink-0 flex-col items-start gap-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:w-96">
-      <div className="flex items-center gap-1 text-[#0C6478]" aria-label="5 estrelas">
+    <div className="flex w-80 flex-shrink-0 flex-col items-start gap-4 rounded-xl border border-brand-gold/20 bg-white p-6 shadow-sm sm:w-96">
+      <div className="flex items-center gap-1 text-brand-gold" aria-label="5 estrelas">
         {Array.from({ length: 5 }).map((_, index) => (
           <Star key={index} className="h-4 w-4" fill="currentColor" strokeWidth={1.5} />
         ))}
       </div>
-      <p className="text-base leading-relaxed text-slate-600">{text}</p>
+      <p className="text-base leading-relaxed text-brand-text">{text}</p>
       <div className="mt-auto flex flex-col">
-        <span className="font-heading font-medium text-slate-950">{author}</span>
-        {source && <span className="text-sm text-slate-500">{source}</span>}
+        <span className="font-heading font-medium text-brand-primary">{author}</span>
+        {source && <span className="text-sm text-brand-text/60">{source}</span>}
       </div>
     </div>
   )

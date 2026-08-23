@@ -60,16 +60,16 @@ const secondRowTestimonials: TestimonialItem[] = [
 
 export function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="w-full scroll-mt-24 overflow-hidden bg-white py-16 md:py-24">
+    <section id="depoimentos" className="w-full scroll-mt-24 overflow-hidden bg-brand-surface py-16 md:py-24">
       <div className="mx-auto w-full px-7 md:px-10">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
+          <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
             Depoimentos
           </p>
-          <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-slate-950 md:text-6xl">
+          <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] text-brand-primary md:text-6xl">
             O que nossos hóspedes dizem
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-slate-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-brand-text md:text-lg">
             Nota 5.0 no Google, com mais de 411 avaliações de hóspedes reais.
           </p>
         </div>

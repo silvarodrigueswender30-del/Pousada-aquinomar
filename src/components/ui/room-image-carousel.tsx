@@ -30,7 +30,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
     <div className="group/carousel relative aspect-[4/3] w-full overflow-hidden rounded-t-lg bg-slate-100">
       <Link
         href={`/quartos/${slug}`}
-        className="relative block h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9]"
+        className="relative block h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light"
       >
         <img
           src={images[currentIndex]}
@@ -43,7 +43,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9] group-hover/carousel:opacity-100"
+            className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
             aria-label="Imagem anterior"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -51,7 +51,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
           
           <button
             onClick={goToNext}
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FB8D9] group-hover/carousel:opacity-100"
+            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
             aria-label="Próxima imagem"
           >
             <ChevronRight className="h-5 w-5" />
@@ -59,7 +59,7 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
         </>
       )}
 
-      <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-[#063A45]/85 px-3 py-1.5 text-xs font-semibold text-white">
+      <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-brand-primary/85 px-3 py-1.5 text-xs font-semibold text-white">
         <Images className="h-3.5 w-3.5" />
         {photoCount}
       </span>
