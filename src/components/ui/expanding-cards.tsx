@@ -117,15 +117,12 @@ export const ExpandingCards = React.forwardRef<
               }
               transition={spring}
               className={cn(
-                "group relative min-h-0 min-w-0 overflow-hidden rounded-xl bg-brand-primary-dark shadow-xl shadow-brand-primary/20",
+                "group relative min-h-0 min-w-0 overflow-hidden rounded-xl bg-brand-primary-dark shadow-lg shadow-brand-primary/15",
                 "focus-within:ring-2 focus-within:ring-brand-gold focus-within:ring-offset-2 focus-within:ring-offset-brand-surface",
                 "lg:h-full",
               )}
               data-active={isActive}
               data-index={item.index}
-              onMouseEnter={() => {
-                if (isDesktop) setActiveItem(index);
-              }}
             >
               <button
                 id={triggerId}
@@ -150,7 +147,9 @@ export const ExpandingCards = React.forwardRef<
                     shouldReduceMotion
                       ? ""
                       : "scale-[1.04] group-data-[active=true]:scale-100",
-                    isActive ? "brightness-100" : "brightness-75",
+                    isActive
+                      ? "brightness-100"
+                      : "brightness-75 group-hover:brightness-90",
                   )}
                   quality={82}
                 />

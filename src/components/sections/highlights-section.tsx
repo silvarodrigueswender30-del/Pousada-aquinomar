@@ -71,7 +71,7 @@ export function HighlightsSection() {
   return (
     <section
       id="destaques"
-      className="relative w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt py-16 md:py-24 lg:py-28"
+      className="relative w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt pb-0 pt-6 md:pt-8 lg:pt-10"
     >
       <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(220px,0.34fr)] lg:items-end">
@@ -105,7 +105,7 @@ export function HighlightsSection() {
         </div>
       </div>
 
-      <div className="relative mt-12 overflow-hidden py-10 md:mt-16 md:py-14 lg:py-16">
+      <div className="relative mt-10 overflow-hidden pb-24 pt-10 md:mt-12 md:pb-32 md:pt-14 lg:pb-40 lg:pt-16">
         <div aria-hidden="true" className="absolute inset-0">
           <AnimatePresence mode="sync">
             <motion.div
@@ -121,15 +121,15 @@ export function HighlightsSection() {
                 alt=""
                 fill
                 sizes="100vw"
-                className="scale-105 object-cover blur-[2px]"
+                className="scale-[1.03] object-cover"
                 quality={70}
               />
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute inset-0 bg-brand-primary-dark/72" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--color-surface-alt)_0%,color-mix(in_oklab,var(--color-surface-alt)_86%,transparent)_10%,transparent_32%,transparent_68%,color-mix(in_oklab,var(--color-surface-alt)_88%,transparent)_94%,var(--color-surface-alt)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_12%,color-mix(in_oklab,var(--color-accent-gold)_22%,transparent),transparent_34%),linear-gradient(90deg,color-mix(in_oklab,var(--color-primary-dark)_74%,transparent)_0%,transparent_48%,color-mix(in_oklab,var(--color-primary)_46%,transparent)_100%)]" />
+          <div className="absolute inset-0 bg-brand-primary-dark/56" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--color-surface-alt)_0%,color-mix(in_oklab,var(--color-surface-alt)_72%,transparent)_9%,transparent_30%,transparent_70%,color-mix(in_oklab,var(--color-surface-alt)_52%,transparent)_88%,var(--color-surface-alt)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_12%,color-mix(in_oklab,var(--color-accent-gold)_18%,transparent),transparent_34%),linear-gradient(90deg,color-mix(in_oklab,var(--color-primary-dark)_58%,transparent)_0%,transparent_50%,color-mix(in_oklab,var(--color-primary)_34%,transparent)_100%)]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-10">
@@ -140,6 +140,11 @@ export function HighlightsSection() {
             defaultActiveIndex={0}
           />
         </div>
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-[linear-gradient(to_bottom,transparent_0%,color-mix(in_oklab,var(--color-surface-alt)_30%,transparent)_35%,color-mix(in_oklab,var(--color-surface-alt)_76%,transparent)_70%,var(--color-surface-alt)_100%)] sm:h-36 md:h-44"
+        />
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ export function OurStorySection() {
     <section
       id="nossa-historia"
       ref={ref}
-      className="w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt py-16 text-brand-text md:py-24 lg:py-28"
+      className="w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt pb-8 pt-16 text-brand-text md:pb-10 md:pt-24 lg:pb-12 lg:pt-28"
     >
       <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
         <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-16 lg:gap-24">
@@ -84,7 +84,7 @@ export function OurStorySection() {
                   : { opacity: 0, scale: imageScale }
               }
               transition={{ ...baseTransition, delay: shouldReduceMotion ? 0 : 0.24 }}
-              className="absolute right-3 top-8 w-[34%] rotate-[1.5deg] overflow-hidden border-4 border-brand-surface-alt bg-brand-surface-alt shadow-xl shadow-brand-primary/20 md:-right-6 md:w-[32%]"
+              className="absolute bottom-5 right-4 w-[30%] rotate-[0.75deg] overflow-hidden rounded-xl border-4 border-brand-surface-alt bg-brand-surface-alt shadow-lg shadow-brand-primary/15 sm:bottom-7 sm:right-6 sm:w-[31%] md:bottom-8 md:-right-4 md:w-[30%]"
             >
               <div className="relative aspect-[4/5]">
                 <Image
