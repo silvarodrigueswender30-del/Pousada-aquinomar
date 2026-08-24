@@ -1,18 +1,27 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight, Images } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface RoomImageCarouselProps {
   images: string[]
   slug: string
   name: string
   photoCount: number
+  label: string
 }
 
-export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageCarouselProps) {
+export function RoomImageCarousel({
+  images,
+  slug,
+  name,
+  photoCount,
+  label,
+}: RoomImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = React.useState(0)
+  const progress = `${((currentIndex + 1) / images.length) * 100}%`
 
   const goToNext = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -27,53 +36,55 @@ export function RoomImageCarousel({ images, slug, name, photoCount }: RoomImageC
   }
 
   return (
-    <div className="group/carousel relative aspect-[4/3] w-full overflow-hidden rounded-t-lg bg-slate-100">
+    <div className="group/carousel relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-brand-surface-alt">
       <Link
         href={`/quartos/${slug}`}
         className="relative block h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light"
       >
-        <img
+        <Image
           src={images[currentIndex]}
           alt={`${name} - foto ${currentIndex + 1}`}
-          className="h-full w-full object-cover transition-all duration-300"
+          fill
+          sizes="(max-width: 1023px) calc(100vw - 40px), 44vw"
+          className="object-cover transition-transform duration-500 motion-safe:group-hover/carousel:scale-[1.015]"
+          quality={82}
         />
       </Link>
+
+      <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-brand-primary/85 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white">
+        {label}
+      </div>
       
       {images.length > 1 && (
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 active:scale-90 active:transition-transform active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
+            className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-brand-primary/70 text-white backdrop-blur-sm transition hover:bg-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light"
             aria-label="Imagem anterior"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
           </button>
           
           <button
             onClick={goToNext}
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-800 opacity-0 shadow backdrop-blur transition-all hover:bg-white hover:scale-105 active:scale-90 active:transition-transform active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light group-hover/carousel:opacity-100"
+            className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-brand-primary/70 text-white backdrop-blur-sm transition hover:bg-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light"
             aria-label="Próxima imagem"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
           </button>
         </>
       )}
 
-      <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-brand-primary/85 px-3 py-1.5 text-xs font-semibold text-white">
-        <Images className="h-3.5 w-3.5" />
-        {photoCount}
+      <span className="pointer-events-none absolute bottom-4 right-4 inline-flex items-center rounded-full bg-brand-primary/85 px-3 py-1.5 text-xs font-semibold text-white">
+        {String(currentIndex + 1).padStart(2, "0")} / {String(photoCount).padStart(2, "0")}
       </span>
       
       {images.length > 1 && (
-        <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5">
-          {images.map((_, i) => (
-            <div
-              key={i}
-              className={`h-1.5 rounded-full transition-all ${
-                i === currentIndex ? "w-3 bg-white" : "w-1.5 bg-white/50"
-              }`}
-            />
-          ))}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-white/35">
+          <div
+            className="h-full bg-brand-gold transition-[width] duration-300"
+            style={{ width: progress }}
+          />
         </div>
       )}
     </div>
