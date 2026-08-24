@@ -4,7 +4,6 @@ import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
 import { FloatingWhatsappButton } from "@/components/ui/floating-whatsapp-button";
-import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
 
 const inter = localFont({
@@ -20,11 +19,11 @@ const inter = localFont({
 });
 
 const siteDescription =
-  "Pousada familiar em Cabore, a poucos minutos do Centro Histórico de Paraty. Piscina, café da manhã incluso e acolhimento de quem trata cada hóspede como família."
+  "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Piscina, café da manhã incluso e acolhimento de quem trata cada hóspede como família."
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pousada-aquino-mar.vercel.app"),
-  title: "Pousada Aquino Mar | Cabore, Paraty - RJ",
+  title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
   description: siteDescription,
   robots: {
     index: true,
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     canonical: "https://pousada-aquino-mar.vercel.app",
   },
   openGraph: {
-    title: "Pousada Aquino Mar | Cabore, Paraty - RJ",
+    title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
     description: siteDescription,
     url: "https://pousada-aquino-mar.vercel.app",
     siteName: "Pousada Aquino Mar",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Pousada Aquino Mar em Cabore, Paraty - RJ",
+        alt: "Pousada Aquino Mar em Caborê, Paraty - RJ",
       },
     ],
     locale: "pt_BR",
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pousada Aquino Mar | Cabore, Paraty - RJ",
+    title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
     description: siteDescription,
     images: ["/og-image.jpg"],
   },
@@ -67,7 +66,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Header />
         {children}
-        <Footer />
         <FloatingWhatsappButton />
       </body>
     </html>

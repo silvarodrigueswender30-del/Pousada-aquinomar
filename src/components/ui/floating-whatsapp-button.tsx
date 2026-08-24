@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 
 const WHATSAPP_NUMBER = "5524998280363"
 const MESSAGE = "Ficou com alguma dúvida? Fale com a Pousada Aquino Mar pelo WhatsApp."
-const URL_MESSAGE = "Olá! Vim pelo site e gostaria de saber mais sobre a Pousada Aquino Mar."
+const URL_MESSAGE = "Olá! Gostaria de tirar algumas dúvidas sobre hospedagem na Pousada Aquino Mar."
 
 export function FloatingWhatsappButton() {
   const [isVisible, setIsVisible] = useState(false)

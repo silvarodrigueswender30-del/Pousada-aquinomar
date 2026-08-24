@@ -27,6 +27,15 @@ export function CountingNumber({ target, decimals = 0, formatLocale = true }: Co
   }, [motionValue, isInView, target]);
 
   useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      motionValue.set(target);
+      setDisplayValue(target);
+    }, 1200);
+
+    return () => window.clearTimeout(timeout);
+  }, [motionValue, target]);
+
+  useEffect(() => {
     return springValue.on("change", (latest) => {
       setDisplayValue(latest);
     });

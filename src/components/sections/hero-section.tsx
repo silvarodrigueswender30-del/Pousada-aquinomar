@@ -1,5 +1,7 @@
 import Image from "next/image"
+import { Star } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
+import { CountingNumber } from "@/components/ui/counting-number"
 
 export function HeroSection() {
   return (
@@ -12,20 +14,29 @@ export function HeroSection() {
         className="object-cover"
         quality={80}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_88%,transparent)_0%,color-mix(in_oklab,var(--color-primary-dark)_45%,transparent)_45%,color-mix(in_oklab,var(--color-primary-dark)_15%,transparent)_100%)]" />
+      <div className="absolute right-4 top-24 z-20 rounded-full border border-brand-gold/20 bg-brand-primary-dark/60 px-5 py-2.5 shadow-xl shadow-brand-primary/20 backdrop-blur-md saturate-150 md:right-10 md:top-24">
+        <p className="flex items-center gap-1.5 text-sm font-medium text-white">
+          <span className="flex items-baseline gap-0"><CountingNumber target={5} />.0</span>
+          <Star className="h-4 w-4 fill-brand-gold-light text-brand-gold-light" aria-hidden="true" />
+          <span className="text-white/70">·</span>
+          <span className="flex items-baseline gap-0"><CountingNumber target={411} />+</span>
+          avaliações
+        </p>
+      </div>
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-28 text-white md:py-36">
         <div className="max-w-3xl">
           <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold-light">
             Pousada Aquino Mar
           </p>
-          <h1 className="mt-5 font-heading text-5xl font-light leading-tight tracking-tight md:text-7xl">
+          <h1 className="mt-5 max-w-2xl font-heading text-5xl font-light leading-tight tracking-tight md:text-6xl">
             Um refúgio em família à beira do mar em Paraty
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
-            Pousada Aquino Mar — hospitalidade genuína em Cabore, a poucos minutos
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 md:text-xl">
+            Pousada Aquino Mar — hospitalidade genuína em Caborê, a poucos minutos
             do Centro Histórico.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <CTAButton
               href="#quartos"
               target="_self"
@@ -33,6 +44,14 @@ export function HeroSection() {
               className="focus-visible:ring-brand-cta-light"
             >
               Ver Quartos
+            </CTAButton>
+            <CTAButton
+              href="#quartos"
+              target="_self"
+              variant="secondary-dark"
+              className="focus-visible:ring-brand-gold-light [&>div]:border [&>div]:border-brand-gold/60 [&>div]:bg-transparent [&>div]:text-brand-gold-light hover:[&>div]:bg-brand-gold/10 [&>span]:border [&>span]:border-brand-gold/60 [&>span]:bg-transparent [&>span]:text-brand-gold-light hover:[&>span]:bg-brand-gold/10"
+            >
+              Reservar Agora
             </CTAButton>
           </div>
         </div>

@@ -80,7 +80,7 @@ export function LocationSection() {
             <div className="mt-6 overflow-hidden rounded-lg border border-white/20 bg-white/10">
               <iframe
                 title="Mapa da Pousada Aquino Mar"
-                src="https://www.google.com/maps?q=371%20Rua%20Guapuruvu%2C%20Cabor%C3%A9%2C%20Paraty%2C%20RJ%2C%2023970-000&output=embed"
+                src="https://www.google.com/maps?q=R.+Guapuruvu,+371+-+Cabor%C3%AA,+Paraty+-+RJ,+23970-000&output=embed"
                 className="h-44 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

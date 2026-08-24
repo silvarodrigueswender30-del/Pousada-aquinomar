@@ -6,43 +6,43 @@ const ilhas = [
   {
     slug: "ilha-das-couves",
     nome: "Ilha das Couves",
-    descricao: "Águas cristalinas e trilhas curtas fazem da Ilha das Couves a parada mais fotografada do passeio de lancha em Ubatuba.",
-    alt: "Ilha das Couves vista do mar durante passeio de lancha Ubatuba",
+    descricao: "Águas cristalinas e trilhas curtas fazem da Ilha das Couves uma das paradas mais fotografadas em Paraty.",
+    alt: "Ilha das Couves vista do mar durante passeio em Paraty",
     image: "/images/galeria/ilhas/ilha-das-couves.webp",
   },
   {
     slug: "ilha-dos-porcos",
     nome: "Ilha dos Porcos",
     descricao: "Ideal para mergulho livre, a Ilha dos Porcos é famosa pela vida marinha visível já na superfície.",
-    alt: "Mergulho livre na Ilha dos Porcos Ubatuba",
+    alt: "Mergulho livre na Ilha dos Porcos em Paraty",
     image: "/images/galeria/ilhas/ilha-dos-porcos.avif",
   },
   {
     slug: "ilha-do-prumirim",
     nome: "Ilha do Prumirim",
     descricao: "Praia tranquila e protegida, perfeita para quem viaja com crianças pequenas.",
-    alt: "Praia da Ilha do Prumirim Ubatuba SP",
+    alt: "Praia da Ilha do Prumirim no litoral fluminense",
     image: "/images/galeria/ilhas/ilha-do-prumirim.webp",
   },
   {
     slug: "ilha-rachada-rapada",
     nome: "Ilha Rachada e Rapada",
     descricao: "Formações rochosas ideais para fotos e contemplação da natureza intocada.",
-    alt: "Ilha Rachada e Rapada Ubatuba",
+    alt: "Ilha Rachada e Rapada no litoral fluminense",
     image: "/images/galeria/ilhas/ilha-rachada-rapada.avif",
   },
   {
     slug: "ilha-das-couves",
     nome: "Ilha das Couves",
-    descricao: "Águas cristalinas e trilhas curtas fazem da Ilha das Couves a parada mais fotografada do passeio de lancha em Ubatuba.",
-    alt: "Ilha das Couves vista do mar durante passeio de lancha Ubatuba",
+    descricao: "Águas cristalinas e trilhas curtas fazem da Ilha das Couves uma das paradas mais fotografadas em Paraty.",
+    alt: "Ilha das Couves vista do mar durante passeio em Paraty",
     image: "/images/galeria/ilhas/ilha-das-couves.webp",
   },
   {
     slug: "ilha-dos-porcos",
     nome: "Ilha dos Porcos",
     descricao: "Ideal para mergulho livre, a Ilha dos Porcos é famosa pela vida marinha visível já na superfície.",
-    alt: "Mergulho livre na Ilha dos Porcos Ubatuba",
+    alt: "Mergulho livre na Ilha dos Porcos em Paraty",
     image: "/images/galeria/ilhas/ilha-dos-porcos.avif",
   },
 ];
@@ -53,10 +53,10 @@ export function IslandsSection() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mx-auto mb-12 md:mb-16 flex max-w-5xl flex-col items-center px-6 text-center lg:px-0">
           <h2 className="font-heading font-light tracking-[-0.025em] text-3xl sm:text-4xl md:text-5xl text-[#0B2530] text-center mb-4 leading-[1.1]">
-            Ilhas de Ubatuba Visitadas no Passeio de Lancha
+            Ilhas de Paraty Visitadas no Passeio de Lancha
           </h2>
           <p className="max-w-2xl font-sans text-base md:text-lg leading-relaxed text-[#4B6570] mt-2">
-            Conheça as ilhas visitadas durante o passeio de lancha saindo de Ubatuba — águas cristalinas, trilhas curtas e paradas para mergulho livre em cada parada do roteiro.
+            Conheça ilhas e praias visitadas durante passeios em Paraty: águas cristalinas, trilhas curtas e paradas para mergulho livre em cada roteiro.
           </p>
         </div>
 

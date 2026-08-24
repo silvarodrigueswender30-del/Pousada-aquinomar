@@ -1,7 +1,7 @@
 const sharp = require('sharp');
 const path = require('path');
 
-const inputPath = 'C:/Users/Teste/Downloads/RF Turismo Passeio de Lancha/img/002.jpeg';
+const inputPath = 'C:/Users/Teste/Downloads/Pousada Aquino Mar/img/002.jpeg';
 const outputPath = path.join(__dirname, 'public', 'images', 'galeria', '002.avif');
 
 (async () => {

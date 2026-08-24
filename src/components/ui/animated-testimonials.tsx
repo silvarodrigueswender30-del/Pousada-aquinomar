@@ -30,7 +30,7 @@ export interface AnimatedTestimonialsProps {
 
 export function AnimatedTestimonials({
   title = "Quem já embarcou, recomenda",
-  subtitle = "Mais de 100 avaliações reais de quem já viveu a experiência RF Turismo pelas ilhas de Ubatuba.",
+  subtitle = "Mais de 100 avaliações reais de quem já viveu a experiência da Pousada Aquino Mar em Paraty.",
   badgeText = "Avaliações reais no Google",
   testimonials = [],
   autoRotateInterval = 6000,
@@ -235,7 +235,7 @@ const rfTestimonials: Testimonial[] = [
     role: "Passeio de Lancha",
     rating: 5,
     quote:
-      "Fizemos um passeio nesse final de semana com a RF Turismo e super recomendo. Marinheiro Cebola, um excelente profissional — pegamos chuva na volta, mas ele pilota muito bem. Parabéns pela recepção, estava tudo maravilhoso. Voltaremos mais vezes!",
+      "Ficamos hospedados nesse final de semana e super recomendamos. A equipe foi muito acolhedora, estava tudo maravilhoso. Voltaremos mais vezes!",
   },
   {
     id: 4,

@@ -135,7 +135,7 @@ export function Footer() {
               <div className="space-y-4 text-sm text-white/70 sm:text-base">
                 <p className="flex items-start gap-2 leading-relaxed">
                   <MapPin size={18} className="mt-0.5 shrink-0 text-brand-gold-light" />
-                  <span>R. Guapuruvu, 371 - Cabore, Paraty/RJ, CEP 23970-000</span>
+                  <span>R. Guapuruvu, 371 - Caborê, Paraty - RJ, 23970-000</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <MessageCircle size={18} className="shrink-0 text-brand-gold-light" />
@@ -170,7 +170,7 @@ export function Footer() {
               </h3>
               <div className="aspect-video w-full rounded-2xl border border-brand-gold/20 bg-brand-primary-dark/80 p-2 shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150">
                 <iframe
-                  src="https://maps.google.com/maps?q=R.%20Guapuruvu%2C%20371%20-%20Cabore%2C%20Paraty%20-%20RJ%2C%2023970-000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.google.com/maps?q=R.+Guapuruvu,+371+-+Cabor%C3%AA,+Paraty+-+RJ,+23970-000&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: "grayscale(15%) brightness(0.95)", borderRadius: "12px" }}

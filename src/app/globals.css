@@ -54,12 +54,12 @@
   }
 }
 
-/* Dark mode desabilitado intencionalmente — o site RF Turismo usa
+/* Dark mode desabilitado intencionalmente — o site Pousada Aquino Mar usa
    paleta de marca clara (branco + turquoise) e não suporta tema escuro. */
 
 body {
   /*
-   * Fundo sólido neutro — o gradiente de marca RF Turismo vive no
+   * Fundo sólido neutro — o gradiente de marca Pousada Aquino Mar vive no
    * wrapper <div id="gradient-wrapper"> em app/page.tsx, que envolve
    * todas as seções de StatsCardSection até AnimatedTestimonials.
    * Manter branco aqui garante que Hero, LogoMarquee e Footer

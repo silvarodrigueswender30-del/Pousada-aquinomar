@@ -13,7 +13,7 @@ export function RoomsGridSection() {
               Acomodacoes
             </p>
             <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
-              Opcoes de quarto
+              Quartos para descansar em Paraty
             </h2>
           </div>
           <p className="max-w-xl text-base font-medium leading-7 text-brand-text md:justify-self-end md:text-lg">

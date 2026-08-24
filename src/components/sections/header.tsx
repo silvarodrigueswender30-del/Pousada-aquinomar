@@ -9,10 +9,9 @@ import { CTAButton } from "@/components/ui/cta-button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { label: "Sobre", href: "/#sobre" },
-  { label: "Quartos", href: "/#quartos" },
+  { label: "A Pousada", href: "/#sobre" },
+  { label: "Acomodações", href: "/#quartos" },
   { label: "Localização", href: "/#localizacao" },
-  { label: "Dúvidas", href: "/#faq" },
   { label: "Depoimentos", href: "/#depoimentos" },
 ]
 
@@ -95,7 +94,7 @@ export function Header() {
             variant={ctaVariant}
             className="[&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
           >
-            Ver Quartos
+            Reservar Estadia
           </CTAButton>
         </div>
 
@@ -139,7 +138,7 @@ export function Header() {
             variant="on-light"
             className="mt-5 [&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
           >
-            Ver Quartos
+            Reservar Estadia
           </CTAButton>
         </nav>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { MapPin } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
 const pointsOfInterest = [
@@ -28,8 +29,9 @@ export function LogoMarquee() {
               key={point}
               className="inline-flex items-center gap-9 whitespace-nowrap font-heading text-xl font-light leading-none text-white/70 transition-colors hover:text-white sm:text-2xl"
             >
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-brand-gold-light" />
               {point}
-              <span aria-hidden="true" className="h-7 w-px bg-white/35" />
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-gold-light/70" />
             </span>
           ))}
         </Marquee>

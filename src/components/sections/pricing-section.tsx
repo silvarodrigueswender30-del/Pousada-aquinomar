@@ -13,10 +13,10 @@ function PricingSection() {
             </div>
             <div className="flex gap-4 flex-col">
               <h2 className="font-heading font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#0B2530] leading-[1.1] tracking-tight max-w-2xl text-left">
-                Valores do Passeio de Lancha em Ubatuba
+                Valores da sua estadia em Paraty
               </h2>
               <p className="font-sans font-light text-base md:text-xl leading-relaxed max-w-md text-left text-[#4B6570]">
-                Conforto no mar não precisa ser um mistério de preço. O passeio privativo com a RF Turismo começa em R$1.800, com roteiro e tempo de parada definidos por você. Para o passeio compartilhado, valores por pessoa variam conforme o roteiro escolhido — fale com a gente no WhatsApp e receba a tabela completa e a disponibilidade para sua data.
+                Conforto e acolhimento não precisam ser um mistério de preço. Fale com a equipe da Pousada Aquino Mar pelo WhatsApp e receba valores, disponibilidade e orientações para a sua data.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -41,7 +41,7 @@ function PricingSection() {
             <div className="relative bg-[#F7FBFC] rounded-2xl aspect-square overflow-hidden shadow-sm group">
               <img 
                 src="/images/imagem5.avif" 
-                alt="Lancha privativa navegando pelas águas de Ubatuba" 
+                alt="Passeio navegando pelas águas de Paraty" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 loading="lazy" 
               />
@@ -57,7 +57,7 @@ function PricingSection() {
             <div className="relative bg-[#F7FBFC] rounded-2xl row-span-2 overflow-hidden shadow-sm group">
               <img 
                 src="/images/hero-1.jpeg" 
-                alt="Passeio exclusivo de lancha em Ubatuba" 
+                alt="Passeio exclusivo de lancha em Paraty" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 loading="lazy" 
               />
@@ -73,14 +73,14 @@ function PricingSection() {
             <div className="relative bg-[#F7FBFC] rounded-2xl aspect-square overflow-hidden shadow-sm group">
               <img 
                 src="/images/imagem6.avif" 
-                alt="Praia cristalina nas ilhas de Ubatuba" 
+                alt="Praia cristalina nas ilhas de Paraty" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 loading="lazy" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#063A45]/85 via-transparent to-transparent z-10 pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none">
                 <span className="font-heading text-white text-lg md:text-xl drop-shadow-md">
-                  Ilhas de Ubatuba
+                  Ilhas de Paraty
                 </span>
               </div>
             </div>

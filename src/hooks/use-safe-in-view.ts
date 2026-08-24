@@ -7,33 +7,56 @@ export function useSafeInView(fallbackDelayMs = 600) {
   useEffect(() => {
     if (!ref.current) return;
     let triggered = false;
+    const element = ref.current;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !triggered) {
-          triggered = true;
-          setIsInView(true);
-        }
-      },
-      { threshold: 0, rootMargin: "200px 0px 200px 0px" }
-    );
-
-    observer.observe(ref.current);
-
-    // Fallback: se o elemento já estiver visível ou o observer falhar 
-    // silenciosamente, força a exibição depois de um tempo mínimo
-    const rect = ref.current.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setIsInView(true);
+    const markInView = () => {
+      if (triggered) return;
       triggered = true;
-    }
+      setIsInView(true);
+    };
+
+    const checkCurrentVisibility = () => {
+      const rect = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      return rect.top < viewportHeight + 200 && rect.bottom > -200;
+    };
+
+    const frameId = window.requestAnimationFrame(() => {
+      if (checkCurrentVisibility()) {
+        markInView();
+      }
+    });
 
     const timeout = setTimeout(() => {
-      if (!triggered) setIsInView(true);
+      if (!triggered && document.body.contains(element)) {
+        markInView();
+      }
     }, fallbackDelayMs);
 
+    let observer: IntersectionObserver | null = null;
+
+    if ("IntersectionObserver" in window) {
+      try {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              markInView();
+            }
+          },
+          { threshold: 0.01, rootMargin: "200px 0px 200px 0px" }
+        );
+
+        observer.observe(element);
+      } catch {
+        markInView();
+      }
+    } else {
+      markInView();
+    }
+
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
+      window.cancelAnimationFrame(frameId);
       clearTimeout(timeout);
     };
   }, [fallbackDelayMs]);

@@ -17,15 +17,15 @@ import {
 
 // Imagens copiadas do Nativo Turismo (momentos reais de clientes)
 const baseImages = [
-  { src: "/images/galeria/clientes/cliente-1.avif", alt: "Família aproveitando o passeio de lancha em Ubatuba" },
-  { src: "/images/galeria/clientes/cliente-2.avif", alt: "Casal sorrindo durante roteiro náutico em Ubatuba" },
-  { src: "/images/galeria/clientes/cliente-3.avif", alt: "Mergulho livre nas águas cristalinas de Ubatuba" },
-  { src: "/images/galeria/clientes/cliente-4.avif", alt: "Grupo de amigos na lancha privativa RF Turismo" },
+  { src: "/images/galeria/clientes/cliente-1.avif", alt: "Família aproveitando momentos de lazer em Paraty" },
+  { src: "/images/galeria/clientes/cliente-2.avif", alt: "Casal sorrindo durante estadia em Paraty" },
+  { src: "/images/galeria/clientes/cliente-3.avif", alt: "Mergulho livre nas águas cristalinas de Paraty" },
+  { src: "/images/galeria/clientes/cliente-4.avif", alt: "Grupo de amigos em passeio privativo em Paraty" },
   { src: "/images/galeria/clientes/cliente-5.avif", alt: "Clientes relaxando na areia da praia" },
-  { src: "/images/galeria/clientes/cliente-6.avif", alt: "Turistas explorando as ilhas em Ubatuba" },
+  { src: "/images/galeria/clientes/cliente-6.avif", alt: "Turistas explorando as ilhas em Paraty" },
   { src: "/images/galeria/clientes/cliente-7.avif", alt: "Vista panorâmica durante o passeio" },
-  { src: "/images/galeria/clientes/cliente-8.avif", alt: "Momentos especiais no mar de Ubatuba" },
-  { src: "/images/galeria/clientes/cliente-9.avif", alt: "Pôr do sol durante passeio de lancha em Ubatuba" },
+  { src: "/images/galeria/clientes/cliente-8.avif", alt: "Momentos especiais no mar de Paraty" },
+  { src: "/images/galeria/clientes/cliente-9.avif", alt: "Pôr do sol durante passeio em Paraty" },
 ]
 
 // Array triplicado para garantir buffer de clonagem do loop em qualquer resolução
@@ -57,7 +57,7 @@ export function ClientGallerySection() {
     object-fit: cover;
   }
 
-  /* Custom Pagination — tokens RF Turismo */
+  /* Custom Pagination — tokens da Pousada Aquino Mar */
   .rf-gallery-swiper .swiper-pagination-bullet {
     background-color: rgba(18, 42, 69, 0.20);
     opacity: 1;
@@ -104,7 +104,7 @@ export function ClientGallerySection() {
           Momentos que Nossos Clientes Viveram no Mar
         </h2>
         <p className="font-sans text-base md:text-lg text-brand-text text-center max-w-2xl mx-auto">
-          Cada foto aqui é de uma família que embarcou com a RF Turismo —{" "}
+          Cada foto aqui é de uma família que se hospedou na Pousada Aquino Mar —{" "}
           <span className="text-brand-gold">momentos reais</span>, sorrisos reais.
         </p>
       </div>

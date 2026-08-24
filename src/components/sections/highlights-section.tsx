@@ -64,7 +64,7 @@ export function HighlightsSection() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
             Praias, cachoeiras e ruas históricas para aproveitar Paraty com calma,
-            partindo de um refúgio familiar em Cabore.
+            partindo de um refúgio familiar em Caborê.
           </p>
         </div>
       </div>

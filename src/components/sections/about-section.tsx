@@ -134,7 +134,7 @@ export function AboutSection() {
                 className="text-[1.375rem] font-medium leading-[120%] text-brand-text max-[479px]:text-[1.375rem] max-[479px]:leading-[120%]"
               >
                 A Pousada Aquino Mar é tocada pela Rose, seu esposo e sua filha — uma gestão
-                genuinamente familiar que se reflete em cada detalhe do atendimento. Em Cabore,
+                genuinamente familiar que se reflete em cada detalhe do atendimento. Em Caborê,
                 a poucos minutos do Centro Histórico de Paraty, oferecemos um refúgio tranquilo
                 com o cuidado de quem trata cada hóspede como parte da família.
               </motion.p>

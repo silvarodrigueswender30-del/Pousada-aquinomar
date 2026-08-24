@@ -304,7 +304,7 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
         alt={service.title} 
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
       />
-      {/* Hero-like overlay gradient - Atualizado para paleta RF Turismo */}
+      {/* Hero-like overlay gradient - atualizado para paleta da pousada */}
       <div 
         aria-hidden 
         className={cn("absolute inset-0 z-10 bg-gradient-to-t pointer-events-none", service.gradient)}
@@ -389,7 +389,7 @@ const services: Service[] = [
   {
     number: "001",
     title: "Lancha Compartilhada",
-    description: "Ideal para quem viaja sozinho, em casal ou em grupo pequeno. Divida a experiência com outros viajantes e conheça as ilhas de Ubatuba pagando por assento.",
+    description: "Ideal para quem viaja sozinho, em casal ou em grupo pequeno. Aproveite Paraty com orientações da equipe e indicações de passeios para conhecer as ilhas da região.",
     cta: "Ver disponibilidade",
     whatsappText: "Olá! Gostaria de saber mais sobre a Lancha Compartilhada.",
     icon: Sailboat,

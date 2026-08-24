@@ -21,7 +21,7 @@ interface TestimonialSectionProps {
 }
 
 /**
- * A responsive section component to display the RF Turismo fleet.
+ * A responsive section component to display featured experiences.
  * Mobile: horizontal CSS scroll-snap carousel with dot indicators.
  * Tablet (md+): static 2-column grid.
  * Desktop (lg+): static 3-column grid.
@@ -222,7 +222,7 @@ export const TestimonialSection = ({
   );
 };
 
-// Default high-quality data localized in Portuguese for RF Turismo Fleet
+// Default high-quality data localized in Portuguese for featured experiences
 const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
@@ -254,7 +254,7 @@ export function TestimonialSectionDemo() {
   return (
     <TestimonialSection
       title="Nossa Frota"
-      subtitle="Conheça as lanchas que vão levar você para as ilhas mais bonitas de Ubatuba"
+      subtitle="Conheça experiências para aproveitar as ilhas mais bonitas de Paraty"
       testimonials={defaultTestimonials}
     />
   );

@@ -13,10 +13,10 @@ export function Stats() {
             </div>
             <div className="flex gap-4 flex-col">
               <h2 className="font-heading font-light tracking-[-0.025em] text-3xl md:text-5xl lg:text-6xl text-left leading-[1.1] max-w-xl text-slate-900">
-                Especialistas em transformar um dia em Ubatuba em uma lembrança para a vida toda
+                Especialistas em transformar sua estadia em Paraty em uma lembrança para a vida toda
               </h2>
               <p className="text-base sm:text-lg max-w-lg leading-relaxed text-slate-600 text-left mt-2 font-sans font-light">
-                A RF Turismo nasceu para oferecer uma forma diferente de conhecer Ubatuba: sem roteiros apertados, sem lotação máxima, sem pressa. Nossa frota própria e nossa tripulação experiente cuidam de cada detalhe — da escolha do melhor horário para cada maré até a parada certa para você aproveitar o mar com calma. Somos uma das poucas operadoras credenciadas para desembarque na Ilha das Couves, e cada passeio pode ser ajustado ao seu ritmo: mais tempo na ilha que você mais gostou, roteiro pensado para crianças, casal ou grupo de amigos, churrasco a bordo — sua experiência, do seu jeito.
+                A Pousada Aquino Mar nasceu para oferecer uma forma acolhedora de viver Paraty: sem pressa, com conforto e atenção aos detalhes. Nossa equipe cuida de cada chegada com carinho, da indicação dos melhores passeios ao descanso depois de um dia no Centro Histórico ou nas praias da região.
               </p>
             </div>
           </div>
