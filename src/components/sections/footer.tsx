@@ -80,7 +80,7 @@ export function Footer() {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--color-primary)_62%,transparent)_0%,color-mix(in_oklab,var(--color-primary)_82%,transparent)_42%,color-mix(in_oklab,var(--color-primary-dark)_96%,transparent)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-8 pt-24 md:px-12 lg:px-16">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-8 pt-24 md:px-10 lg:pt-32">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -88,92 +88,93 @@ export function Footer() {
           animate={isInView ? "visible" : "hidden"}
           className="flex flex-col gap-12 md:gap-16"
         >
-          <motion.div
-            variants={itemVariants}
-            className="w-full border-b border-brand-gold/20 pb-12 text-center md:text-left"
-          >
-            <h2 className="font-heading text-4xl font-light tracking-tight sm:text-5xl lg:text-6xl">
-              Pousada Aquino Mar
-            </h2>
-            <p className="mt-3 text-lg font-light text-white/70 sm:text-xl">
-              Acolhimento familiar em Caboré, Paraty
-            </p>
-          </motion.div>
+          <div className="grid gap-12 border-y border-brand-gold/25 py-12 lg:grid-cols-[minmax(0,0.56fr)_minmax(22rem,0.44fr)] lg:gap-14">
+            <motion.div variants={itemVariants} className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(12rem,0.9fr)]">
+              <div>
+                <Image
+                  src="/logo-pousada1.png"
+                  alt="Pousada Aquino Mar"
+                  width={190}
+                  height={86}
+                  className="h-auto w-40 brightness-0 invert sm:w-48"
+                />
+                <p className="mt-6 max-w-md text-base leading-7 text-white/72">
+                  Acolhimento familiar em Caboré, Paraty, com localização tranquila, café da manhã e contato direto com a pousada.
+                </p>
 
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4 lg:gap-16">
-            <motion.div variants={itemVariants} className="flex flex-col gap-4">
-              <h3 className="flex items-center gap-2 font-heading text-xl text-brand-gold-light">
-                <Navigation size={20} />
-                Navegação
-              </h3>
-              <ul className="space-y-3 text-sm text-white/70 sm:text-base">
-                {navigationLinks.map((link) => (
-                  <li key={link.href}>
-                    <a href={link.href} className="transition-colors duration-200 hover:text-brand-gold-light">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-                <li>
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium transition-colors duration-200 hover:text-brand-gold-light"
-                  >
-                    Reservar no WhatsApp
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-cta px-6 py-3 text-sm font-semibold text-white transition hover:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary-dark"
+                >
+                  Reservar no WhatsApp
+                </a>
+              </div>
 
-            <motion.div variants={itemVariants} className="flex flex-col gap-4">
-              <h3 className="flex items-center gap-2 font-heading text-xl text-brand-gold-light">
-                <Info size={20} />
-                Contato
-              </h3>
-              <div className="space-y-4 text-sm text-white/70 sm:text-base">
-                <p className="flex items-start gap-2 leading-relaxed">
-                  <MapPin size={18} className="mt-0.5 shrink-0 text-brand-gold-light" />
-                  <span>R. Guapuruvu, 371 - Caborê, Paraty - RJ, 23970-000</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <MessageCircle size={18} className="shrink-0 text-brand-gold-light" />
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-brand-gold-light">
-                    (24) 99828-0363
-                  </a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Mail size={18} className="shrink-0 text-brand-gold-light" />
-                  {/* TODO: confirmar e-mail oficial com a proprietária */}
-                  <a href="mailto:contato@pousadaaquinomar.com.br" className="transition-colors duration-200 hover:text-brand-gold-light">
-                    contato@pousadaaquinomar.com.br
-                  </a>
-                </p>
-                <div className="flex items-center gap-4 pt-1">
-                  {/* TODO: adicionar links reais das redes sociais quando fornecidos */}
-                  <span aria-label="Instagram da Pousada Aquino Mar" className="text-brand-gold-light">
-                    <FaInstagram size={20} />
-                  </span>
-                  {/* TODO: adicionar links reais das redes sociais quando fornecidos */}
-                  <span aria-label="Facebook da Pousada Aquino Mar" className="text-brand-gold-light">
-                    <FaFacebookF size={18} />
-                  </span>
+              <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-1">
+                <div>
+                  <h3 className="flex items-center gap-2 font-heading text-xl font-normal text-brand-gold-light">
+                    <Navigation size={18} aria-hidden="true" />
+                    Navegação
+                  </h3>
+                  <ul className="mt-5 space-y-3 text-sm text-white/70">
+                    {navigationLinks.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href} className="transition-colors duration-200 hover:text-brand-gold-light">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="flex items-center gap-2 font-heading text-xl font-normal text-brand-gold-light">
+                    <Info size={18} aria-hidden="true" />
+                    Contato
+                  </h3>
+                  <div className="mt-5 space-y-4 text-sm leading-relaxed text-white/70">
+                    <p className="flex items-start gap-2">
+                      <MapPin size={17} className="mt-0.5 shrink-0 text-brand-gold-light" aria-hidden="true" />
+                      <span>R. Guapuruvu, 371 - Caborê, Paraty - RJ, 23970-000</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <MessageCircle size={17} className="shrink-0 text-brand-gold-light" aria-hidden="true" />
+                      <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-brand-gold-light">
+                        (24) 99828-0363
+                      </a>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Mail size={17} className="shrink-0 text-brand-gold-light" aria-hidden="true" />
+                      <a href="mailto:contato@pousadaaquinomar.com.br" className="transition-colors duration-200 hover:text-brand-gold-light">
+                        contato@pousadaaquinomar.com.br
+                      </a>
+                    </p>
+                    <div className="flex items-center gap-4 pt-1">
+                      <span aria-label="Instagram da Pousada Aquino Mar" className="text-brand-gold-light">
+                        <FaInstagram size={20} />
+                      </span>
+                      <span aria-label="Facebook da Pousada Aquino Mar" className="text-brand-gold-light">
+                        <FaFacebookF size={18} />
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="col-span-1 flex h-full w-full flex-col sm:col-span-2">
-              <h3 className="mb-4 flex items-center gap-2 font-heading text-xl text-white">
+            <motion.div variants={itemVariants} className="flex h-full w-full flex-col">
+              <h3 className="mb-4 flex items-center gap-2 font-heading text-xl font-normal text-white">
                 <MapPin size={20} className="shrink-0 text-brand-gold-light" />
                 Onde estamos
               </h3>
-              <div className="aspect-video w-full rounded-2xl border border-brand-gold/20 bg-brand-primary-dark/80 p-2 shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150">
+              <div className="aspect-video w-full overflow-hidden rounded-xl border border-brand-gold/25 bg-brand-primary-dark/80">
                 <iframe
                   src="https://www.google.com/maps?q=R.+Guapuruvu,+371+-+Cabor%C3%AA,+Paraty+-+RJ,+23970-000&output=embed"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "grayscale(15%) brightness(0.95)", borderRadius: "12px" }}
+                  style={{ border: 0, filter: "grayscale(10%) brightness(0.96)" }}
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -186,7 +187,7 @@ export function Footer() {
 
           <motion.div
             variants={itemVariants}
-            className="mt-4 flex flex-col items-center justify-between gap-4 border-t border-brand-gold/20 pt-8 text-xs text-white/50 md:flex-row"
+            className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 md:flex-row"
           >
             <p className="w-full text-center leading-relaxed md:w-auto md:text-left">
               © {new Date().getFullYear()} Pousada Aquino Mar. Todos os direitos reservados.

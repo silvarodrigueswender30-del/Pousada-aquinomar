@@ -61,32 +61,36 @@ const secondRowTestimonials: TestimonialItem[] = [
 export function TestimonialsSection() {
   return (
     <section id="depoimentos" className="w-full scroll-mt-24 overflow-hidden bg-brand-surface py-16 md:py-24">
-      <div className="mx-auto w-full px-7 md:px-10">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
-            Depoimentos
-          </p>
-          <h2 className="mt-4 font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl">
-            O que nossos hóspedes dizem
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-7 text-brand-text md:text-lg">
-            Nota 5.0 no Google, com mais de 411 avaliações de hóspedes reais.
+      <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,0.58fr)_minmax(18rem,0.42fr)] md:items-end">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold">
+              DEPOIMENTOS
+            </p>
+            <h2 className="mt-5 max-w-4xl font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
+              O que nossos hóspedes dizem
+            </h2>
+          </div>
+          <p className="max-w-md text-base leading-7 text-brand-text/75 md:justify-self-end">
+            Nota real 5.0 no Google, com mais de 411 avaliações de hóspedes reais.
           </p>
         </div>
       </div>
 
       <div className="mt-12 space-y-6 md:mt-16">
-        <HorizontalScroller speed="50s" direction="left">
+        <HorizontalScroller speed="68s" direction="left">
           {firstRowTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} {...testimonial} />
           ))}
         </HorizontalScroller>
 
-        <HorizontalScroller speed="65s" direction="right">
+        <div className="hidden md:block">
+        <HorizontalScroller speed="78s" direction="right">
           {secondRowTestimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} {...testimonial} />
           ))}
         </HorizontalScroller>
+        </div>
       </div>
     </section>
   )
