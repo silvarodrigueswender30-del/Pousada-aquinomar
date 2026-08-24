@@ -1,132 +1,128 @@
 "use client"
 
+import Image from "next/image"
 import { motion, useReducedMotion } from "framer-motion"
-import { HeartHandshake } from "lucide-react"
-
-const power3Out = [0.22, 1, 0.36, 1] as const
-const viewport = { once: true, margin: "0px 0px -20% 0px" } as const
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring" as const, bounce: 0, duration: 0.4 },
-  },
-}
-
-const imageReveal = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { type: "spring" as const, bounce: 0, duration: 0.4, delay: 0.2 },
-  },
-}
+import { Heart } from "lucide-react"
 
 import { useSafeInView } from "@/hooks/use-safe-in-view"
 
+const motionEase = [0.25, 0.1, 0.25, 1] as const
+
 export function OurStorySection() {
-  const { ref, isInView } = useSafeInView();
-  const shouldReduceMotion = useReducedMotion();
-  const revealY = shouldReduceMotion ? 0 : 30;
-  const revealTransition = (delay: number) =>
-    shouldReduceMotion
-      ? { duration: 0.2, delay }
-      : { type: "spring" as const, bounce: 0, duration: 0.4, delay };
+  const { ref, isInView } = useSafeInView()
+  const shouldReduceMotion = useReducedMotion()
+  const textY = shouldReduceMotion ? 0 : 24
+  const imageX = shouldReduceMotion ? 0 : 30
+  const imageScale = shouldReduceMotion ? 1 : 0.96
+  const baseTransition = shouldReduceMotion
+    ? { duration: 0.2 }
+    : { duration: 0.62, ease: motionEase }
 
   return (
-    <section id="nossa-historia" ref={ref} className="w-full scroll-mt-24 bg-white py-16 md:py-24">
-      <div className="mx-auto w-full px-7 md:px-10">
-        <div className="grid gap-12 border-y border-brand-primary/10 py-10 md:grid-cols-[1.35fr_0.9fr] md:items-center md:gap-16 md:py-14 lg:gap-24">
-          <div>
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="flex items-center gap-2"
-            >
-              <HeartHandshake className="h-4 w-4 text-brand-gold" aria-hidden="true" />
-              <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold">
-                Nossa história
-              </p>
-            </motion.div>
+    <section
+      id="nossa-historia"
+      ref={ref}
+      className="w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt py-16 text-brand-text md:py-24 lg:py-28"
+    >
+      <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
+        <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-16 lg:gap-24">
+          <motion.div
+            initial={{ opacity: 0, y: textY }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: textY }}
+            transition={baseTransition}
+            className="max-w-xl"
+          >
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold">
+              NOSSA HISTÓRIA
+            </p>
 
-            <motion.h2
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={revealTransition(0.1)}
-              className="mt-4 max-w-4xl font-heading text-4xl font-light leading-[0.98] tracking-tight text-brand-primary md:text-6xl"
-            >
-              Um sobrenome, uma família, uma pousada
-            </motion.h2>
+            <h2 className="mt-5 max-w-xl font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
+              <span className="block">Um sobrenome,</span>
+              <span className="block">
+                uma <span className="text-brand-gold">família</span>,
+              </span>
+              <span className="block">uma pousada</span>
+            </h2>
 
-            <div className="mt-8 max-w-3xl space-y-6">
-              <motion.p
-                variants={fadeUp}
-                initial={{ opacity: 0, y: revealY }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
-                transition={revealTransition(0.2)}
-                className="text-lg font-medium leading-8 text-brand-text"
-              >
-                O nome Aquino Mar carrega o sobrenome da família que também está por trás da Aquinotour, agência de passeios náuticos da região. Não é uma rede, não é um grupo hoteleiro — é a Rose, o esposo e a filha, tocando o negócio com as próprias mãos e recebendo cada hóspede como se fosse visita de casa.
-              </motion.p>
+            <div aria-hidden="true" className="mt-7 h-px w-20 bg-brand-gold/70" />
 
-              <motion.p
-                variants={fadeUp}
-                initial={{ opacity: 0, y: revealY }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
-                transition={revealTransition(0.3)}
-                className="text-lg font-medium leading-8 text-brand-text"
-              >
-                Essa proximidade aparece em cada detalhe: no café da manhã feito com carinho e servido todos os dias, na atenção redobrada na limpeza dos quartos, na disposição de indicar o melhor passeio ou a praia mais tranquila para quem está de passagem por Paraty.
-              </motion.p>
+            <p className="mt-8 max-w-xl text-base leading-7 text-brand-text/80">
+              O nome Aquino Mar carrega o sobrenome da família que também está por trás
+              da Aquinotour, agência de passeios náuticos da região. É a Rose, o esposo
+              e a filha tocando o negócio com as próprias mãos e recebendo cada hóspede
+              como visita de casa.
+            </p>
+          </motion.div>
 
-              <motion.p
-                variants={fadeUp}
-                initial={{ opacity: 0, y: revealY }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
-                transition={revealTransition(0.4)}
-                className="text-lg font-medium leading-8 text-brand-text"
-              >
-                O resultado está nas mais de 400 avaliações cinco estrelas deixadas por quem já passou por aqui — e na vontade repetida de voltar.
-              </motion.p>
+          <motion.figure
+            initial={{ opacity: 0, x: imageX }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: imageX }}
+            transition={{ ...baseTransition, delay: shouldReduceMotion ? 0 : 0.1 }}
+            className="relative md:pl-4"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute -left-4 top-8 hidden h-[calc(100%-4rem)] w-px bg-brand-gold/35 md:block"
+            />
+
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-brand-surface">
+              <Image
+                src="/images/hero/hero01.avif"
+                alt="Área da piscina da Pousada Aquino Mar na propriedade"
+                fill
+                sizes="(max-width: 767px) 100vw, 48vw"
+                className="object-cover object-center"
+                quality={82}
+              />
             </div>
 
-            <motion.blockquote
-              variants={fadeUp}
-              initial={{ opacity: 0, y: revealY }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: revealY }}
-              transition={revealTransition(0.5)}
-              className="mt-10 border-l-4 border-brand-gold bg-brand-surface px-6 py-5 shadow-sm shadow-brand-primary/5"
+            <motion.div
+              initial={{ opacity: 0, scale: imageScale }}
+              animate={
+                isInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: imageScale }
+              }
+              transition={{ ...baseTransition, delay: shouldReduceMotion ? 0 : 0.24 }}
+              className="absolute right-3 top-8 w-[34%] rotate-[1.5deg] overflow-hidden border-4 border-brand-surface-alt bg-brand-surface-alt shadow-xl shadow-brand-primary/20 md:-right-6 md:w-[32%]"
             >
-              <p className="font-heading text-2xl font-light italic leading-tight text-brand-primary">
-                “Simplicidade luxuosa.”
-              </p>
-              <footer className="mt-3 text-sm font-medium text-brand-text/70">
-                — Hóspede, avaliação no Google
-              </footer>
-            </motion.blockquote>
-          </div>
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/images/cafe-02.avif"
+                  alt="Café da manhã preparado com bolo, frutas, pão de queijo e café"
+                  fill
+                  sizes="(max-width: 767px) 34vw, 16vw"
+                  className="object-cover object-center"
+                  quality={82}
+                />
+              </div>
+            </motion.div>
+          </motion.figure>
 
           <motion.div
-            variants={imageReveal}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="relative order-first aspect-[335/366] overflow-hidden rounded-2xl bg-[linear-gradient(135deg,var(--color-surface)_0%,var(--color-surface)_52%,var(--color-surface)_100%)] md:order-none md:aspect-[4/5]"
-            style={{ transform: "translateZ(0)" }}
+            initial={{ opacity: 0, y: textY }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: textY }}
+            transition={{ ...baseTransition, delay: shouldReduceMotion ? 0 : 0.18 }}
+            className="max-w-xl md:col-start-1 md:row-start-2"
           >
-            {/* TODO: substituir por foto real da família/fachada da pousada quando disponível */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_20%,color-mix(in_oklab,var(--color-cta)_36%,transparent),transparent_34%),radial-gradient(circle_at_75%_74%,color-mix(in_oklab,var(--color-primary)_18%,transparent),transparent_42%)]" />
-            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-brand-gold/20 bg-white/82 p-5 shadow-xl shadow-brand-primary/10 backdrop-blur-md saturate-150">
-              <p className="font-heading text-xl font-semibold leading-tight text-brand-primary">
-                Rose, esposo e filha
-              </p>
-              <p className="mt-1 text-sm font-medium text-brand-text">
-                gestão familiar
-              </p>
-            </div>
+            <p className="text-base leading-7 text-brand-text/80">
+              Essa proximidade aparece em cada detalhe: no café da manhã feito com
+              carinho, na atenção redobrada à limpeza dos quartos e na disposição de
+              indicar o melhor passeio ou a praia mais tranquila para quem está de
+              passagem por Paraty.
+            </p>
+
+            <p className="mt-9 font-heading text-2xl italic leading-snug text-brand-primary md:text-3xl">
+              Cada detalhe carrega um pouco da nossa história.
+            </p>
+
+            <p className="mt-6 flex items-center gap-2 text-sm font-medium text-brand-text/75">
+              <Heart
+                className="h-4 w-4 fill-brand-gold/25 text-brand-gold"
+                aria-hidden="true"
+              />
+              Família Aquino
+            </p>
           </motion.div>
         </div>
       </div>
