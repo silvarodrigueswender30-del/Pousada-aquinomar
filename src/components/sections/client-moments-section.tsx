@@ -23,39 +23,22 @@ const baseImages = [
   { src: "/images/galeria/clientes/cliente-9.avif", alt: "Fim de tarde durante viagem em família" },
 ]
 
-const loopSlideBuffer = baseImages.length
-
 export function ClientMomentsSection() {
   const shouldReduceMotion = useReducedMotion()
+
   const css = `
   .pam-moments-swiper {
     width: 100%;
+    overflow: hidden;
     padding-bottom: 64px;
     padding-top: 18px;
   }
 
   .pam-moments-swiper .swiper-slide {
     position: relative;
-    background-position: center;
-    background-size: cover;
-    width: clamp(300px, 24vw, 340px);
     height: clamp(390px, 32vw, 460px);
     border-radius: 16px;
     overflow: hidden;
-    opacity: 0.45;
-    transform: scale(0.88);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    box-shadow: 0 18px 46px color-mix(in oklab, var(--color-primary) 16%, transparent);
-  }
-
-  .pam-moments-swiper .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .pam-moments-swiper .swiper-slide-prev,
-  .pam-moments-swiper .swiper-slide-next {
-    opacity: 0.72;
   }
 
   .pam-moments-swiper .swiper-slide img {
@@ -99,7 +82,6 @@ export function ClientMomentsSection() {
 
   @media (max-width: 639px) {
     .pam-moments-swiper .swiper-slide {
-      width: min(78vw, 310px);
       height: min(104vw, 410px);
     }
     .pam-moments-swiper .swiper-pagination-bullet {
@@ -150,25 +132,46 @@ export function ClientMomentsSection() {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        loopAdditionalSlides={loopSlideBuffer}
+        loopAdditionalSlides={2}
         loopPreventsSliding={false}
         watchSlidesProgress={true}
-        observer={true}
-        observeParents={true}
-        slidesPerView="auto"
-        spaceBetween={18}
+        slidesPerView={1.18}
+        spaceBetween={16}
+        breakpoints={{
+          480: {
+            slidesPerView: 1.55,
+            spaceBetween: 18,
+          },
+          768: {
+            slidesPerView: 2.4,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3.4,
+            spaceBetween: 22,
+          },
+          1440: {
+            slidesPerView: 4.2,
+            spaceBetween: 24,
+          },
+        }}
         coverflowEffect={{
-          rotate: 0,
-          stretch: 18,
-          depth: 120,
+          rotate: 7,
+          stretch: 0,
+          depth: 75,
           modifier: 1,
+          scale: 0.94,
           slideShadows: false,
         }}
-        autoplay={shouldReduceMotion ? false : {
-          delay: 4600,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
+        autoplay={
+          shouldReduceMotion
+            ? false
+            : {
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
+        }
         navigation
         pagination={{ clickable: true, dynamicBullets: true }}
       >
@@ -178,7 +181,7 @@ export function ClientMomentsSection() {
               src={image.src}
               alt={image.alt}
               fill
-              sizes="(max-width: 639px) 82vw, 34vw"
+              sizes="(max-width: 479px) 88vw, (max-width: 767px) 66vw, (max-width: 1023px) 30vw, (max-width: 1439px) 30vw, 24vw"
               className="object-cover"
               quality={82}
             />
