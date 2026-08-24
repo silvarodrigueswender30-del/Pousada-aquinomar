@@ -23,6 +23,8 @@ const baseImages = [
   { src: "/images/galeria/clientes/cliente-9.avif", alt: "Fim de tarde durante viagem em família" },
 ]
 
+const loopSlideBuffer = baseImages.length
+
 export function ClientMomentsSection() {
   const shouldReduceMotion = useReducedMotion()
   const css = `
@@ -36,8 +38,8 @@ export function ClientMomentsSection() {
     position: relative;
     background-position: center;
     background-size: cover;
-    width: clamp(250px, 30vw, 430px);
-    height: clamp(330px, 42vw, 560px);
+    width: clamp(300px, 24vw, 340px);
+    height: clamp(390px, 32vw, 460px);
     border-radius: 16px;
     overflow: hidden;
     opacity: 0.45;
@@ -97,8 +99,8 @@ export function ClientMomentsSection() {
 
   @media (max-width: 639px) {
     .pam-moments-swiper .swiper-slide {
-      width: min(82vw, 330px);
-      height: min(110vw, 430px);
+      width: min(78vw, 310px);
+      height: min(104vw, 410px);
     }
     .pam-moments-swiper .swiper-pagination-bullet {
       width: 16px;
@@ -148,14 +150,18 @@ export function ClientMomentsSection() {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        loopAdditionalSlides={9}
+        loopAdditionalSlides={loopSlideBuffer}
+        loopPreventsSliding={false}
+        watchSlidesProgress={true}
+        observer={true}
+        observeParents={true}
         slidesPerView="auto"
-        spaceBetween={20}
+        spaceBetween={18}
         coverflowEffect={{
           rotate: 0,
-          stretch: 0,
-          depth: 130,
-          modifier: 1.2,
+          stretch: 18,
+          depth: 120,
+          modifier: 1,
           slideShadows: false,
         }}
         autoplay={shouldReduceMotion ? false : {

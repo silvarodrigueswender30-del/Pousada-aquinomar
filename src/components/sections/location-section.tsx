@@ -40,9 +40,17 @@ export function LocationSection() {
           className="absolute inset-0 h-full w-full object-cover max-md:object-[48%_top]"
           quality={82}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary-dark)_24%,transparent)_0%,color-mix(in_oklab,var(--color-primary)_8%,transparent)_44%,color-mix(in_oklab,var(--color-primary-dark)_74%,transparent)_100%)]" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary-dark)_24%,transparent)_0%,color-mix(in_oklab,var(--color-primary)_8%,transparent)_44%,color-mix(in_oklab,var(--color-primary-dark)_74%,transparent)_100%)]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--color-cta)_10%,white)_0%,color-mix(in_oklab,color-mix(in_oklab,var(--color-cta)_10%,white)_55%,transparent)_48%,transparent_100%)] sm:h-28 md:h-36"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-[linear-gradient(to_bottom,transparent_0%,color-mix(in_oklab,var(--color-surface)_55%,transparent)_52%,var(--color-surface)_100%)] sm:h-28 md:h-36"
+        />
 
-        <div className="relative z-10 mx-auto flex min-h-[48rem] w-full max-w-7xl flex-col justify-between px-5 py-16 text-white md:px-10 md:py-20">
+        <div className="relative z-20 mx-auto flex min-h-[48rem] w-full max-w-7xl flex-col justify-between px-5 py-16 text-white md:px-10 md:py-20">
           <div className="max-w-4xl rounded-2xl bg-brand-primary-dark/72 p-6 backdrop-blur-sm md:p-8">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold-light">
               LOCALIZAÇÃO
