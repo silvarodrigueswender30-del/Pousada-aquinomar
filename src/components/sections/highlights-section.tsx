@@ -106,7 +106,7 @@ export function HighlightsSection() {
       </div>
 
       <div className="relative mt-10 overflow-hidden pb-24 pt-10 md:mt-12 md:pb-32 md:pt-14 lg:pb-40 lg:pt-16">
-        <div aria-hidden="true" className="absolute inset-0">
+        <div aria-hidden="true" className="absolute inset-0 z-0">
           <AnimatePresence mode="sync">
             <motion.div
               key={activeItem.id}
@@ -132,7 +132,12 @@ export function HighlightsSection() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_12%,color-mix(in_oklab,var(--color-accent-gold)_18%,transparent),transparent_34%),linear-gradient(90deg,color-mix(in_oklab,var(--color-primary-dark)_58%,transparent)_0%,transparent_50%,color-mix(in_oklab,var(--color-primary)_34%,transparent)_100%)]" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-10">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-[linear-gradient(to_bottom,var(--color-surface-alt)_0%,color-mix(in_oklab,var(--color-surface-alt)_88%,transparent)_18%,color-mix(in_oklab,var(--color-surface-alt)_52%,transparent)_48%,color-mix(in_oklab,var(--color-surface-alt)_18%,transparent)_76%,transparent_100%)] sm:h-28 md:h-36"
+        />
+
+        <div className="relative z-20 mx-auto w-full max-w-7xl px-5 md:px-10">
           <ExpandingCards
             items={paratyHighlights}
             activeIndex={activeIndex}
@@ -143,7 +148,7 @@ export function HighlightsSection() {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-[linear-gradient(to_bottom,transparent_0%,color-mix(in_oklab,var(--color-surface-alt)_30%,transparent)_35%,color-mix(in_oklab,var(--color-surface-alt)_76%,transparent)_70%,var(--color-surface-alt)_100%)] sm:h-36 md:h-44"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 bg-[linear-gradient(to_bottom,transparent_0%,color-mix(in_oklab,var(--color-surface-alt)_30%,transparent)_35%,color-mix(in_oklab,var(--color-surface-alt)_76%,transparent)_70%,var(--color-surface-alt)_100%)] sm:h-36 md:h-44"
         />
       </div>
     </section>
