@@ -1,4 +1,9 @@
-import { Landmark, MapPin, Mountain, Umbrella, Waves } from "lucide-react";
+"use client";
+
+import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
+
 import {
   ExpandingCards,
   type CardItem,
@@ -6,104 +11,134 @@ import {
 
 const paratyHighlights: CardItem[] = [
   {
-    id: "jabaquara",
+    id: "praia-do-jabaquara",
+    index: "01",
     title: "Praia do Jabaquara",
-    description:
-      "A cerca de 1,3 km da pousada, uma das praias mais próximas e tranquilas de Paraty.",
-    imgSrc:
-      "/images/passeio/praia-do-jabaquara.avif",
-    icon: <MapPin size={24} />,
+    category: "Praias",
+    image: "/images/passeio/praia-do-jabaquara.avif",
+    alt: "Praia do Jabaquara em Paraty com mar calmo e barcos próximos à areia",
+    metadata: "Mar tranquilo · Próxima à pousada",
+    actionLabel: "Descobrir o lugar →",
   },
   {
     id: "centro-historico",
-    title: "Centro Histórico de Paraty",
-    description:
-      "Ruas de pedra colonial, igrejas históricas e a Praça da Matriz, a poucos minutos da pousada.",
-    imgSrc:
-      "/images/passeio/centro-historico.avif",
-    icon: <Landmark size={24} />,
+    index: "02",
+    title: "Centro Histórico",
+    category: "História",
+    image: "/images/passeio/centro-historico.avif",
+    alt: "Rua de pedra com casarões coloniais no Centro Histórico de Paraty",
+    metadata: "Ruas de pedra · Arquitetura colonial",
+    actionLabel: "Descobrir o lugar →",
   },
   {
-    id: "cachoeira-tobo",
+    id: "cachoeira-toboga",
+    index: "03",
     title: "Cachoeira do Tobogã",
-    description:
-      "Um escorregador natural de pedra, ideal para um passeio refrescante em família.",
-    imgSrc:
-      "/images/passeio/cachoeira-toboga.avif",
-    icon: <Mountain size={24} />,
+    category: "Natureza",
+    image: "/images/passeio/cachoeira-toboga.avif",
+    alt: "Cachoeira do Tobogã cercada por mata e pedras em Paraty",
+    metadata: "Água doce · Passeio em meio à mata",
+    actionLabel: "Descobrir o lugar →",
   },
   {
-    id: "praia-cais",
-    title: "Praia do Cais",
-    description: "A cerca de 1,9 km, uma praia charmosa junto ao centro histórico.",
-    imgSrc:
-      "/images/passeio/praia-do-cais.avif",
-    icon: <Waves size={24} />,
-  },
-  {
-    id: "praia-pontal",
+    id: "praia-do-pontal",
+    index: "04",
     title: "Praia do Pontal",
-    description:
-      "A cerca de 2 km da pousada, com boa estrutura de bares e restaurantes.",
-    imgSrc:
-      "/images/passeio/praia-do-pontal.avif",
-    icon: <Umbrella size={24} />,
+    category: "Praias",
+    image: "/images/passeio/praia-do-pontal.avif",
+    alt: "Praia do Pontal em Paraty com barcos e montanhas ao fundo",
+    metadata: "Orla tranquila · Cenário de Paraty",
+    actionLabel: "Descobrir o lugar →",
+  },
+  {
+    id: "praia-do-cais",
+    index: "05",
+    title: "Praia do Cais",
+    category: "Passeios",
+    image: "/images/passeio/praia-do-cais.avif",
+    alt: "Barcos coloridos na Praia do Cais em Paraty",
+    metadata: "Barcos coloridos · Ponto de partida",
+    actionLabel: "Descobrir o lugar →",
   },
 ];
 
 export function HighlightsSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+  const activeItem = paratyHighlights[activeIndex] ?? paratyHighlights[0];
+  const total = String(paratyHighlights.length).padStart(2, "0");
+
   return (
-    <section id="destaques" className="relative w-full scroll-mt-24 overflow-hidden bg-white pt-16 md:pt-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4">
-        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
-          <p className="font-heading text-sm font-medium uppercase tracking-wide text-[#0C6478]">
-            Região
-          </p>
-          <h2 className="mt-3 font-heading text-4xl font-light text-slate-950 md:text-6xl">
-            O que explorar perto da pousada
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
-            Praias, cachoeiras e ruas históricas para aproveitar Paraty com calma,
-            partindo de um refúgio familiar em Caborê.
-          </p>
+    <section
+      id="destaques"
+      className="relative w-full scroll-mt-24 overflow-hidden bg-brand-surface-alt py-16 md:py-24 lg:py-28"
+    >
+      <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(220px,0.34fr)] lg:items-end">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold">
+              CURADORIA LOCAL
+            </p>
+            <h2 className="mt-4 max-w-4xl font-heading text-4xl font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
+              O que explorar perto da pousada
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-brand-text/70">
+              Lugares especiais de Paraty, escolhidos por quem conhece cada caminho.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4 lg:justify-end">
+            <span className="font-heading text-5xl font-light text-brand-primary">
+              {activeItem.index}
+            </span>
+            <span className="text-brand-gold" aria-hidden="true">
+              /
+            </span>
+            <span className="font-heading text-2xl text-brand-text/40">
+              {total}
+            </span>
+            <span
+              aria-hidden="true"
+              className="h-px min-w-16 flex-1 bg-brand-gold/50 lg:max-w-28"
+            />
+          </div>
         </div>
       </div>
 
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-12 md:py-20">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,#E4F6FA_0%,#F8FAFC_52%,#CFF0F7_100%)]" />
-          <img
-            src="/images/passeio/praia-do-cais.avif"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover"
-          />
+      <div className="relative mt-12 overflow-hidden py-10 md:mt-16 md:py-14 lg:py-16">
+        <div aria-hidden="true" className="absolute inset-0">
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={activeItem.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.55 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={activeItem.image}
+                alt=""
+                fill
+                sizes="100vw"
+                className="scale-105 object-cover blur-[2px]"
+                quality={70}
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="absolute inset-0 bg-brand-primary-dark/72" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--color-surface-alt)_0%,color-mix(in_oklab,var(--color-surface-alt)_86%,transparent)_10%,transparent_32%,transparent_68%,color-mix(in_oklab,var(--color-surface-alt)_88%,transparent)_94%,var(--color-surface-alt)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_12%,color-mix(in_oklab,var(--color-accent-gold)_22%,transparent),transparent_34%),linear-gradient(90deg,color-mix(in_oklab,var(--color-primary-dark)_74%,transparent)_0%,transparent_48%,color-mix(in_oklab,var(--color-primary)_46%,transparent)_100%)]" />
         </div>
 
-        <div
-          className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[50%]"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, 
-              #FFFFFF 0%, 
-              rgba(255,255,255,0.92) 12%,
-              rgba(255,255,255,0.35) 55%, 
-              transparent 100%)`,
-          }}
-        />
-
-        <div
-          className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[30%]"
-          style={{
-            backgroundImage: `linear-gradient(to top, 
-              #FFFFFF 0%, 
-              rgba(255,255,255,0.72) 22%, 
-              rgba(255,255,255,0.28) 62%, 
-              transparent 100%)`,
-          }}
-        />
-
-        <div className="relative z-20 flex justify-center px-4 md:px-6">
-          <ExpandingCards items={paratyHighlights} defaultActiveIndex={0} />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-10">
+          <ExpandingCards
+            items={paratyHighlights}
+            activeIndex={activeIndex}
+            onActiveChange={setActiveIndex}
+            defaultActiveIndex={0}
+          />
         </div>
       </div>
     </section>
