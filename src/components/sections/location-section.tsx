@@ -32,7 +32,7 @@ export function LocationSection() {
     <section id="localizacao" className="w-full scroll-mt-24 bg-white">
       <div className="relative overflow-hidden bg-brand-primary md:min-h-[48rem]">
         <Image
-          src="/images/location/rf-location-bg.jpg"
+          src="/images/location/foto-pousada-03.avif"
           alt=""
           aria-hidden="true"
           fill
