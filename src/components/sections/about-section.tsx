@@ -31,7 +31,7 @@ export function AboutSection() {
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-brand-surface-alt shadow-2xl shadow-brand-primary/10">
             <Image
-              src="/images/hero/hero01.avif"
+              src="/images/sobre/foto-pousada01.avif"
               alt="Piscina da Pousada Aquino Mar com espreguiçadeiras e logo ao fundo"
               fill
               sizes="(min-width: 1024px) 47vw, (min-width: 768px) 48vw, calc(100vw - 40px)"
@@ -48,7 +48,7 @@ export function AboutSection() {
           >
             <div className="relative aspect-[4/5]">
               <Image
-                src="/images/cafe-02.avif"
+                src="/images/sobre/foto-pousada02.avif"
                 alt="Café da manhã da Pousada Aquino Mar com bolo, frutas e café"
                 fill
                 sizes="(min-width: 1024px) 18vw, (min-width: 768px) 20vw, 34vw"
