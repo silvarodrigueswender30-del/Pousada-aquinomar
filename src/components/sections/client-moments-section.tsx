@@ -21,6 +21,9 @@ const baseImages = [
   { src: "/images/galeria/clientes/cliente-7.avif", alt: "Vista de viagem registrada por hóspedes" },
   { src: "/images/galeria/clientes/cliente-8.avif", alt: "Momentos especiais vividos por hóspedes da pousada" },
   { src: "/images/galeria/clientes/cliente-9.avif", alt: "Fim de tarde durante viagem em família" },
+  { src: "/images/galeria/clientes/cliente-10.avif", alt: "Mais momentos de alegria de nossos hóspedes" },
+  { src: "/images/galeria/clientes/cliente-11.avif", alt: "Aproveitando a vida em Paraty" },
+  { src: "/images/galeria/clientes/cliente-12.avif", alt: "Sorrisos de nossos hóspedes na pousada" },
 ]
 
 export function ClientMomentsSection() {
