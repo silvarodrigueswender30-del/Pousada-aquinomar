@@ -67,7 +67,7 @@ export function OurStorySection() {
 
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-brand-surface">
               <Image
-                src="/images/hero/hero01.avif"
+                src="/images/historia/foto-pousada04.avif"
                 alt="Área da piscina da Pousada Aquino Mar na propriedade"
                 fill
                 sizes="(max-width: 767px) 100vw, 48vw"
@@ -88,7 +88,7 @@ export function OurStorySection() {
             >
               <div className="relative aspect-[4/5]">
                 <Image
-                  src="/images/cafe-02.avif"
+                  src="/images/historia/foto-pousada05.avif"
                   alt="Café da manhã preparado com bolo, frutas, pão de queijo e café"
                   fill
                   sizes="(max-width: 767px) 34vw, 16vw"
