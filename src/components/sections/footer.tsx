@@ -70,10 +70,18 @@ export function Footer() {
         }}
       >
         <Image
-          src="/images/hero-2.avif"
+          src="/images/footer/footer-desktop.avif"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-center max-md:hidden"
+          quality={80}
+          aria-hidden="true"
+        />
+        <Image
+          src="/images/footer/footer-mobile.avif"
+          alt=""
+          fill
+          className="object-cover object-center md:hidden"
           quality={80}
           aria-hidden="true"
         />
