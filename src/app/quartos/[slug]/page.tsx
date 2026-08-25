@@ -31,9 +31,9 @@ export default async function RoomDetailPage({
           Voltar para o início
         </Link>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {room.images.slice(0, 2).map((image, index) => (
-            <div key={`${image}-${index}`} className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100 md:aspect-[16/11]">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {room.images.map((image, index) => (
+            <div key={`${image}-${index}`} className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
               <img
                 src={image}
                 alt={`${room.name} - imagem ${index + 1}`}
