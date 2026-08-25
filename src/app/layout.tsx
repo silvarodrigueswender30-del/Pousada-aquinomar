@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Pousada Aquino Mar",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Pousada Aquino Mar em Caborê, Paraty - RJ",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
     description: siteDescription,
-    images: ["/og-image.jpg"],
+    images: ["/og-image.webp"],
   },
 };
 
@@ -71,4 +71,5 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
 

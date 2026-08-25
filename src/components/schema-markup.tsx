@@ -70,3 +70,39 @@ export function FaqSchema() {
     />
   );
 }
+
+
+export function HotelRoomSchema({ room }: { room: any }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "HotelRoom",
+    "name": room.name + " na Pousada Aquino Mar em Paraty",
+    "description": room.description,
+    "image": room.images,
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "value": room.capacity
+    },
+    "bed": {
+      "@type": "BedDetails",
+      "typeOfBed": room.bedSetup
+    },
+    "containedInPlace": {
+      "@type": "LodgingBusiness",
+      "name": "Pousada Aquino Mar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paraty",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      }
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

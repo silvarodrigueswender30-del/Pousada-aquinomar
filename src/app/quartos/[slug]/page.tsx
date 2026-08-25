@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { rooms } from "@/data/rooms"
 import { RoomDetailCarousel } from "@/components/ui/room-detail-carousel"
+import { HotelRoomSchema } from "@/components/schema-markup"
 
 import type { Metadata } from "next"
 
@@ -40,6 +41,7 @@ export default async function RoomDetailPage({
 
   return (
     <main className="min-h-screen bg-white pb-16 pt-20 md:pb-24">
+      <HotelRoomSchema room={room} />
       <section className="mx-auto w-full px-4 pt-8 md:px-10 md:pt-12">
         <Link href="/" className="text-sm font-medium text-brand-cta hover:text-brand-primary">
           Voltar para o início
@@ -136,7 +138,7 @@ export default async function RoomDetailPage({
                     <div className="aspect-[4/3] overflow-hidden bg-slate-100">
                       <img
                         src={suggestedRoom.images[0]}
-                        alt={suggestedRoom.name}
+                        alt={`${suggestedRoom.name} na Pousada Aquino Mar em Paraty`}
                         className="h-full w-full object-cover transition duration-500 hover:scale-105"
                       />
                     </div>
@@ -163,5 +165,7 @@ export default async function RoomDetailPage({
     </main>
   )
 }
+
+
 
 

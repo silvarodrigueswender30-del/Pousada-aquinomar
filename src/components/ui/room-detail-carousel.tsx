@@ -38,7 +38,7 @@ export function RoomDetailCarousel({ images, name }: RoomDetailCarouselProps) {
         <Image
           key={current}
           src={images[current]}
-          alt={`${name} - foto ${current + 1}`}
+          alt={`${name} na Pousada Aquino Mar em Paraty - foto ${current + 1}`}
           fill
           priority={current === 0}
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) calc(100vw - 80px), 1100px"
@@ -97,7 +97,7 @@ export function RoomDetailCarousel({ images, name }: RoomDetailCarouselProps) {
             >
               <Image
                 src={src}
-                alt={`${name} - miniatura ${i + 1}`}
+                alt={`${name} na Pousada Aquino Mar em Paraty - miniatura ${i + 1}`}
                 fill
                 sizes="128px"
                 className="object-cover"
@@ -110,3 +110,4 @@ export function RoomDetailCarousel({ images, name }: RoomDetailCarouselProps) {
     </div>
   )
 }
+
