@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Star } from "lucide-react"
+import Image from "next/image"
 import { CTAButton } from "@/components/ui/cta-button"
 import { CountingNumber } from "@/components/ui/counting-number"
 
@@ -20,6 +21,14 @@ export function HeroSection() {
   return (
     <section id="inicio" className="relative flex min-h-screen w-full scroll-mt-24 items-center overflow-hidden bg-brand-primary">
       
+      <Image
+        src="/images/hero/hero01.avif"
+        alt="Pousada Aquino Mar em Paraty"
+        fill
+        priority
+        className="absolute inset-0 z-0 object-cover object-[center_30%]"
+        sizes="(max-width: 768px) 100vw, 100vw"
+      />
       <video
         ref={videoRef}
         autoPlay
@@ -27,7 +36,7 @@ export function HeroSection() {
         loop
         playsInline
         preload="auto"
-        poster="/images/hero/hero01.avif"
+        
         aria-hidden="true"
         className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
       >
@@ -88,3 +97,4 @@ export function HeroSection() {
     </section>
   )
 }
+

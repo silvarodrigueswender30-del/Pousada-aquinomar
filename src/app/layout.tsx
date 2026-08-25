@@ -77,6 +77,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://jszueizwowynhekpsfii.supabase.co" />
+        <link rel="dns-prefetch" href="https://jszueizwowynhekpsfii.supabase.co" />
+      </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Header />
         {children}
@@ -85,5 +89,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
 
 
