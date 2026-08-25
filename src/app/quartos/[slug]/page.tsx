@@ -1,4 +1,4 @@
-﻿import Link from "next/link"
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Check, Heart, MapPin, Star, Users, X } from "lucide-react"
 import { BookingCard } from "@/components/ui/booking-card"
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const room = rooms.find((item) => item.slug === slug);
   if (!room) return { title: "Quarto não encontrado | Pousada Aquino Mar" };
   return {
-    title: ${room.name} em Paraty | Pousada Aquino Mar — Caborê, RJ,
+    title: `${room.name} em Paraty | Pousada Aquino Mar — Caborê, RJ`,
     description: room.description.substring(0, 160),
     alternates: { canonical: 'https://pousada-aquinomar.vercel.app/quartos/' + slug }
   };
