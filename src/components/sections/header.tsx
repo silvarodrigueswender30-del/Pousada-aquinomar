@@ -58,7 +58,7 @@ export function Header() {
         >
           <div className="relative h-8 w-[91px] md:h-10 md:w-[114px]">
             <Image
-              src="/logo-pousada1.png"
+              src="/logo-pousada1.webp"
               alt="Pousada Aquino Mar"
               fill
               priority
@@ -145,3 +145,4 @@ export function Header() {
     </header>
   )
 }
+

@@ -100,7 +100,7 @@ export function Footer() {
             <motion.div variants={itemVariants} className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(12rem,0.9fr)]">
               <div>
                 <Image
-                  src="/logo-pousada1.png"
+                  src="/logo-pousada1.webp"
                   alt="Pousada Aquino Mar"
                   width={190}
                   height={86}
@@ -217,3 +217,4 @@ export function Footer() {
     </footer>
   )
 }
+
