@@ -1,19 +1,63 @@
+"use client"
+
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Star } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
 import { CountingNumber } from "@/components/ui/counting-number"
 
 export function HeroSection() {
+  const [isDesktop, setIsDesktop] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)")
+    setIsDesktop(mediaQuery.matches)
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+    mediaQuery.addEventListener("change", handler)
+    return () => mediaQuery.removeEventListener("change", handler)
+  }, [])
+
+  // Forçar autoplay no navegador via JS caso a tag HTML nativa seja bloqueada
+  useEffect(() => {
+    if (isDesktop && videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(e => console.warn("Autoplay bloqueado pelo navegador:", e));
+    }
+  }, [isDesktop])
+
   return (
     <section id="inicio" className="relative flex min-h-screen w-full scroll-mt-24 items-center overflow-hidden bg-brand-primary">
-      <Image
-        src="/images/hero/hero01.avif"
-        alt="Piscina da Pousada Aquino Mar ao entardecer"
-        fill
-        priority
-        className="object-cover"
-        quality={80}
-      />
+      {/* Imagem de base para SSR rápido (LCP). Escondida no desktop para não cobrir o vídeo. */}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-700 ${isDesktop ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <Image
+          src="/images/hero/hero01.avif"
+          alt="Piscina da Pousada Aquino Mar ao entardecer"
+          fill
+          priority
+          className="object-cover"
+          quality={80}
+        />
+      </div>
+
+      {/* Vídeo nativo carregado apenas em Desktop */}
+      {isDesktop && (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero/hero01.avif"
+          aria-hidden="true"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+        >
+          <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/Woman_walking_by_pool_1080p_202608251121.mp4" type="video/mp4" />
+        </video>
+      )}
+
       <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_88%,transparent)_0%,color-mix(in_oklab,var(--color-primary-dark)_45%,transparent)_45%,color-mix(in_oklab,var(--color-primary-dark)_15%,transparent)_100%)]" />
       <div className="absolute right-4 top-24 z-20 rounded-full border border-brand-gold/20 bg-brand-primary-dark/60 px-5 py-2.5 shadow-xl shadow-brand-primary/20 backdrop-blur-md saturate-150 md:right-10 md:top-24">
         <p className="flex items-center gap-1.5 text-sm font-medium text-white">
@@ -59,4 +103,3 @@ export function HeroSection() {
     </section>
   )
 }
-
