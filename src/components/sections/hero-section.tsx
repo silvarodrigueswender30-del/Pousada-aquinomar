@@ -9,12 +9,22 @@ import { CountingNumber } from "@/components/ui/counting-number"
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  // Forçar autoplay no navegador via JS caso a tag HTML nativa seja bloqueada
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(e => console.warn("Autoplay bloqueado pelo navegador:", e));
+    // 1. Verifica se é desktop
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    
+    if (isDesktop && videoRef.current) {
+      // 2. Atraso de 500ms para garantir que o LCP da <Image> já foi registrado
+      const timer = setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.defaultMuted = true;
+          videoRef.current.muted = true;
+          // Dispara o carregamento/play de forma assíncrona
+          videoRef.current.play().catch(e => console.warn("Autoplay bloqueado pelo navegador:", e));
+        }
+      }, 500);
+      
+      return () => clearTimeout(timer);
     }
   }, [])
 
@@ -29,25 +39,21 @@ export function HeroSection() {
         className="absolute inset-0 z-0 object-cover object-[center_30%]"
         sizes="(max-width: 768px) 100vw, 100vw"
       />
+      
+      {/* 
+        preload="none": Garante que o navegador não baixe nada até o JS mandar.
+        hidden md:block: Esconde visualmente no mobile.
+      */}
       <video
         ref={videoRef}
-        autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-        
+        preload="none"
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%] hidden md:block"
       >
-        {/* MOBILE (Versão leve recortada na vertical) */}
-        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/video-home_mobile_vertical.mp4" media="(max-width: 767px)" type="video/mp4" />
-        
-        {/* DESKTOP 1080p (Padrão) */}
-        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/Woman_walking_by_pool_1080p_202608251121.mp4" media="(max-width: 1919px)" type="video/mp4" />
-        
-        {/* TELAS GRANDES / 4K (Substitua a URL abaixo pela versão 4K/1440p) */}
-        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/Woman_walking_by_pool_1080p_202608251121.mp4" media="(min-width: 1920px)" type="video/mp4" />
+        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/Woman_walking_by_pool_1080p_202608251121.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay com contraste otimizado para o movimento (stops ajustados para 60% e 25%) */}
@@ -57,39 +63,44 @@ export function HeroSection() {
         <p className="flex items-center gap-1.5 text-sm font-medium text-white">
           <span className="flex items-baseline gap-0"><CountingNumber target={5} />.0</span>
           <Star className="h-4 w-4 fill-brand-gold-light text-brand-gold-light" aria-hidden="true" />
-          <span className="text-white/70">·</span>
-          <span className="flex items-baseline gap-0"><CountingNumber target={411} />+</span>
-          avaliações
+          <span>no Tripadvisor</span>
         </p>
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-28 text-white md:py-36">
+
+      <div className="container relative z-20 mx-auto px-4 md:px-6">
         <div className="max-w-3xl">
-          <p className="font-heading text-sm font-medium uppercase tracking-wide text-brand-gold-light">
-            Pousada Aquino Mar
-          </p>
-          <h1 className="mt-5 max-w-2xl font-heading text-5xl font-light leading-tight tracking-tight md:text-6xl">
-            Um refúgio em família à beira do mar em Paraty
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-gold"></span>
+            </span>
+            A poucos minutos do Centro Histórico
+          </div>
+          
+          <h1 className="mb-6 font-serif text-5xl font-medium leading-[1.1] text-white tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+            Sinta-se em <span className="italic text-brand-gold-light">casa</span>, <br className="hidden sm:block" />
+            <span className="opacity-90">perto do mar.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 md:text-xl">
-            Pousada Aquino Mar — hospitalidade genuína em Caborê, a poucos minutos
-            do Centro Histórico.
+          
+          <p className="mb-10 max-w-xl text-lg text-white/90 leading-relaxed md:text-xl font-light">
+            Pousada Aquino Mar - hospitalidade genuína em Caborê, a poucos minutos
+            do charme das ruas de pedra de Paraty.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CTAButton
+          
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <CTAButton 
               href="#quartos"
-              target="_self"
               variant="brand"
-              className="focus-visible:ring-brand-cta-light"
+              className="px-8 py-6 text-lg"
             >
-              Ver Quartos
+              Ver Nossas Suítes
             </CTAButton>
-            <CTAButton
-              href="#quartos"
-              target="_self"
-              variant="secondary-dark"
-              className="focus-visible:ring-brand-gold-light [&>div]:border [&>div]:border-brand-gold/60 [&>div]:bg-transparent [&>div]:text-brand-gold-light hover:[&>div]:bg-brand-gold/10 [&>span]:border [&>span]:border-brand-gold/60 [&>span]:bg-transparent [&>span]:text-brand-gold-light hover:[&>span]:bg-brand-gold/10"
+            <CTAButton 
+              href="#contato"
+              variant="on-dark"
+              className="px-8 py-6 text-lg"
             >
-              Reservar Agora
+              Falar com a Recepção
             </CTAButton>
           </div>
         </div>
@@ -97,4 +108,3 @@ export function HeroSection() {
     </section>
   )
 }
-
