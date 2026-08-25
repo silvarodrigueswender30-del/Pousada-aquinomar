@@ -5,6 +5,7 @@ import { BookingCard } from "@/components/ui/booking-card"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { rooms } from "@/data/rooms"
+import { RoomDetailCarousel } from "@/components/ui/room-detail-carousel"
 
 export function generateStaticParams() {
   return rooms.map((room) => ({ slug: room.slug }))
@@ -31,17 +32,7 @@ export default async function RoomDetailPage({
           Voltar para o início
         </Link>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {room.images.map((image, index) => (
-            <div key={`${image}-${index}`} className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
-              <img
-                src={image}
-                alt={`${room.name} - imagem ${index + 1}`}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <RoomDetailCarousel images={room.images} name={room.name} />
       </section>
 
       <section className="mx-auto mt-10 grid w-full gap-10 px-4 md:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:items-start xl:gap-12">
