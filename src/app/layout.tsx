@@ -18,22 +18,36 @@ const inter = localFont({
   display: "swap",
 });
 
+const siteTitle = "Pousada em Paraty com Café da Manhã | Aquino Mar — Caborê, RJ"
+
 const siteDescription =
-  "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Piscina, café da manhã incluso e acolhimento de quem trata cada hóspede como família."
+  "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Café da manhã incluso, piscina, Wi-Fi, ar-condicionado e estacionamento gratuito. Reserve pelo WhatsApp!"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pousada-aquinomar.vercel.app"),
-  title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
+  title: siteTitle,
   description: siteDescription,
+  keywords: [
+    "pousada em Paraty",
+    "hospedagem em Paraty",
+    "onde ficar em Paraty",
+    "pousada familiar Paraty",
+    "pousada com café da manhã Paraty",
+    "pousada Caborê Paraty",
+    "pousada romântica Paraty",
+    "hotel Paraty RJ",
+    "Pousada Aquino Mar",
+  ],
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true },
   },
   alternates: {
     canonical: "https://pousada-aquinomar.vercel.app",
   },
   openGraph: {
-    title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
+    title: siteTitle,
     description: siteDescription,
     url: "https://pousada-aquinomar.vercel.app",
     siteName: "Pousada Aquino Mar",
@@ -50,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
+    title: siteTitle,
     description: siteDescription,
     images: ["/og-image.webp"],
   },
