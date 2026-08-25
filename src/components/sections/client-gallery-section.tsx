@@ -1,7 +1,8 @@
 "use client"
 
 import React from "react"
-import { useReducedMotion } from "framer-motion"
+import {  } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
@@ -146,3 +147,5 @@ export function ClientGallerySection() {
     </section>
   )
 }
+
+

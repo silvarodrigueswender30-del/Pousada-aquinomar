@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { MessageCircle, Minus, Plus } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
 import { useSafeInView } from "@/hooks/use-safe-in-view";
@@ -195,3 +196,5 @@ export function FaqSection() {
     </section>
   );
 }
+
+

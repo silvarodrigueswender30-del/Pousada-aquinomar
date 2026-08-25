@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useState } from "react";
 
 import {
@@ -154,3 +155,5 @@ export function HighlightsSection() {
     </section>
   );
 }
+
+

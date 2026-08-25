@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { useReducedMotion } from "framer-motion"
+import {  } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
 import "swiper/css"
 import "swiper/css/effect-coverflow"
@@ -194,3 +195,5 @@ export function ClientMomentsSection() {
     </section>
   )
 }
+
+
