@@ -31,8 +31,8 @@ export function HeroSection() {
         aria-hidden="true"
         className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
       >
-        {/* MOBILE (Versão leve 720p otimizada) */}
-        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/video-home_720p_mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+        {/* MOBILE (Versão leve recortada na vertical) */}
+        <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/video-home_mobile_vertical.mp4" media="(max-width: 767px)" type="video/mp4" />
         
         {/* DESKTOP 1080p (Padrão) */}
         <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/Woman_walking_by_pool_1080p_202608251121.mp4" media="(max-width: 1919px)" type="video/mp4" />
