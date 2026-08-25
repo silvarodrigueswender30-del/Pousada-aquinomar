@@ -1,14 +1,14 @@
-export function LocalBusinessSchema() {
+ï»¿export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Pousada Aquino Mar",
-    "description": "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Café da manhã incluso, piscina, Wi-Fi e estacionamento gratuito.",
+    "description": "Pousada familiar em Caborï¿½, a poucos minutos do Centro Histï¿½rico de Paraty. Cafï¿½ da manhï¿½ incluso, piscina, Wi-Fi e estacionamento gratuito.",
     "url": "https://pousada-aquinomar.vercel.app",
     "telephone": "+55-24-99828-0363",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "R. Guapuruvu, 371 - Caborê",
+      "streetAddress": "R. Guapuruvu, 371 - Caborï¿½",
       "addressLocality": "Paraty",
       "addressRegion": "RJ",
       "postalCode": "23970-000",
@@ -20,7 +20,7 @@ export function LocalBusinessSchema() {
       "longitude": -44.7176435
     },
     "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Café da manhã incluído", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Cafï¿½ da manhï¿½ incluï¿½do", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Estacionamento gratuito", "value": true },
@@ -46,18 +46,18 @@ export function FaqSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Onde a pousada está localizada?",
+        "name": "Onde a pousada estï¿½ localizada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A Pousada Aquino Mar fica no Caborê, em uma rua residencial e tranquila. O trajeto até o Centro Histórico leva em média de 12 a 20 minutos a pé."
+          "text": "A Pousada Aquino Mar fica no Caborï¿½, em uma rua residencial e tranquila. O trajeto atï¿½ o Centro Histï¿½rico leva em mï¿½dia de 12 a 20 minutos a pï¿½."
         }
       },
       {
         "@type": "Question",
-        "name": "O que está incluso na diária?",
+        "name": "O que estï¿½ incluso na diï¿½ria?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nossas diárias incluem um delicioso café da manhã caseiro, acesso à piscina, Wi-Fi nas áreas comuns e nos quartos, e estacionamento rotativo gratuito."
+          "text": "Nossas diï¿½rias incluem um delicioso cafï¿½ da manhï¿½ caseiro, acesso ï¿½ piscina, Wi-Fi nas ï¿½reas comuns e nos quartos, e estacionamento rotativo gratuito."
         }
       }
     ]
