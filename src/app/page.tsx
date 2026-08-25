@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
 
 import { HeroSection } from "@/components/sections/hero-section"
+import { LocalBusinessSchema, FaqSchema } from "@/components/schema-markup"
 import { LogoMarquee } from "@/components/sections/logo-marquee"
 import { StatsBar } from "@/components/sections/stats-bar"
 
@@ -21,6 +22,8 @@ const FooterSection = dynamic(() => import("@/components/sections/footer-section
 export default function Home() {
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#FFFFFF_0%,#E4F6FA_52%,#FFFFFF_100%)]">
+      <LocalBusinessSchema />
+      <FaqSchema />
       <HeroSection />
       <LogoMarquee />
       <StatsBar />
@@ -39,3 +42,4 @@ export default function Home() {
     </main>
   )
 }
+

@@ -7,6 +7,19 @@ import { Card } from "@/components/ui/card"
 import { rooms } from "@/data/rooms"
 import { RoomDetailCarousel } from "@/components/ui/room-detail-carousel"
 
+import type { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const room = rooms.find((item) => item.slug === slug);
+  if (!room) return { title: "Quarto não encontrado | Pousada Aquino Mar" };
+  return {
+    title: ${room.name} em Paraty | Pousada Aquino Mar — Caborê, RJ,
+    description: room.description.substring(0, 160),
+    alternates: { canonical: 'https://pousada-aquinomar.vercel.app/quartos/' + slug }
+  };
+}
+
 export function generateStaticParams() {
   return rooms.map((room) => ({ slug: room.slug }))
 }
@@ -150,4 +163,5 @@ export default async function RoomDetailPage({
     </main>
   )
 }
+
 

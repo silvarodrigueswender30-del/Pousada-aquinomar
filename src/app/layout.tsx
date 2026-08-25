@@ -22,7 +22,7 @@ const siteDescription =
   "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Piscina, café da manhã incluso e acolhimento de quem trata cada hóspede como família."
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pousada-aquino-mar.vercel.app"),
+  metadataBase: new URL("https://pousada-aquinomar.vercel.app"),
   title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
   description: siteDescription,
   robots: {
@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://pousada-aquino-mar.vercel.app",
+    canonical: "https://pousada-aquinomar.vercel.app",
   },
   openGraph: {
     title: "Pousada Aquino Mar | Caborê, Paraty - RJ",
     description: siteDescription,
-    url: "https://pousada-aquino-mar.vercel.app",
+    url: "https://pousada-aquinomar.vercel.app",
     siteName: "Pousada Aquino Mar",
     images: [
       {
@@ -71,3 +71,4 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
