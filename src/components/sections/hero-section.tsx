@@ -29,7 +29,7 @@ export function HeroSection() {
         preload="auto"
         poster="/images/hero/hero01.avif"
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[25%_30%] md:object-[center_30%]"
       >
         {/* MOBILE (Versão leve 720p otimizada) */}
         <source src="https://jszueizwowynhekpsfii.supabase.co/storage/v1/object/public/Pousada-Aquinomar/video-home_720p_mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
