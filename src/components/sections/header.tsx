@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { label: "A Pousada", href: "/#sobre" },
   { label: "Acomodações", href: "/#quartos" },
+  { label: "Grupos & Caravanas", href: "/grupos-e-caravanas" },
   { label: "Localização", href: "/#localizacao" },
   { label: "Depoimentos", href: "/#depoimentos" },
 ]

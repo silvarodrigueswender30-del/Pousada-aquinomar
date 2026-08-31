@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import * as React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -265,3 +266,5 @@ function CollapsedDesktopContent({ item }: { item: CardItem }) {
 }
 
 ExpandingCards.displayName = "ExpandingCards";
+
+

@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { useReducedMotion } from "framer-motion"
+import {  } from "framer-motion"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -64,3 +65,5 @@ export const HorizontalScroller = ({
     </div>
   )
 }
+
+
