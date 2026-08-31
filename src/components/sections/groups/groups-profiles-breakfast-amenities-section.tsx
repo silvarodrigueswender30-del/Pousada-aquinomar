@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Sparkles } from "lucide-react"
+import { Leaf, Sparkles } from "lucide-react"
 import { groupAmenities, profileTags } from "./groups-data"
 
 export function GroupsProfilesSection() {
@@ -23,7 +23,7 @@ export function GroupsProfilesSection() {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {profileTags.map((tag, index) => (
-            <div key={tag} className="border-t border-brand-gold/35 py-5">
+            <div key={tag} className={`border-t border-brand-gold/35 py-5 ${index === profileTags.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
               <span className="text-xs font-medium tracking-[0.18em] text-brand-gold/70">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -120,6 +120,17 @@ export function GroupsAmenitiesSection() {
     <section className="w-full overflow-hidden">
       <div className="grid min-h-0 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)]">
         <div className="relative isolate overflow-hidden bg-[linear-gradient(145deg,var(--color-primary)_0%,var(--color-primary-dark)_100%)] px-5 py-16 text-white sm:px-8 md:px-10 lg:flex lg:items-center lg:px-14 lg:py-20 xl:px-16">
+          <Leaf
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-16 top-16 z-0 h-72 w-72 rotate-[-18deg] text-white/[0.04]"
+            strokeWidth={0.5}
+          />
+          <Leaf
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-20 -left-20 z-0 h-60 w-60 rotate-[22deg] text-white/[0.035]"
+            strokeWidth={0.5}
+          />
+
           <div className="relative z-10 max-w-xl">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold-light">
               COMODIDADES
@@ -130,6 +141,13 @@ export function GroupsAmenitiesSection() {
             </h2>
             <p className="mt-7 max-w-md text-base leading-7 text-white/80">
               Estrutura e atendimento direto para deixar a hospedagem mais simples para quem organiza a viagem.
+            </p>
+            <span
+              aria-hidden="true"
+              className="mt-8 block h-px w-full max-w-sm bg-brand-gold-light/45"
+            />
+            <p className="mt-8 max-w-md font-heading text-2xl italic leading-snug text-white sm:text-3xl">
+              Quando a hospedagem está organizada, o grupo aproveita melhor a viagem.
             </p>
           </div>
         </div>

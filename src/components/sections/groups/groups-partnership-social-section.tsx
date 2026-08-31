@@ -281,7 +281,7 @@ export function GroupsTestimonialsSection() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-7 text-brand-text/75 md:justify-self-end">
-            Avaliações reais já usadas no site, sem criar depoimentos específicos de excursões.
+            Experiências compartilhadas por quem já se hospedou na Aquino Mar.
           </p>
         </div>
       </div>

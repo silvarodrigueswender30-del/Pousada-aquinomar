@@ -2,7 +2,7 @@ import { proofItems, processSteps } from "./groups-data"
 
 export function GroupsProofSection() {
   return (
-    <section className="w-full bg-brand-surface py-16 shadow-sm shadow-[#063A45]/5 md:py-20">
+    <section className="w-full bg-brand-surface py-16 shadow-sm shadow-[#063A45]/5 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
           <div>
@@ -63,11 +63,14 @@ export function GroupsProcessSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid border-y border-brand-gold/30 lg:grid-cols-4 lg:divide-x lg:divide-brand-gold/30">
+        <div className="mt-12 grid border-y border-brand-gold/30 md:grid-cols-2 xl:grid-cols-4">
           {processSteps.map((step, index) => {
             const Icon = step.icon
             return (
-              <article key={step.title} className="relative border-b border-brand-gold/30 py-8 last:border-b-0 lg:border-b-0 lg:px-7">
+              <article
+                key={step.title}
+                className="relative border-b border-brand-gold/30 py-8 last:border-b-0 md:px-7 md:[&:nth-child(odd)]:border-r md:[&:nth-child(odd)]:border-brand-gold/30 xl:border-b-0 xl:[&:nth-child(2)]:border-r xl:[&:nth-child(2)]:border-brand-gold/30"
+              >
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-heading text-6xl font-light text-brand-primary/16">
                     {String(index + 1).padStart(2, "0")}

@@ -58,12 +58,12 @@ export function GroupsStructureSection() {
                 alt: "Área externa da Pousada Aquino Mar em Paraty",
               },
             ].map((image) => (
-              <figure key={image.src} className="group relative aspect-square overflow-hidden rounded-xl bg-brand-surface sm:aspect-[4/3] lg:aspect-auto">
+              <figure key={image.src} className="group relative aspect-square overflow-hidden rounded-xl bg-brand-surface last:col-span-2 last:aspect-[2.2/1] sm:aspect-[4/3] sm:last:col-span-1 sm:last:aspect-[4/3] lg:aspect-auto lg:last:aspect-auto">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 50vw, 28vw"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 28vw"
                   className="object-cover object-center transition-transform duration-700 motion-safe:group-hover:scale-[1.02]"
                   quality={82}
                 />
@@ -99,10 +99,10 @@ export function GroupsAccommodationSection() {
             HOSPEDAGEM PARA GRUPOS
           </p>
           <h2 className="mt-5 font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
-            Uma combinação de acomodações de acordo com a composição da sua viagem.
+            Uma hospedagem que se adapta ao seu grupo.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-brand-text/75 md:text-lg">
-            Trabalhamos com diferentes categorias de acomodação e organizamos a distribuição conforme o perfil do grupo, o período e a disponibilidade.
+            Organizamos a combinação de acomodações de acordo com a composição da viagem, o período e a disponibilidade.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">

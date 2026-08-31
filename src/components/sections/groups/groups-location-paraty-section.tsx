@@ -1,4 +1,10 @@
+"use client"
+
 import Image from "next/image"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/pagination"
 import { paratyGroupRoutes } from "./groups-data"
 
 const locationPoints = [
@@ -98,6 +104,34 @@ export function GroupsLocationSection() {
 }
 
 export function GroupsParatySection() {
+  const css = `
+  .pam-paraty-swiper {
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 52px;
+    padding-top: 4px;
+  }
+  .pam-paraty-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+  .pam-paraty-swiper .swiper-slide {
+    height: auto;
+  }
+  .pam-paraty-swiper .swiper-pagination-bullet {
+    background-color: color-mix(in oklab, var(--color-primary) 18%, transparent);
+    opacity: 1;
+    width: 16px;
+    height: 2px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    margin: 0 3px !important;
+  }
+  .pam-paraty-swiper .swiper-pagination-bullet-active {
+    background-color: var(--color-accent-gold);
+    width: 32px;
+  }
+  `
+
   return (
     <section className="w-full overflow-hidden bg-brand-surface-alt py-16 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-10">
@@ -115,7 +149,56 @@ export function GroupsParatySection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+        {/* Mobile/Tablet: Swiper carousel — Desktop xl+: grid 5 colunas */}
+        <style>{css}</style>
+
+        {/* Swiper visible em < xl */}
+        <div className="mt-12 xl:hidden">
+          <Swiper
+            className="pam-paraty-swiper"
+            modules={[Pagination]}
+            slidesPerView={1.2}
+            spaceBetween={16}
+            breakpoints={{
+              480: { slidesPerView: 1.5, spaceBetween: 18 },
+              640: { slidesPerView: 2.1, spaceBetween: 20 },
+              900: { slidesPerView: 3.1, spaceBetween: 22 },
+            }}
+            pagination={{ clickable: true, dynamicBullets: true }}
+          >
+            {paratyGroupRoutes.map((route, index) => (
+              <SwiperSlide key={route.title}>
+                <article className="group overflow-hidden rounded-xl bg-brand-primary-dark shadow-lg shadow-brand-primary/10">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <Image
+                      src={route.image}
+                      alt={route.alt}
+                      fill
+                      sizes="(max-width: 479px) 86vw, (max-width: 639px) 68vw, (max-width: 899px) 50vw, 34vw"
+                      className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
+                      quality={82}
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_90%,transparent)_0%,transparent_72%)]" />
+                    <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                      <span className="text-xs font-medium tracking-[0.18em] text-brand-gold-light">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="mt-3 font-heading text-2xl font-normal leading-tight">
+                        {route.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-white/72">
+                        {route.text}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Desktop xl+: grid 5 colunas com espaço suficiente */}
+        <div className="mt-12 hidden gap-5 xl:grid xl:grid-cols-5">
           {paratyGroupRoutes.map((route, index) => (
             <article key={route.title} className="group overflow-hidden rounded-xl bg-brand-primary-dark shadow-lg shadow-brand-primary/10">
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -123,7 +206,7 @@ export function GroupsParatySection() {
                   src={route.image}
                   alt={route.alt}
                   fill
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 20vw"
+                  sizes="20vw"
                   className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
                   quality={82}
                 />
@@ -132,7 +215,7 @@ export function GroupsParatySection() {
                   <span className="text-xs font-medium tracking-[0.18em] text-brand-gold-light">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-3 font-heading text-2xl font-light leading-tight">
+                  <h3 className="mt-3 font-heading text-2xl font-normal leading-tight">
                     {route.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-white/72">

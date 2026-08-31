@@ -2,12 +2,15 @@
 
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { MessageCircle, Minus, Plus } from "lucide-react"
+import { Leaf, MessageCircle, Minus, Plus } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
 import { groupFaqs, groupsWhatsappHref } from "./groups-data"
 
 export function GroupsFaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const visibleFaqs = showAll ? groupFaqs : groupFaqs.slice(0, 6)
 
   return (
     <section className="w-full scroll-mt-24 bg-brand-surface py-16 md:py-24">
@@ -44,14 +47,14 @@ export function GroupsFaqSection() {
           </div>
 
           <div className="bg-brand-surface-alt px-6 py-6 md:px-8 lg:px-12 lg:py-10">
-            {groupFaqs.map((faq, index) => {
+            {visibleFaqs.map((faq, index) => {
               const isOpen = openIndex === index
               return (
                 <div key={faq.question} className="border-b border-brand-gold/30">
                   <button
                     type="button"
                     onClick={() => setOpenIndex((current) => (current === index ? null : index))}
-                    className="group flex w-full items-center justify-between gap-4 rounded-sm py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 md:py-7"
+                    className="group flex w-full items-center justify-between gap-4 rounded-sm py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2 md:py-6"
                     aria-expanded={isOpen}
                   >
                     <span className="flex min-w-0 flex-1 items-start gap-4 md:gap-6">
@@ -81,7 +84,7 @@ export function GroupsFaqSection() {
                         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="pb-6 pl-14 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
+                        <p className="pb-6 pl-10 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -90,6 +93,25 @@ export function GroupsFaqSection() {
                 </div>
               )
             })}
+
+            {!showAll && groupFaqs.length > 6 && (
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="mt-6 flex w-full items-center justify-center rounded-lg border border-brand-gold/30 bg-brand-surface/40 py-3 text-sm font-medium text-brand-primary transition hover:bg-brand-surface focus-visible:outline-none"
+              >
+                Ver mais perguntas ({groupFaqs.length - 6})
+              </button>
+            )}
+            {showAll && groupFaqs.length > 6 && (
+              <button
+                type="button"
+                onClick={() => setShowAll(false)}
+                className="mt-6 flex w-full items-center justify-center rounded-lg border border-brand-gold/30 bg-brand-surface/40 py-3 text-sm font-medium text-brand-primary transition hover:bg-brand-surface focus-visible:outline-none"
+              >
+                Ver menos perguntas
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -101,6 +123,11 @@ export function GroupsFinalCtaSection() {
   return (
     <section className="relative w-full overflow-hidden bg-brand-primary-dark py-20 md:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_16%,color-mix(in_oklab,var(--color-cta)_18%,transparent),transparent_34%),linear-gradient(135deg,var(--color-primary)_0%,var(--color-primary-dark)_78%)]" />
+      <Leaf
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 top-8 h-72 w-72 rotate-[-18deg] text-white/[0.035]"
+        strokeWidth={0.5}
+      />
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-7 text-center text-white md:px-10">
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-brand-gold-light">
           COTAÇÃO PARA GRUPOS
@@ -112,10 +139,10 @@ export function GroupsFinalCtaSection() {
           Conte para a gente sobre seu grupo e consulte as possibilidades de hospedagem para a sua data.
         </p>
         <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
-          <CTAButton href={groupsWhatsappHref} variant="brand" className="justify-center">
+          <CTAButton href={groupsWhatsappHref} variant="brand" className="justify-center px-6 sm:px-8">
             Solicitar cotação para meu grupo
           </CTAButton>
-          <CTAButton href={groupsWhatsappHref} variant="on-dark" className="justify-center">
+          <CTAButton href={groupsWhatsappHref} variant="on-dark" className="justify-center px-6 sm:px-8">
             Falar pelo WhatsApp
           </CTAButton>
         </div>
