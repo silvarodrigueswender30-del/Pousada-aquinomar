@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Check, Users } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
-import { groupAccommodationFeatures, groupsWhatsappHref } from "./groups-data"
+import { groupAccommodationFeatures, groupsWhatsappAccommodationHref } from "./groups-data"
 
 export function GroupsStructureSection() {
   return (
@@ -26,7 +26,7 @@ export function GroupsStructureSection() {
           <figure className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-brand-surface shadow-sm shadow-brand-primary/10 lg:aspect-auto lg:min-h-[34rem]">
             <Image
               src="/images/sobre/foto-pousada01.avif"
-              alt="Piscina da Pousada Aquino Mar com espreguiçadeiras e logo ao fundo"
+              alt="Piscina e áreas sociais da Pousada Aquino Mar em Paraty para recepção de grupos"
               fill
               sizes="(max-width: 1023px) 100vw, 64vw"
               className="object-cover object-center transition-transform duration-700 motion-safe:group-hover:scale-[1.02]"
@@ -47,15 +47,15 @@ export function GroupsStructureSection() {
             {[
               {
                 src: "/images/cafe-03.avif",
-                alt: "Buffet de café da manhã da Pousada Aquino Mar",
+                alt: "Buffet de café da manhã da Pousada Aquino Mar em Paraty",
               },
               {
                 src: "/images/quarto-triplo/quarto-triplo-2.avif",
-                alt: "Acomodação da Pousada Aquino Mar preparada para hóspedes",
+                alt: "Acomodação confortável da Pousada Aquino Mar para grupos e excursões",
               },
               {
                 src: "/images/location/foto-pousada-03.avif",
-                alt: "Área externa da Pousada Aquino Mar em Paraty",
+                alt: "Área externa e jardim da Pousada Aquino Mar no Caboré, Paraty",
               },
             ].map((image) => (
               <figure key={image.src} className="group relative aspect-square overflow-hidden rounded-xl bg-brand-surface last:col-span-2 last:aspect-[2.2/1] sm:aspect-[4/3] sm:last:col-span-1 sm:last:aspect-[4/3] lg:aspect-auto lg:last:aspect-auto">
@@ -83,7 +83,7 @@ export function GroupsAccommodationSection() {
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-brand-surface-alt shadow-2xl shadow-brand-primary/10">
           <Image
             src="/images/quarto-triplo/quarto-triplo-1.avif"
-            alt="Quarto da Pousada Aquino Mar preparado para receber hóspedes"
+            alt="Quarto triplo e suítes da Pousada Aquino Mar para grupos e famílias em Paraty"
             fill
             sizes="(max-width: 1023px) 100vw, 46vw"
             className="object-cover object-center"
@@ -114,13 +114,21 @@ export function GroupsAccommodationSection() {
             ))}
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <CTAButton href={groupsWhatsappHref} variant="brand">
-              Consultar meu grupo
-            </CTAButton>
-            <p className="flex items-center gap-2 text-sm font-medium text-brand-text/65">
-              <Users className="h-4 w-4 text-brand-gold" aria-hidden="true" />
-              Cotação sem preço simulado no site
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+              <CTAButton href={groupsWhatsappAccommodationHref} variant="brand">
+                Consultar meu grupo
+              </CTAButton>
+              <a
+                href="/#quartos"
+                className="inline-flex items-center gap-1 text-xs font-medium tracking-wide text-brand-primary/80 transition-colors hover:text-brand-gold hover:underline"
+              >
+                Conhecer nossas suítes →
+              </a>
+            </div>
+            <p className="flex items-center gap-2 text-xs font-medium text-brand-text/65">
+              <Users className="h-4 w-4 text-brand-gold shrink-0" aria-hidden="true" />
+              <span>Cotação direta sem intermediários</span>
             </p>
           </div>
         </article>

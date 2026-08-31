@@ -7,16 +7,30 @@ import { GroupsHeroSection } from "@/components/sections/groups/groups-hero-sect
 import { GroupsLocationSection, GroupsParatySection } from "@/components/sections/groups/groups-location-paraty-section"
 import { GroupsMomentsSection, GroupsPartnershipSection, GroupsTestimonialsSection } from "@/components/sections/groups/groups-partnership-social-section"
 import { GroupsProcessSection, GroupsProofSection } from "@/components/sections/groups/groups-proof-process-section"
+import { GroupsSchema } from "@/components/sections/groups/groups-schema"
 
 const title = "Pousada para Grupos e Caravanas em Paraty | Aquino Mar"
 const description =
-  "Organize a hospedagem do seu grupo, excursão ou caravana em Paraty com atendimento direto da Pousada Aquino Mar. Consulte disponibilidade e condições para sua viagem."
+  "Hospedagem para grupos, excursões e caravanas em Paraty com atendimento direto da Pousada Aquino Mar. Consulte disponibilidade para sua viagem."
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords: [
+    "pousada para grupos em Paraty",
+    "hospedagem para grupos em Paraty",
+    "pousada para caravanas em Paraty",
+    "hospedagem para caravanas em Paraty",
+    "pousada para excursões em Paraty",
+    "hospedagem para agências de turismo em Paraty",
+    "pousada Caboré Paraty grupos",
+  ],
   alternates: {
     canonical: "https://pousada-aquinomar.vercel.app/grupos-e-caravanas",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   openGraph: {
     title,
@@ -25,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "Pousada Aquino Mar",
     images: [
       {
-        url: "/og-image.webp",
+        url: "https://pousada-aquinomar.vercel.app/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Pousada Aquino Mar em Caboré, Paraty - RJ",
+        alt: "Pousada Aquino Mar em Caboré, Paraty - RJ - Hospedagem para Grupos",
       },
     ],
     locale: "pt_BR",
@@ -38,13 +52,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.webp"],
+    images: ["https://pousada-aquinomar.vercel.app/og-image.webp"],
   },
 }
 
 export default function GroupsAndCaravansPage() {
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#FFFFFF_0%,#E4F6FA_52%,#FFFFFF_100%)]">
+      <GroupsSchema />
       <GroupsHeroSection />
       <GroupsProofSection />
       <GroupsProcessSection />

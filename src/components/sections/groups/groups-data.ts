@@ -12,10 +12,29 @@ import {
   Waves,
 } from "lucide-react"
 
-export const groupsWhatsappMessage =
-  "Olá! Estou organizando um grupo para Paraty e gostaria de consultar hospedagem na Pousada Aquino Mar."
+const createWhatsappHref = (msg: string) =>
+  `https://wa.me/5524998280363?text=${encodeURIComponent(msg)}`
 
-export const groupsWhatsappHref = `https://wa.me/5524998280363?text=${encodeURIComponent(groupsWhatsappMessage)}`
+export const groupsWhatsappMessage =
+  "Olá! Estou organizando um grupo para Paraty e gostaria de solicitar uma cotação de hospedagem na Pousada Aquino Mar."
+
+export const groupsWhatsappHref = createWhatsappHref(groupsWhatsappMessage)
+
+export const groupsWhatsappHeroSecondaryHref = createWhatsappHref(
+  "Olá! Gostaria de falar com a equipe da Pousada Aquino Mar sobre hospedagem de grupo em Paraty."
+)
+
+export const groupsWhatsappAccommodationHref = createWhatsappHref(
+  "Olá! Gostaria de consultar a disponibilidade de acomodações para meu grupo em Paraty na Pousada Aquino Mar."
+)
+
+export const groupsWhatsappFaqHref = createWhatsappHref(
+  "Olá! Gostaria de tirar dúvidas e consultar disponibilidade para meu grupo na Pousada Aquino Mar."
+)
+
+export const groupsWhatsappFinalCtaHref = createWhatsappHref(
+  "Olá! Estou organizando uma viagem em grupo para Paraty e gostaria de solicitar cotação de hospedagem na Pousada Aquino Mar."
+)
 
 export const proofItems = [
   { title: "Atendimento direto ao organizador", icon: MessageCircle },

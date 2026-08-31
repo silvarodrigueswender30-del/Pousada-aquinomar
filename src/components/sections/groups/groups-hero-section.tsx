@@ -1,14 +1,14 @@
 import Image from "next/image"
 import { Star } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
-import { groupsWhatsappHref } from "./groups-data"
+import { groupsWhatsappHeroSecondaryHref, groupsWhatsappHref } from "./groups-data"
 
 export function GroupsHeroSection() {
   return (
     <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-brand-primary">
       <Image
         src="/images/historia/foto-pousada04.avif"
-        alt="Área da piscina da Pousada Aquino Mar em Paraty"
+        alt="Área da piscina da Pousada Aquino Mar em Paraty - Hospedagem para grupos"
         fill
         priority
         sizes="100vw"
@@ -44,7 +44,7 @@ export function GroupsHeroSection() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg font-light leading-relaxed text-white/90 md:text-xl">
-            Recebemos grupos, excursões e caravanas com atendimento direto para organizadores, agências e empresas de turismo.
+            Recebemos grupos, excursões e caravanas em Paraty com atendimento direto para organizadores, agências e empresas de turismo.
           </p>
 
           <div className="mt-10 flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -56,7 +56,7 @@ export function GroupsHeroSection() {
               Solicitar cotação para meu grupo
             </CTAButton>
             <CTAButton
-              href={groupsWhatsappHref}
+              href={groupsWhatsappHeroSecondaryHref}
               variant="on-dark"
               className="flex w-full items-center justify-center px-8 py-6 text-lg sm:w-auto"
             >

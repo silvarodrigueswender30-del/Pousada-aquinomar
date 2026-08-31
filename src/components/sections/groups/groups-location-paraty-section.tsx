@@ -21,8 +21,7 @@ export function GroupsLocationSection() {
       <div className="relative overflow-hidden bg-brand-primary md:min-h-[48rem]">
         <Image
           src="/images/location/foto-pousada-03.avif"
-          alt=""
-          aria-hidden="true"
+          alt="Pousada Aquino Mar localizada no bairro Caboré em Paraty"
           fill
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover max-md:object-[48%_top]"

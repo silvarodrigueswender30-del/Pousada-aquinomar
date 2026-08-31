@@ -4,7 +4,12 @@ import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Leaf, MessageCircle, Minus, Plus } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
-import { groupFaqs, groupsWhatsappHref } from "./groups-data"
+import {
+  groupFaqs,
+  groupsWhatsappFaqHref,
+  groupsWhatsappFinalCtaHref,
+  groupsWhatsappHeroSecondaryHref,
+} from "./groups-data"
 
 export function GroupsFaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -40,7 +45,7 @@ export function GroupsFaqSection() {
                   </p>
                 </div>
               </div>
-              <CTAButton href={groupsWhatsappHref} variant="brand" className="mt-6 focus-visible:ring-brand-cta-light">
+              <CTAButton href={groupsWhatsappFaqHref} variant="brand" className="mt-6 focus-visible:ring-brand-cta-light">
                 Falar sobre meu grupo
               </CTAButton>
             </div>
@@ -139,10 +144,10 @@ export function GroupsFinalCtaSection() {
           Conte para a gente sobre seu grupo e consulte as possibilidades de hospedagem para a sua data.
         </p>
         <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
-          <CTAButton href={groupsWhatsappHref} variant="brand" className="justify-center px-6 sm:px-8">
+          <CTAButton href={groupsWhatsappFinalCtaHref} variant="brand" className="justify-center px-6 sm:px-8">
             Solicitar cotação para meu grupo
           </CTAButton>
-          <CTAButton href={groupsWhatsappHref} variant="on-dark" className="justify-center px-6 sm:px-8">
+          <CTAButton href={groupsWhatsappHeroSecondaryHref} variant="on-dark" className="justify-center px-6 sm:px-8">
             Falar pelo WhatsApp
           </CTAButton>
         </div>
