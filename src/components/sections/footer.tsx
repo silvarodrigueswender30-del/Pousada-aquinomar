@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { Info, Mail, MapPin, MessageCircle, Navigation } from "lucide-react"
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import { useSafeInView } from "@/hooks/use-safe-in-view"
+import { COOKIE_PREFERENCES_EVENT } from "@/lib/cookie-consent"
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
 const navigationLinks = [
   { label: "Início", href: "/" },
@@ -14,12 +16,14 @@ const navigationLinks = [
   { label: "Depoimentos", href: "/#depoimentos" },
 ]
 
-const whatsappMessage =
-  "Olá! Vim pelo site e gostaria de saber mais sobre a Pousada Aquino Mar."
-const whatsappHref = `https://wa.me/5524998280363?text=${encodeURIComponent(whatsappMessage)}`
+const whatsappHref = buildWhatsAppUrl(whatsappMessages.home)
 
 export function Footer() {
   const { ref, isInView } = useSafeInView();
+
+  function openCookiePreferences() {
+    window.dispatchEvent(new Event(COOKIE_PREFERENCES_EVENT))
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -211,6 +215,21 @@ export function Footer() {
                 Off-Data
               </a>
             </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs md:justify-end">
+              <a
+                href="/politica-de-privacidade-e-cookies"
+                className="text-white/55 transition-colors hover:text-brand-gold-light hover:underline"
+              >
+                Política de Privacidade e Cookies
+              </a>
+              <button
+                type="button"
+                onClick={openCookiePreferences}
+                className="text-white/55 transition-colors hover:text-brand-gold-light hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold-light"
+              >
+                Preferências de cookies
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

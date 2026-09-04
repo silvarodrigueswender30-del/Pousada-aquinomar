@@ -35,7 +35,8 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    setIsMenuOpen(false)
+    const timeoutId = window.setTimeout(() => setIsMenuOpen(false), 0)
+    return () => window.clearTimeout(timeoutId)
   }, [pathname])
 
   const isHomeTop = pathname === "/" && !isScrolled && !isMenuOpen

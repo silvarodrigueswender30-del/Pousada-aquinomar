@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { CTAButton } from "@/components/ui/cta-button";
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
 function PricingSection() {
   return (
@@ -21,7 +22,7 @@ function PricingSection() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <CTAButton
-                href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Pousada%20Aquino%20Mar."
+                href={buildWhatsAppUrl(whatsappMessages.home)}
                 variant="on-light"
               >
                 Reservar Agora

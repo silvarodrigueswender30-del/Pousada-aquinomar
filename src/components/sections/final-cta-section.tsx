@@ -1,10 +1,8 @@
 import { Leaf, MessageCircle } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
-const whatsappMessage =
-  "Olá! Vim pelo site e gostaria de saber mais sobre a Pousada Aquino Mar."
-
-const whatsappHref = `https://wa.me/5524998280363?text=${encodeURIComponent(whatsappMessage)}`
+const whatsappHref = buildWhatsAppUrl(whatsappMessages.home)
 
 export function FinalCtaSection() {
   return (

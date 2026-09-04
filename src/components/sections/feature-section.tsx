@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
 export function FeatureSection() {
   return (
@@ -107,7 +108,7 @@ export function FeatureSection() {
 
             {/* CTA — cor corrigida: indigo → deep-teal do design system */}
             <a
-              href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Pousada%20Aquino%20Mar."
+              href={buildWhatsAppUrl(whatsappMessages.home)}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 mt-6 text-[#0C6478] hover:text-[#1D7DA3] transition font-medium font-sans text-sm"

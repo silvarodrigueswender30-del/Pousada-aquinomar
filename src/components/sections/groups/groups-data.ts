@@ -11,29 +11,26 @@ import {
   Wifi,
   Waves,
 } from "lucide-react"
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
-const createWhatsappHref = (msg: string) =>
-  `https://wa.me/5524998280363?text=${encodeURIComponent(msg)}`
+export const groupsWhatsappMessage = whatsappMessages.groups
 
-export const groupsWhatsappMessage =
-  "Olá! Estou organizando um grupo para Paraty e gostaria de solicitar uma cotação de hospedagem na Pousada Aquino Mar."
+export const groupsWhatsappHref = buildWhatsAppUrl(groupsWhatsappMessage)
 
-export const groupsWhatsappHref = createWhatsappHref(groupsWhatsappMessage)
-
-export const groupsWhatsappHeroSecondaryHref = createWhatsappHref(
-  "Olá! Gostaria de falar com a equipe da Pousada Aquino Mar sobre hospedagem de grupo em Paraty."
+export const groupsWhatsappHeroSecondaryHref = buildWhatsAppUrl(
+  "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de falar com a equipe sobre hospedagem de grupo em Paraty."
 )
 
-export const groupsWhatsappAccommodationHref = createWhatsappHref(
-  "Olá! Gostaria de consultar a disponibilidade de acomodações para meu grupo em Paraty na Pousada Aquino Mar."
+export const groupsWhatsappAccommodationHref = buildWhatsAppUrl(
+  "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de consultar a disponibilidade de acomodações para meu grupo em Paraty."
 )
 
-export const groupsWhatsappFaqHref = createWhatsappHref(
-  "Olá! Gostaria de tirar dúvidas e consultar disponibilidade para meu grupo na Pousada Aquino Mar."
+export const groupsWhatsappFaqHref = buildWhatsAppUrl(
+  "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de tirar dúvidas e consultar disponibilidade para meu grupo."
 )
 
-export const groupsWhatsappFinalCtaHref = createWhatsappHref(
-  "Olá! Estou organizando uma viagem em grupo para Paraty e gostaria de solicitar cotação de hospedagem na Pousada Aquino Mar."
+export const groupsWhatsappFinalCtaHref = buildWhatsAppUrl(
+  "Olá! Vim pelo site oficial da Pousada Aquino Mar e estou organizando uma viagem em grupo para Paraty. Gostaria de solicitar cotação de hospedagem."
 )
 
 export const proofItems = [

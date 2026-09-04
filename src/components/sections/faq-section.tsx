@@ -6,6 +6,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { MessageCircle, Minus, Plus } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
 import { useSafeInView } from "@/hooks/use-safe-in-view";
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
 const faqs = [
   {
@@ -170,7 +171,7 @@ export function FaqSection() {
               </div>
 
               <CTAButton
-                href="https://wa.me/5524998280363?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20a%20Pousada%20Aquino%20Mar."
+                href={buildWhatsAppUrl(whatsappMessages.home)}
                 variant="brand"
                 className="mt-6 focus-visible:ring-brand-cta-light"
               >

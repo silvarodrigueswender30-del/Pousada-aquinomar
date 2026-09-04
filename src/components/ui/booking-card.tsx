@@ -5,6 +5,7 @@ import { Calendar, MapPin, Star, Users } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { buildWhatsAppUrl } from "@/lib/whatsapp"
 import type { Room } from "@/data/rooms"
 
 interface BookingCardProps {
@@ -18,13 +19,13 @@ export function BookingCard({ room, className }: BookingCardProps) {
   const [guests, setGuests] = React.useState(1)
 
   const whatsappText = [
-    `Olá! Vim pelo site e gostaria de reservar o quarto ${room.name} na Pousada Aquino Mar.`,
+    `Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de consultar disponibilidade e valores para a acomodação ${room.name}.`,
     `Check-in: ${checkIn || "a definir"}`,
     `Check-out: ${checkOut || "a definir"}`,
     `Hospedes: ${guests}`,
   ].join("\n")
 
-  const whatsappUrl = `https://wa.me/5524998280363?text=${encodeURIComponent(whatsappText)}`
+  const whatsappUrl = buildWhatsAppUrl(whatsappText)
 
   return (
     <Card

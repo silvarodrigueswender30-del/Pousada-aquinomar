@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['192.168.100.29', '192.168.1.100', '192.168.0.100', '192.168.1.16', 'localhost'],
   compress: true,
   images: {
-    qualities: [25, 50, 75, 80, 90, 100],
+    qualities: [25, 50, 60, 70, 75, 80, 82, 84, 86, 88, 90, 100],
     formats: ["image/avif", "image/webp"],
   },
   async headers() {

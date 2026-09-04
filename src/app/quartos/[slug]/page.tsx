@@ -10,14 +10,41 @@ import { HotelRoomSchema } from "@/components/schema-markup"
 
 import type { Metadata } from "next"
 
+const siteUrl = "https://pousadaaquinomarparaty.com.br"
+const socialImageUrl = `${siteUrl}/og/aquinomar-share.jpg`
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const room = rooms.find((item) => item.slug === slug);
   if (!room) return { title: "Quarto não encontrado | Pousada Aquino Mar" };
+  const title = `${room.name} em Paraty | Pousada Aquino Mar — Caborê, RJ`
+  const description = room.description.substring(0, 160)
   return {
-    title: `${room.name} em Paraty | Pousada Aquino Mar — Caborê, RJ`,
-    description: room.description.substring(0, 160),
-    alternates: { canonical: 'https://pousada-aquinomar.vercel.app/quartos/' + slug }
+    title,
+    description,
+    alternates: { canonical: `${siteUrl}/quartos/${slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/quartos/${slug}`,
+      siteName: "Pousada Aquino Mar",
+      images: [
+        {
+          url: socialImageUrl,
+          width: 1200,
+          height: 630,
+          alt: "Logo da Pousada Aquino Mar",
+        },
+      ],
+      locale: "pt_BR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [socialImageUrl],
+    },
   };
 }
 

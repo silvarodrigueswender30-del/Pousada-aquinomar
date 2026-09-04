@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "project": {
+    "name": "rfturismoprojeto",
+    "productType": null,
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind-v4"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/app/globals.css"
+    ],
+    "components": [
+      "src/components/ui"
+    ],
+    "assets": [
+      "public/images"
+    ],
+    "instructions": [
+      "AGENTS.md",
+      "CLAUDE.md"
+    ]
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--background": {
+        "value": "#ffffff",
+        "source": "src/app/globals.css"
+      },
+      "--foreground": {
+        "value": "#171717",
+        "source": "src/app/globals.css"
+      },
+      "--color-primary": {
+        "value": "#122A45",
+        "source": "src/app/globals.css"
+      },
+      "--color-primary-dark": {
+        "value": "#0B1D30",
+        "source": "src/app/globals.css"
+      },
+      "--color-accent-gold": {
+        "value": "#C79A3E",
+        "source": "src/app/globals.css"
+      },
+      "--color-accent-gold-light": {
+        "value": "#E4C077",
+        "source": "src/app/globals.css"
+      },
+      "--color-cta": {
+        "value": "#2E9DA6",
+        "source": "src/app/globals.css"
+      },
+      "--color-cta-light": {
+        "value": "#7FCBD1",
+        "source": "src/app/globals.css"
+      },
+      "--color-accent-warm": {
+        "value": "#B23B2E",
+        "source": "src/app/globals.css"
+      },
+      "--color-surface": {
+        "value": "#F4EEDD",
+        "source": "src/app/globals.css"
+      },
+      "--color-surface-alt": {
+        "value": "#FFFFFF",
+        "source": "src/app/globals.css"
+      },
+      "--color-text": {
+        "value": "#2B2B2B",
+        "source": "src/app/globals.css"
+      },
+      "--color-background": {
+        "value": "var(--background)",
+        "source": "src/app/globals.css"
+      },
+      "--color-foreground": {
+        "value": "var(--foreground)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-primary": {
+        "value": "var(--color-primary)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-primary-dark": {
+        "value": "var(--color-primary-dark)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-gold": {
+        "value": "var(--color-accent-gold)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-gold-light": {
+        "value": "var(--color-accent-gold-light)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-cta": {
+        "value": "var(--color-cta)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-cta-light": {
+        "value": "var(--color-cta-light)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-warm": {
+        "value": "var(--color-accent-warm)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-surface": {
+        "value": "var(--color-surface)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-surface-alt": {
+        "value": "var(--color-surface-alt)",
+        "source": "src/app/globals.css"
+      },
+      "--color-brand-text": {
+        "value": "var(--color-text)",
+        "source": "src/app/globals.css"
+      }
+    },
+    "typography": {
+      "--font-sans": {
+        "value": "var(--font-geist-sans)",
+        "source": "src/app/globals.css"
+      },
+      "--font-mono": {
+        "value": "var(--font-geist-mono)",
+        "source": "src/app/globals.css"
+      },
+      "--font-heading": {
+        "value": "var(--font-inter), \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "source": "src/app/globals.css"
+      }
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [
+      "animated-testimonials",
+      "badge",
+      "booking-card",
+      "button",
+      "card",
+      "counting-number",
+      "cta-button",
+      "expanding-cards",
+      "feature-grid-enterprise-grade",
+      "floating-whatsapp-button",
+      "infinite-slider",
+      "marquee",
+      "room-detail-carousel",
+      "room-image-carousel",
+      "section-divider",
+      "separator",
+      "stats-card-section",
+      "stats-section-with-text",
+      "testimonial-scroller",
+      "testimonials"
+    ],
+    "preferredPrimitives": [
+      "radix-ui"
+    ],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [],
+  "evidence": [
+    {
+      "fact": "components.installed",
+      "source": "src/components/ui"
+    },
+    {
+      "fact": "design.colorMode:light",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "project.instructions",
+      "source": "AGENTS.md"
+    },
+    {
+      "fact": "project.instructions",
+      "source": "CLAUDE.md"
+    },
+    {
+      "fact": "project.stack:nextjs",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:shadcn",
+      "source": "components.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v4",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-09-03T01:35:32.859Z"
+}

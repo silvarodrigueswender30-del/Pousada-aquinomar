@@ -3,6 +3,8 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
+import { CookieConsent } from "@/components/cookie-consent";
+import { ExitDiscountPopup } from "@/components/exit-discount-popup";
 import { FloatingWhatsappButton } from "@/components/ui/floating-whatsapp-button";
 import { Header } from "@/components/sections/header";
 
@@ -23,8 +25,11 @@ const siteTitle = "Pousada em Paraty com Café da Manhã | Aquino Mar — Cabor�
 const siteDescription =
   "Pousada familiar em Caborê, a poucos minutos do Centro Histórico de Paraty. Café da manhã incluso, piscina, Wi-Fi, ar-condicionado e estacionamento gratuito. Reserve pelo WhatsApp!"
 
+const siteUrl = "https://pousadaaquinomarparaty.com.br"
+const socialImageUrl = `${siteUrl}/og/aquinomar-share.jpg`
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pousada-aquinomar.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
   keywords: [
@@ -44,19 +49,19 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "https://pousada-aquinomar.vercel.app",
+    canonical: siteUrl,
   },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
-    url: "https://pousada-aquinomar.vercel.app",
+    url: siteUrl,
     siteName: "Pousada Aquino Mar",
     images: [
       {
-        url: "/og-image.webp",
+        url: socialImageUrl,
         width: 1200,
         height: 630,
-        alt: "Pousada Aquino Mar em Caborê, Paraty - RJ",
+        alt: "Logo da Pousada Aquino Mar",
       },
     ],
     locale: "pt_BR",
@@ -66,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og-image.webp"],
+    images: [socialImageUrl],
   },
 };
 
@@ -80,11 +85,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <link rel="preconnect" href="https://jszueizwowynhekpsfii.supabase.co" />
         <link rel="dns-prefetch" href="https://jszueizwowynhekpsfii.supabase.co" />
+        <link rel="describedby" href={`${siteUrl}/llms.txt`} type="text/markdown" />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Header />
         {children}
         <FloatingWhatsappButton />
+        <CookieConsent />
+        <ExitDiscountPopup />
       </body>
     </html>
   );

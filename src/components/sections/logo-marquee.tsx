@@ -5,12 +5,12 @@ import { MapPin } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
 const pointsOfInterest = [
-  "Praia do Jabaquara",
-  "Praia do Cais",
-  "Praia do Pontal",
-  "Cachoeira do Tobogã",
+  "Praia de São Gonçalo",
+  "Ilha do Pelado",
+  "Praia da Trindade",
+  "Passeio de Escuna",
+  "Passeio de Jeep",
   "Igreja de Santa Rita",
-  "Centro Histórico de Paraty",
 ];
 
 export function LogoMarquee() {

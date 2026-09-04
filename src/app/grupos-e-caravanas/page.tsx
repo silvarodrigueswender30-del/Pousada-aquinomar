@@ -12,6 +12,8 @@ import { GroupsSchema } from "@/components/sections/groups/groups-schema"
 const title = "Pousada para Grupos e Caravanas em Paraty | Aquino Mar"
 const description =
   "Hospedagem para grupos, excursões e caravanas em Paraty com atendimento direto da Pousada Aquino Mar. Consulte disponibilidade para sua viagem."
+const siteUrl = "https://pousadaaquinomarparaty.com.br"
+const socialImageUrl = `${siteUrl}/og/aquinomar-share.jpg`
 
 export const metadata: Metadata = {
   title,
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     "pousada Caboré Paraty grupos",
   ],
   alternates: {
-    canonical: "https://pousada-aquinomar.vercel.app/grupos-e-caravanas",
+    canonical: `${siteUrl}/grupos-e-caravanas`,
   },
   robots: {
     index: true,
@@ -35,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://pousada-aquinomar.vercel.app/grupos-e-caravanas",
+    url: `${siteUrl}/grupos-e-caravanas`,
     siteName: "Pousada Aquino Mar",
     images: [
       {
-        url: "https://pousada-aquinomar.vercel.app/og-image.webp",
+        url: socialImageUrl,
         width: 1200,
         height: 630,
-        alt: "Pousada Aquino Mar em Caboré, Paraty - RJ - Hospedagem para Grupos",
+        alt: "Logo da Pousada Aquino Mar",
       },
     ],
     locale: "pt_BR",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["https://pousada-aquinomar.vercel.app/og-image.webp"],
+    images: [socialImageUrl],
   },
 }
 

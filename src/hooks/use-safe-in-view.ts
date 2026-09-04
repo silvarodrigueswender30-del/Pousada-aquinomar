@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useSafeInView(fallbackDelayMs = 600) {
-  const ref = useRef<any>(null);
+export function useSafeInView<T extends HTMLElement = HTMLDivElement>(fallbackDelayMs = 600) {
+  const ref = useRef<T | null>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {

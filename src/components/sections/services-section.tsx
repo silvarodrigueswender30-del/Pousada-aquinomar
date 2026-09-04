@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { motion, useInView } from "framer-motion";
 import { SectionDivider } from "@/components/ui/section-divider";
-import { ArrowRight, ArrowLeft, Anchor, Sailboat, Ship, Waves, Map, Droplets } from "lucide-react";
+import { ArrowRight, ArrowLeft, Anchor, Sailboat, Map } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 // Shadcn UI Carousel Imports
 import useEmblaCarousel, {
@@ -103,11 +103,13 @@ const Carousel = React.forwardRef<
 
     React.useEffect(() => {
       if (!api) return;
-      onSelect(api);
+      const timeoutId = window.setTimeout(() => onSelect(api), 0);
       api.on("reInit", onSelect);
       api.on("select", onSelect);
       return () => {
+        window.clearTimeout(timeoutId);
         api?.off("select", onSelect);
+        api?.off("reInit", onSelect);
       };
     }, [api, onSelect]);
 
@@ -244,12 +246,15 @@ const CarouselDots = () => {
 
   React.useEffect(() => {
     if (!api) return;
-    setScrollSnaps(api.scrollSnapList());
     const onSelect = () => setSelectedIndex(api.selectedScrollSnap());
+    const timeoutId = window.setTimeout(() => {
+      setScrollSnaps(api.scrollSnapList());
+      onSelect();
+    }, 0);
     api.on("select", onSelect);
     api.on("reInit", onSelect);
-    onSelect();
     return () => {
+      window.clearTimeout(timeoutId);
       api.off("select", onSelect);
       api.off("reInit", onSelect);
     };
@@ -290,7 +295,7 @@ export interface Service {
 
 // Sub-component for individual cards
 const ServiceCard = ({ service, index }: { service: Service; index: number }) => {
-  const whatsappUrl = `https://wa.me/5524998280363?text=${encodeURIComponent(service.whatsappText)}`;
+  const whatsappUrl = buildWhatsAppUrl(service.whatsappText);
 
   return (
     <div
@@ -391,7 +396,7 @@ const services: Service[] = [
     title: "Lancha Compartilhada",
     description: "Ideal para quem viaja sozinho, em casal ou em grupo pequeno. Aproveite Paraty com orientações da equipe e indicações de passeios para conhecer as ilhas da região.",
     cta: "Ver disponibilidade",
-    whatsappText: "Olá! Gostaria de saber mais sobre a Lancha Compartilhada.",
+    whatsappText: "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de saber mais sobre a Lancha Compartilhada.",
     icon: Sailboat,
     gradient: "from-[#063A45] via-[#063A45]/70 to-[#2FB8D9]/20",
     accentColor: "#2FB8D9"
@@ -401,7 +406,7 @@ const services: Service[] = [
     title: "Lancha Privativa",
     description: "A lancha é só sua. Escolha o roteiro, o tempo em cada parada e leve quem você quiser — do seu jeito, no seu ritmo. A partir de R$1.800",
     cta: "Reservar Privativa",
-    whatsappText: "Olá! Gostaria de reservar uma Lancha Privativa.",
+    whatsappText: "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de reservar uma Lancha Privativa.",
     icon: Anchor,
     gradient: "from-[#094F5F] via-[#094F5F]/70 to-[#0C6478]/20",
     accentColor: "#0C6478"
@@ -411,7 +416,7 @@ const services: Service[] = [
     title: "Roteiro Personalizado",
     description: "Aniversário, pedido de casamento, confraternização de empresa ou um dia diferente com a família: montamos o roteiro sob medida para a ocasião.",
     cta: "Montar meu roteiro",
-    whatsappText: "Olá! Gostaria de montar um Roteiro Personalizado.",
+    whatsappText: "Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de montar um Roteiro Personalizado.",
     icon: Map,
     gradient: "from-[#0B2530] via-[#0B2530]/70 to-[#1D7DA3]/20",
     accentColor: "#1D7DA3"

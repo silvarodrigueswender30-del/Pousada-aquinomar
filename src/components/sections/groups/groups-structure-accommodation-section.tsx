@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Check, Users } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
 import { groupAccommodationFeatures, groupsWhatsappAccommodationHref } from "./groups-data"
@@ -119,12 +120,12 @@ export function GroupsAccommodationSection() {
               <CTAButton href={groupsWhatsappAccommodationHref} variant="brand">
                 Consultar meu grupo
               </CTAButton>
-              <a
+              <Link
                 href="/#quartos"
                 className="inline-flex items-center gap-1 text-xs font-medium tracking-wide text-brand-primary/80 transition-colors hover:text-brand-gold hover:underline"
               >
                 Conhecer nossas suítes →
-              </a>
+              </Link>
             </div>
             <p className="flex items-center gap-2 text-xs font-medium text-brand-text/65">
               <Users className="h-4 w-4 text-brand-gold shrink-0" aria-hidden="true" />

@@ -2,9 +2,9 @@ import Link from "next/link"
 import { BedDouble, MapPin, Users } from "lucide-react"
 import { rooms } from "@/data/rooms"
 import { RoomImageCarousel } from "@/components/ui/room-image-carousel"
+import { buildWhatsAppUrl } from "@/lib/whatsapp"
 
 const roomLabels = ["CASAL", "FAMÍLIA"]
-const whatsappNumber = "5524998280363"
 
 export function RoomsGridSection() {
   return (
@@ -55,8 +55,8 @@ export function RoomsGridSection() {
 
         <div className="grid border-b border-brand-gold/30 lg:grid-cols-2 lg:divide-x lg:divide-brand-gold/30">
           {rooms.map((room, index) => {
-            const whatsappText = `Olá! Gostaria de consultar disponibilidade e valores para a ${room.name} da Pousada Aquino Mar.`
-            const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`
+            const whatsappText = `Olá! Vim pelo site oficial da Pousada Aquino Mar e gostaria de consultar disponibilidade e valores para a acomodação ${room.name}.`
+            const whatsappHref = buildWhatsAppUrl(whatsappText)
 
             return (
               <article

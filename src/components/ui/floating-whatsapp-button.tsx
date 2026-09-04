@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
+import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
-const WHATSAPP_NUMBER = "5524998280363"
 const MESSAGE = "Ficou com alguma dúvida? Fale com a Pousada Aquino Mar pelo WhatsApp."
-const URL_MESSAGE = "Olá! Gostaria de tirar algumas dúvidas sobre hospedagem na Pousada Aquino Mar."
 
 export function FloatingWhatsappButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -43,9 +42,7 @@ export function FloatingWhatsappButton() {
 
   if (!isVisible) return null
 
-  const encodedMessage = encodeURIComponent(URL_MESSAGE)
-
-  const linkUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
+  const linkUrl = buildWhatsAppUrl(whatsappMessages.home)
 
   const closeBalloon = (e: React.MouseEvent) => {
     e.preventDefault()
