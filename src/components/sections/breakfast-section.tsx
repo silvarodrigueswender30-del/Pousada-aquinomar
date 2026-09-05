@@ -51,7 +51,7 @@ export function BreakfastSection() {
             </div>
 
             <h2 className="mt-5 max-w-4xl font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
-              O café da manhã que faz o dia{" "}
+              Café da manhã na pousada para{" "}
               <span className="text-brand-gold">começar em família</span>
             </h2>
           </div>

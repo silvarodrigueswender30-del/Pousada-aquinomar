@@ -1,4 +1,28 @@
 import dynamic from "next/dynamic"
+import type { Metadata } from "next"
+
+const homeTitle = "Pousada Aquino Mar em Paraty, RJ | Sinta-se em casa"
+const homeDescription = "Sua hospedagem em Paraty, RJ, com acolhimento de família. Café da manhã incluso, piscina e estacionamento gratuito. Reserve na Pousada Aquino Mar."
+
+export const metadata: Metadata = {
+  title: homeTitle,
+  description: homeDescription,
+  openGraph: {
+    title: homeTitle,
+    description: homeDescription,
+    url: "https://pousadaaquinomarparaty.com.br",
+    siteName: "Pousada Aquino Mar",
+    images: [{ url: "/og/aquinomar-share.jpg", width: 1200, height: 630, alt: "Logo da Pousada Aquino Mar" }],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+    images: ["/og/aquinomar-share.jpg"],
+  },
+}
 
 import { HeroSection } from "@/components/sections/hero-section"
 import { LocalBusinessSchema, FaqSchema } from "@/components/schema-markup"

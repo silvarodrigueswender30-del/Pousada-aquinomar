@@ -44,7 +44,7 @@ export function AmenitiesSection() {
               CONFORTO & CUIDADO
             </p>
             <h2 className="mt-6 max-w-xl font-heading text-[2.6rem] font-light leading-[1.03] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
-              Estrutura e comodidades para uma estadia{" "}
+              Comodidades para uma hospedagem{" "}
               <span className="text-brand-gold-light">sem preocupação</span>
             </h2>
             <p className="mt-7 max-w-md text-base leading-7 text-white/80">

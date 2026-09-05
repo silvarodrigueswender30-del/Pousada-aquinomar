@@ -149,10 +149,11 @@ export function FaqSection() {
               PERGUNTAS FREQUENTES
             </p>
             <h2 className="mt-5 font-heading text-[2.45rem] font-light leading-[1.04] tracking-tight text-white md:text-5xl">
-              Tire suas dúvidas
+              Tire suas dúvidas sobre a pousada
             </h2>
             <p className="mt-6 max-w-xl text-base leading-7 text-white/76">
               Tudo o que você precisa saber antes de se hospedar com a gente em Paraty.
+              {" "}Para quem procura um hotel em Parati, nossa pousada oferece o aconchego de uma casa de família.
             </p>
 
             <div className="mt-10 border-t border-brand-gold/45 pt-8">

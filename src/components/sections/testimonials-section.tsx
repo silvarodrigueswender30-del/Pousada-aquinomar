@@ -68,7 +68,7 @@ export function TestimonialsSection() {
               DEPOIMENTOS
             </p>
             <h2 className="mt-5 max-w-4xl font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-brand-primary sm:text-5xl lg:text-6xl">
-              O que nossos hóspedes dizem
+              O que nossos hóspedes dizem da pousada
             </h2>
           </div>
           <p className="max-w-md text-base leading-7 text-brand-text/75 md:justify-self-end">

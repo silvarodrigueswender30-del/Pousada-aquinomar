@@ -56,7 +56,7 @@ export function LocationSection() {
               LOCALIZAÇÃO
             </p>
             <h2 className="mt-5 font-heading text-[2.65rem] font-light leading-[1.02] tracking-tight md:text-6xl">
-              Localização e como chegar
+              Como chegar à pousada em Paraty
             </h2>
             <div className="mt-7 grid gap-3 text-sm font-medium text-white/82 sm:grid-cols-3">
               <p><span className="text-brand-gold-light">+</span> Endereço completo</p>

@@ -20,7 +20,7 @@ export function FinalCtaSection() {
         </p>
 
         <h2 className="mt-5 font-heading text-[2.6rem] font-light leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl">
-          Pronta para sua próxima estadia?
+          Pronta para sua próxima estadia em Paraty?
         </h2>
 
         <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-white/78 md:text-lg">

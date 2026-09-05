@@ -78,8 +78,8 @@ export function HeroSection() {
           </div>
           
           <h1 className="mb-6 font-serif text-5xl font-medium leading-[1.1] text-white tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-            Sinta-se em <span className="italic text-brand-gold-light">casa</span>, <br className="hidden sm:block" />
-            <span className="opacity-90">perto do mar.</span>
+            Sua <span className="italic text-brand-gold-light">casa em Paraty</span>, <br className="hidden sm:block" />
+            <span className="opacity-90">na Pousada Aquino Mar.</span>
           </h1>
           
           <p className="mb-10 max-w-xl text-lg text-white/90 leading-relaxed md:text-xl font-light">
