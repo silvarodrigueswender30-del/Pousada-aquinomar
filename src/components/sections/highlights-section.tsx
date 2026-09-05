@@ -28,7 +28,7 @@ const paratyHighlights: CardItem[] = [
     category: "Serviço Aquinomar",
     image: "/images/passeio/passeio-de-escuna.avif",
     alt: "Passeio de escuna em Paraty navegando por praias de mar azul",
-    metadata: "Praias de Paraty · Serviço Aquinomar",
+    metadata: "Saída fácil do Centro · Bate-volta pelas ilhas de Paraty",
     actionLabel: "Descobrir o lugar →",
   },
   {
@@ -38,7 +38,7 @@ const paratyHighlights: CardItem[] = [
     category: "Serviço Aquinomar",
     image: "/images/passeio/passeio-de-jeep.avif",
     alt: "Passeio de jeep em Paraty por roteiro de natureza e aventura",
-    metadata: "Roteiro de aventura · Serviço Aquinomar",
+    metadata: "Trilhas e cachoeiras · Roteiro de aventura na Mata Atlântica",
     actionLabel: "Descobrir o lugar →",
   },
   {
@@ -48,7 +48,7 @@ const paratyHighlights: CardItem[] = [
     category: "Ilhas",
     image: "/images/passeio/ilha-do-pelado.avif",
     alt: "Ilha do Pelado em Paraty com mar transparente e vegetação costeira",
-    metadata: "Travessia curta · Mar cristalino",
+    metadata: "Mar transparente · Acesso só de barco",
     actionLabel: "Descobrir o lugar →",
   },
   {
@@ -58,7 +58,7 @@ const paratyHighlights: CardItem[] = [
     category: "Praias",
     image: "/images/passeio/praia-da-trindade.avif",
     alt: "Praia da Trindade em Paraty com mar azul e paisagem preservada",
-    metadata: "Vila caiçara · Natureza preservada",
+    metadata: "Paisagem preservada · Ideal para um dia inteiro",
     actionLabel: "Descobrir o lugar →",
   },
 ];

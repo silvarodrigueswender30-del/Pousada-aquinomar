@@ -109,8 +109,8 @@ export function OurStorySection() {
             <p className="text-base leading-7 text-brand-text/80">
               Essa proximidade aparece em cada detalhe: no café da manhã feito com
               carinho, na atenção redobrada à limpeza dos quartos e na disposição de
-              indicar o melhor passeio ou a praia mais tranquila para quem está de
-              passagem por Paraty.
+                indicar o melhor passeio ou a praia mais tranquila para quem está
+                hospedado em Paraty.
             </p>
 
             <p className="mt-9 font-heading text-2xl italic leading-snug text-brand-primary md:text-3xl">

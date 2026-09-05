@@ -84,7 +84,9 @@ export function RoomsGridSection() {
                     </div>
 
                     <p className="mt-6 text-base leading-7 text-brand-text/75">
-                      {room.description}
+                      {room.slug === "suite-casal"
+                        ? "Ambiente intimista e confortável, ideal para casais ou estadias individuais que buscam uma pousada em Paraty com espaço e privacidade. Contamos com 5 unidades idênticas nesta categoria, todas com espaço amplo e acabamento padronizado."
+                        : room.description}
                     </p>
                   </div>
 

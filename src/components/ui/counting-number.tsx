@@ -12,7 +12,7 @@ interface CountingNumberProps {
 
 export function CountingNumber({ target, decimals = 0, formatLocale = true }: CountingNumberProps) {
   const { ref, isInView } = useSafeInView(400);
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState(target);
 
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
@@ -41,9 +41,15 @@ export function CountingNumber({ target, decimals = 0, formatLocale = true }: Co
     });
   }, [springValue]);
 
-  const formatted = formatLocale 
-    ? Math.floor(displayValue).toLocaleString('pt-BR') 
-    : displayValue.toFixed(decimals).replace('.', ',');
+  const formatValue = (value: number) => formatLocale
+    ? Math.floor(value).toLocaleString('pt-BR')
+    : value.toFixed(decimals).replace('.', ',');
 
-  return <span ref={ref}>{formatted}</span>;
+  // Keep the final value available without JavaScript and outside the animation.
+  return (
+    <span ref={ref}>
+      <span className="sr-only">{formatValue(target)}</span>
+      <span aria-hidden="true">{formatValue(displayValue)}</span>
+    </span>
+  );
 }

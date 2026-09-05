@@ -83,8 +83,8 @@ export function HeroSection() {
           </h1>
           
           <p className="mb-10 max-w-xl text-lg text-white/90 leading-relaxed md:text-xl font-light">
-            Pousada Aquino Mar - hospitalidade genuína em Caborê, a poucos minutos
-            do charme das ruas de pedra de Paraty.
+            Pousada Aquino Mar — hospedagem familiar em Caborê, a poucos minutos
+            do charme das ruas de pedra do Centro Histórico de Paraty.
           </p>
           
           <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">

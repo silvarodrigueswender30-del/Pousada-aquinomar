@@ -82,10 +82,10 @@ export function AboutSection() {
           <div className="mt-8 space-y-5 text-base leading-7 text-brand-text/85 md:text-lg md:leading-8">
             <p>
               Na Pousada Aquino Mar, a hospitalidade nasce do cuidado de uma família que
-              recebe cada visitante com atenção, proximidade e carinho.
+              recebe cada hóspede com atenção, proximidade e carinho.
             </p>
             <p>
-              Em um ambiente tranquilo e acolhedor, cada detalhe é pensado para que sua
+              Em um ambiente tranquilo e acolhedor, cada detalhe da pousada foi pensado para que sua
               estadia em Paraty seja leve, confortável e especial.
             </p>
           </div>

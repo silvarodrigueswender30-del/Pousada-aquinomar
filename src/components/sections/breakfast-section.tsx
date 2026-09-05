@@ -30,7 +30,7 @@ const breakfastHighlights = [
   {
     title: "Tempo à mesa",
     description:
-      "Um momento leve para aproveitar a manhã antes de descobrir Paraty.",
+      "Um momento leve para aproveitar a manhã antes de sair para explorar Paraty.",
   },
 ]
 

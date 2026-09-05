@@ -111,7 +111,7 @@ export function Footer() {
                   className="h-auto w-40 brightness-0 invert sm:w-48"
                 />
                 <p className="mt-6 max-w-md text-base leading-7 text-white/72">
-                  Acolhimento familiar em Caboré, Paraty, com localização tranquila, café da manhã e contato direto com a pousada.
+                  Pousada em Caboré, Paraty, com acolhimento familiar, café da manhã incluso e contato direto com a recepção.
                 </p>
 
                 <a
