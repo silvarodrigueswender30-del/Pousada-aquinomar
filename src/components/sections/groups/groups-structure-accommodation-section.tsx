@@ -36,7 +36,7 @@ export function GroupsStructureSection() {
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_76%,transparent)_0%,color-mix(in_oklab,var(--color-primary-dark)_40%,transparent)_48%,transparent_100%)]" />
             <figcaption className="absolute bottom-5 left-5 max-w-sm pr-5 md:bottom-7 md:left-7">
               <h3 className="font-heading text-2xl font-normal text-white md:text-3xl">
-                Áreas para pausa e convivência
+                Áreas de pausa e convivência para grupos e excursões em Paraty
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-white/80">
                 Piscina · descanso · acolhimento familiar

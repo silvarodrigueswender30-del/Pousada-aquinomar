@@ -34,10 +34,26 @@ export const groupsWhatsappFinalCtaHref = buildWhatsAppUrl(
 )
 
 export const proofItems = [
-  { title: "Atendimento direto ao organizador", icon: MessageCircle },
-  { title: "Acomodações para diferentes perfis", icon: BedDouble },
-  { title: "Café da manhã", icon: Coffee },
-  { title: "Localização em Paraty", icon: MapPin },
+  {
+    title: "Atendimento direto ao organizador",
+    description: "Sem intermediários: você negocia direto com quem toma a decisão.",
+    icon: MessageCircle,
+  },
+  {
+    title: "Acomodações para diferentes perfis",
+    description: "Suítes para casais, famílias e grupos maiores, dentro da mesma pousada.",
+    icon: BedDouble,
+  },
+  {
+    title: "Café da manhã",
+    description: "Incluso para todo o grupo, sem custo extra por pessoa.",
+    icon: Coffee,
+  },
+  {
+    title: "Localização em Paraty",
+    description: "Base tranquila no Caboré, perto do Centro Histórico e dos passeios.",
+    icon: MapPin,
+  },
 ]
 
 export const processSteps = [
@@ -74,11 +90,26 @@ export const groupAccommodationFeatures = [
 ]
 
 export const profileTags = [
-  "Casais",
-  "Famílias",
-  "Amigos",
-  "Excursões",
-  "Grupos organizados",
+  {
+    title: "Casais",
+    description: "Privacidade mesmo viajando em grupo maior.",
+  },
+  {
+    title: "Famílias",
+    description: "Quartos com espaço para acomodar todos juntos.",
+  },
+  {
+    title: "Amigos",
+    description: "Configuração flexível para grupos de amigos em Paraty.",
+  },
+  {
+    title: "Excursões",
+    description: "Atendimento pensado para operadoras e roteiros fechados.",
+  },
+  {
+    title: "Grupos organizados",
+    description: "Cotação única e ponto de contato dedicado para caravanas e comitivas.",
+  },
 ]
 
 export const groupAmenities = [
@@ -113,31 +144,31 @@ export const paratyGroupRoutes = [
     title: "Centro Histórico",
     image: "/images/passeio/centro-historico.avif",
     alt: "Rua de pedra com casarões coloniais no Centro Histórico de Paraty",
-    text: "Roteiros culturais, gastronomia e caminhadas pelas ruas históricas.",
+    text: "Roteiros históricos pelo Centro de Paraty para caravanas.",
   },
   {
     title: "Passeios de barco",
     image: "/images/galeria/passeio-1.webp",
     alt: "Passeio de barco em Paraty com mar e montanhas ao fundo",
-    text: "Experiências náuticas para complementar a viagem do grupo.",
+    text: "Passeios em grupo pelas ilhas de Paraty.",
   },
   {
     title: "Praias",
     image: "/images/passeio/praia-do-pontal.avif",
     alt: "Praia do Pontal em Paraty com barcos e montanhas ao fundo",
-    text: "Dias leves na orla e em cenários clássicos da região.",
+    text: "Praias acessíveis para grupos com crianças e idosos.",
   },
   {
     title: "Cachoeiras",
     image: "/images/passeio/cachoeira-toboga.avif",
     alt: "Cachoeira do Tobogã cercada por mata e pedras em Paraty",
-    text: "Contato com natureza para grupos que buscam roteiros ao ar livre.",
+    text: "Trilhas guiadas para excursões e grupos maiores.",
   },
   {
     title: "Cultura local",
     image: "/images/passeio/praia-do-cais.avif",
     alt: "Barcos coloridos na Praia do Cais em Paraty",
-    text: "Uma base para viver Paraty com calma, história e paisagens.",
+    text: "Opções de passeio para grupos com diferentes ritmos.",
   },
 ]
 

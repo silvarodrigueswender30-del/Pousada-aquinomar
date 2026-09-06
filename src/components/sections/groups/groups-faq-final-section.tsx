@@ -141,7 +141,7 @@ export function GroupsFinalCtaSection() {
           Está organizando uma viagem para Paraty?
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-white/78 md:text-lg">
-          Conte para a gente sobre seu grupo e consulte as possibilidades de hospedagem para a sua data.
+          Conte pra gente o tamanho do grupo e a data pretendida — respondemos com disponibilidade e cotação para sua excursão ou caravana em Paraty.
         </p>
         <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
           <CTAButton href={groupsWhatsappFinalCtaHref} variant="brand" className="justify-center px-6 sm:px-8">

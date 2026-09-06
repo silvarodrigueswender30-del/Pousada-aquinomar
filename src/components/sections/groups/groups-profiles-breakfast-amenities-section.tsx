@@ -23,12 +23,15 @@ export function GroupsProfilesSection() {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {profileTags.map((tag, index) => (
-            <div key={tag} className={`border-t border-brand-gold/35 py-5 ${index === profileTags.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+            <div key={tag.title} className={`border-t border-brand-gold/35 py-5 ${index === profileTags.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
               <span className="text-xs font-medium tracking-[0.18em] text-brand-gold/70">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <p className="mt-3 font-heading text-2xl font-normal text-brand-primary">
-                {tag}
+                {tag.title}
+              </p>
+              <p className="mt-3 max-w-xs text-sm leading-6 text-brand-text/70">
+                {tag.description}
               </p>
             </div>
           ))}

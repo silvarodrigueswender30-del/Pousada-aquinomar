@@ -18,7 +18,7 @@ export function GroupsHeroSection() {
       <div className="absolute inset-0 z-10 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_92%,transparent)_0%,color-mix(in_oklab,var(--color-primary-dark)_66%,transparent)_48%,color-mix(in_oklab,var(--color-primary-dark)_30%,transparent)_100%)]" />
       <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_22%_20%,color-mix(in_oklab,var(--color-accent-gold)_22%,transparent),transparent_32%)]" />
 
-      <div className="absolute right-4 top-24 z-20 rounded-full border border-brand-gold/20 bg-brand-primary-dark/64 px-4 py-2 shadow-xl shadow-brand-primary/20 backdrop-blur-md md:right-10 md:px-5 md:py-2.5">
+      <div className="absolute right-4 top-24 z-20 hidden rounded-full border border-brand-gold/20 bg-brand-primary-dark/64 px-4 py-2 shadow-xl shadow-brand-primary/20 backdrop-blur-md md:right-10 md:flex md:px-5 md:py-2.5">
         <p className="flex items-center gap-1.5 text-xs font-medium text-white md:text-sm">
           <span>Atendimento direto</span>
           <Star className="h-3.5 w-3.5 fill-brand-gold-light text-brand-gold-light md:h-4 md:w-4" aria-hidden="true" />
@@ -36,8 +36,8 @@ export function GroupsHeroSection() {
             GRUPOS & CARAVANAS
           </div>
 
-          <h1 className="max-w-3xl font-serif text-[2.9rem] font-medium leading-[1.04] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-            Seu grupo em Paraty.
+          <h1 className="max-w-3xl font-serif text-[2.75rem] font-medium leading-[1.04] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Seu grupo, sua excursão ou sua caravana em Paraty.
             <span className="block text-brand-gold-light">
               A hospedagem fica com a gente.
             </span>

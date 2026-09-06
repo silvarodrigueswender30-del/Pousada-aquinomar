@@ -32,6 +32,9 @@ export function GroupsProofSection() {
                   <h3 className="mt-5 font-heading text-2xl font-normal leading-tight text-brand-primary">
                     {item.title}
                   </h3>
+                  <p className="mt-4 text-sm leading-6 text-brand-text/70">
+                    {item.description}
+                  </p>
                 </article>
               )
             })}
