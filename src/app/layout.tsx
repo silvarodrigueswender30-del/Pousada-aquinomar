@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
@@ -84,15 +83,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4QF4XRRWGW" />
-        <Script id="google-analytics">
-          {`
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QF4XRRWGW" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-4QF4XRRWGW');
-          `}
-        </Script>
+          `,
+          }}
+        />
         <link rel="preconnect" href="https://jszueizwowynhekpsfii.supabase.co" />
         <link rel="dns-prefetch" href="https://jszueizwowynhekpsfii.supabase.co" />
         <link rel="describedby" href={`${siteUrl}/llms.txt`} type="text/markdown" />
