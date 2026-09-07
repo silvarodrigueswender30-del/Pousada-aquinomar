@@ -1,3 +1,16 @@
 {
-  "name": "pousada-aquinomar"
+  "name": "pousada-aquinomar",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.pousadaaquinomarparaty.com.br"
+        }
+      ],
+      "destination": "https://pousadaaquinomarparaty.com.br/:path*",
+      "permanent": true
+    }
+  ]
 }
