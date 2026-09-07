@@ -1,8 +1,10 @@
+import { homeFaqs } from "@/data/home-faqs"
+
 const siteUrl = "https://pousadaaquinomarparaty.com.br"
 const lodgingId = `${siteUrl}/#lodging`
 const websiteId = `${siteUrl}/#website`
 const imageUrl = `${siteUrl}/og/aquinomar-share.jpg`
-const logoUrl = `${siteUrl}/images/Logo-Colorida.png`
+const logoUrl = `${siteUrl}/logo-pousada1.webp`
 const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=Rua%20Guapuruvu%20371%20Cabore%20Paraty%20RJ"
 const officialProfiles = [
@@ -29,6 +31,13 @@ export function LocalBusinessSchema() {
         "image": imageUrl,
         "logo": logoUrl,
         "telephone": "+55-24-99828-0363",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": 411,
+          "bestRating": "5",
+          "worstRating": "1",
+        },
         "hasMap": mapUrl,
         "sameAs": officialProfiles,
         "address": {
@@ -106,67 +115,14 @@ export function FaqSchema() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${siteUrl}/#faq`,
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Onde fica a Pousada Aquino Mar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text":
-            "A Pousada Aquino Mar fica na Rua Guapuruvu, 371, no bairro Caborê, em Paraty, Rio de Janeiro.",
-        },
+    "mainEntity": homeFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
       },
-      {
-        "@type": "Question",
-        "name": "A pousada fica perto do Centro Histórico de Paraty?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text":
-            "Sim. O site informa acesso ao Centro Histórico de Paraty em aproximadamente 12 a 20 minutos de caminhada, dependendo do ritmo e do trajeto.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "A Pousada Aquino Mar tem café da manhã?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. A pousada comunica café da manhã como uma das comodidades oferecidas aos hóspedes.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "A pousada tem piscina?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. A Pousada Aquino Mar informa piscina e áreas externas para descanso.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "A pousada tem estacionamento?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. O site informa estacionamento privativo gratuito para hóspedes.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "Tem Wi-Fi e ar-condicionado?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. A pousada comunica Wi-Fi e ar-condicionado como comodidades disponíveis.",
-        },
-      },
-      {
-        "@type": "Question",
-        "name": "A pousada recebe famílias e grupos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text":
-            "Sim. A Pousada Aquino Mar atende casais, famílias, pequenos grupos, amigos, viagens corporativas, excursões e caravanas, com cotação conforme composição da viagem e disponibilidade.",
-        },
-      },
-    ],
+    })),
   }
 
   return (

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { Leaf, MessageCircle, Minus, Plus } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
 import {
@@ -14,8 +14,6 @@ import {
 export function GroupsFaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
-
-  const visibleFaqs = showAll ? groupFaqs : groupFaqs.slice(0, 6)
 
   return (
     <section className="w-full scroll-mt-24 bg-brand-surface py-16 md:py-24">
@@ -52,10 +50,14 @@ export function GroupsFaqSection() {
           </div>
 
           <div className="bg-brand-surface-alt px-6 py-6 md:px-8 lg:px-12 lg:py-10">
-            {visibleFaqs.map((faq, index) => {
+            {groupFaqs.map((faq, index) => {
               const isOpen = openIndex === index
+              const isInitiallyHidden = !showAll && index >= 6
               return (
-                <div key={faq.question} className="border-b border-brand-gold/30">
+                <div
+                  key={faq.question}
+                  className={`border-b border-brand-gold/30 ${isInitiallyHidden ? "hidden" : ""}`}
+                >
                   <button
                     type="button"
                     onClick={() => setOpenIndex((current) => (current === index ? null : index))}
@@ -79,22 +81,16 @@ export function GroupsFaqSection() {
                     </span>
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="answer"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-6 pl-10 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <motion.div
+                    initial={false}
+                    animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-6 pl-10 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
                 </div>
               )
             })}

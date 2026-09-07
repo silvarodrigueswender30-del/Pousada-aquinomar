@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 const homeTitle = "Pousada Aquino Mar em Paraty, RJ | Sinta-se em casa"
 const homeDescription = "Sua hospedagem em Paraty, RJ, com acolhimento de família. Café da manhã incluso, piscina e estacionamento gratuito. Reserve na Pousada Aquino Mar."
@@ -55,6 +56,16 @@ export default function Home() {
       <OurStorySection />
       <HighlightsSection />
       <BreakfastSection />
+      <section className="bg-white px-5 pb-4 md:px-10">
+        <div className="mx-auto max-w-7xl border-y border-brand-gold/25 py-5">
+          <Link
+            href="/grupos-e-caravanas"
+            className="inline-flex text-sm font-medium text-brand-primary transition-colors hover:text-brand-gold hover:underline md:text-base"
+          >
+            Vai com um grupo? Veja condições especiais para grupos e caravanas em Paraty →
+          </Link>
+        </div>
+      </section>
       <AmenitiesSection />
       <RoomsGridSection />
       <LocationSection />

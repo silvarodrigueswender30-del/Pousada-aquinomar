@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper/modules"
+import { Pagination } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 import { paratyGroupRoutes } from "./groups-data"
@@ -148,11 +148,9 @@ export function GroupsParatySection() {
           </p>
         </div>
 
-        {/* Mobile/Tablet: Swiper carousel — Desktop xl+: grid 5 colunas */}
         <style>{css}</style>
 
-        {/* Swiper visible em < xl */}
-        <div className="mt-12 xl:hidden">
+        <div className="mt-12">
           <Swiper
             className="pam-paraty-swiper"
             modules={[Pagination]}
@@ -162,6 +160,7 @@ export function GroupsParatySection() {
               480: { slidesPerView: 1.5, spaceBetween: 18 },
               640: { slidesPerView: 2.1, spaceBetween: 20 },
               900: { slidesPerView: 3.1, spaceBetween: 22 },
+              1280: { slidesPerView: 5, spaceBetween: 20 },
             }}
             pagination={{ clickable: true, dynamicBullets: true }}
           >
@@ -194,36 +193,6 @@ export function GroupsParatySection() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-
-        {/* Desktop xl+: grid 5 colunas com espaço suficiente */}
-        <div className="mt-12 hidden gap-5 xl:grid xl:grid-cols-5">
-          {paratyGroupRoutes.map((route, index) => (
-            <article key={route.title} className="group overflow-hidden rounded-xl bg-brand-primary-dark shadow-lg shadow-brand-primary/10">
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src={route.image}
-                  alt={route.alt}
-                  fill
-                  sizes="20vw"
-                  className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
-                  quality={82}
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--color-primary-dark)_90%,transparent)_0%,transparent_72%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <span className="text-xs font-medium tracking-[0.18em] text-brand-gold-light">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-3 font-heading text-2xl font-normal leading-tight">
-                    {route.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/72">
-                    {route.text}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>

@@ -1,50 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { MessageCircle, Minus, Plus } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
 import { useSafeInView } from "@/hooks/use-safe-in-view";
 import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
-
-const faqs = [
-  {
-    question: "O café da manhã está incluído na diária?",
-    answer:
-      "Sim. O café da manhã está incluído e é servido das 8h às 10h, com mesa preparada pela família da pousada, opções frescas e aquele cuidado de casa que os hóspedes sempre elogiam.",
-  },
-  {
-    question: "A pousada tem estacionamento?",
-    answer:
-      "Temos estacionamento privativo gratuito para hóspedes. É um diferencial importante para quem quer ficar em um bairro tranquilo de Paraty sem depender de vagas disputadas no Centro Histórico.",
-  },
-  {
-    question: "Qual é a distância até o Centro Histórico de Paraty?",
-    answer:
-      "A Pousada Aquino Mar fica no Caboré, em uma rua residencial e tranquila. O trajeto até o Centro Histórico leva em média de 12 a 20 minutos a pé, em ritmo tranquilo.",
-  },
-  {
-    question: "Os quartos têm ar-condicionado e Wi-Fi?",
-    answer:
-      "Sim. As acomodações contam com ar-condicionado e Wi-Fi, além de enxoval de qualidade e limpeza diária para deixar a estadia mais confortável.",
-  },
-  {
-    question: "A pousada tem piscina e áreas comuns?",
-    answer:
-      "Sim. A pousada oferece piscina, jardim e áreas de convivência pensadas para uma experiência leve, familiar e acolhedora depois dos passeios por Paraty.",
-  },
-  {
-    question: "Como faço para consultar disponibilidade ou reservar?",
-    answer:
-      "Você pode falar direto pelo WhatsApp da Pousada Aquino Mar. A equipe confirma disponibilidade, valores atualizados e ajuda a escolher o quarto mais adequado para sua viagem.",
-  },
-  {
-    question: "A pousada é indicada para famílias?",
-    answer:
-      "Sim. O atendimento familiar é um dos pontos mais fortes da pousada, com acolhimento próximo, quartos confortáveis e uma rotina pensada para quem busca hospitalidade de verdade em Paraty.",
-  },
-];
+import { homeFaqs } from "@/data/home-faqs";
 
 function FaqItem({
   question,
@@ -97,22 +60,16 @@ function FaqItem({
         </span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            key="answer"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 pl-14 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={false}
+        animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        className="overflow-hidden"
+      >
+        <p className="pb-6 pl-14 pt-1 text-base leading-7 text-brand-text/75 md:pb-7 md:pl-[4.5rem]">
+          {answer}
+        </p>
+      </motion.div>
     </motion.div>
   );
 }
@@ -182,7 +139,7 @@ export function FaqSection() {
           </motion.div>
 
           <div className="bg-brand-surface-alt px-6 py-6 md:px-8 lg:px-12 lg:py-10">
-            {faqs.map((faq, index) => (
+            {homeFaqs.map((faq, index) => (
               <FaqItem
                 key={faq.question}
                 question={faq.question}
