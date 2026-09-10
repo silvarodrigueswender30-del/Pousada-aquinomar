@@ -5,6 +5,7 @@ import { Star } from "lucide-react"
 import Image from "next/image"
 import { CTAButton } from "@/components/ui/cta-button"
 import { CountingNumber } from "@/components/ui/counting-number"
+import { trackGtagEvent } from "@/lib/analytics"
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -92,6 +93,7 @@ export function HeroSection() {
               href="#quartos"
               variant="brand"
               className="flex w-full items-center justify-center px-8 py-6 text-lg sm:w-auto"
+              onClick={() => trackGtagEvent("clique_ver_suites")}
             >
               Ver Nossas Suítes
             </CTAButton>
@@ -99,6 +101,7 @@ export function HeroSection() {
               href="#contato"
               variant="on-dark"
               className="flex w-full items-center justify-center px-8 py-6 text-lg sm:w-auto"
+              onClick={() => trackGtagEvent("contato_whatsapp")}
             >
               Falar com a Recepção
             </CTAButton>

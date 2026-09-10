@@ -6,6 +6,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
+import { trackGtagEvent } from "@/lib/analytics"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -95,6 +96,7 @@ export function Header() {
             target="_self"
             variant={ctaVariant}
             className="[&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
+            onClick={() => trackGtagEvent("clique_reservar_estadia")}
           >
             Reservar Estadia
           </CTAButton>
@@ -139,6 +141,7 @@ export function Header() {
             target="_self"
             variant="on-light"
             className="mt-5 [&>*]:bg-brand-cta [&_*]:text-white hover:[&>*]:brightness-90 hover:[&>*]:shadow-lg hover:[&>*]:shadow-brand-primary/20 focus-visible:ring-brand-cta-light"
+            onClick={() => trackGtagEvent("clique_reservar_estadia")}
           >
             Reservar Estadia
           </CTAButton>

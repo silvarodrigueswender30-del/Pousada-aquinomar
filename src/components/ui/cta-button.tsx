@@ -14,6 +14,7 @@ interface CTAButtonProps {
   variant?: Variant
   className?: string
   target?: "_blank" | "_self"
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 const variantStyles: Record<Variant, string> = {
@@ -45,6 +46,7 @@ export function CTAButton({
   variant = "on-light",
   className,
   target = "_blank",
+  onClick,
 }: CTAButtonProps) {
   const [hovered, setHovered] = React.useState(false)
 
@@ -57,6 +59,7 @@ export function CTAButton({
       transition={{ type: "spring", bounce: 0, duration: 0.15 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={onClick}
       className={cn(
         "inline-flex items-center gap-0 font-body font-semibold text-sm select-none cursor-pointer",
         "transition-colors duration-300 ease-in-out",

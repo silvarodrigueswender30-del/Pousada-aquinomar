@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import { BedDouble, MapPin, Users } from "lucide-react"
 import { rooms } from "@/data/rooms"
 import { RoomImageCarousel } from "@/components/ui/room-image-carousel"
+import { trackGtagEvent } from "@/lib/analytics"
 import { buildWhatsAppUrl } from "@/lib/whatsapp"
 
 const roomLabels = ["CASAL", "FAMÍLIA"]
@@ -112,6 +115,7 @@ export function RoomsGridSection() {
                       href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackGtagEvent("clique_reservar_suite", { room_name: room.name })}
                       className="inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta-light focus-visible:ring-offset-2"
                     >
                       Reservar esta suíte

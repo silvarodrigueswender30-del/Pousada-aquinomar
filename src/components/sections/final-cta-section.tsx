@@ -1,5 +1,8 @@
+"use client"
+
 import { Leaf, MessageCircle } from "lucide-react"
 import { CTAButton } from "@/components/ui/cta-button"
+import { trackGtagEvent } from "@/lib/analytics"
 import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
 const whatsappHref = buildWhatsAppUrl(whatsappMessages.home)
@@ -28,7 +31,11 @@ export function FinalCtaSection() {
         </p>
 
         <div className="mt-9">
-          <CTAButton href={whatsappHref} variant="brand">
+          <CTAButton
+            href={whatsappHref}
+            variant="brand"
+            onClick={() => trackGtagEvent("contato_whatsapp")}
+          >
             <span className="inline-flex items-center gap-2">
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Fale pelo WhatsApp

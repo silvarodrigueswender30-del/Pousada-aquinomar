@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Info, Mail, MapPin, MessageCircle, Navigation } from "lucide-react"
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import { useSafeInView } from "@/hooks/use-safe-in-view"
+import { trackGtagEvent } from "@/lib/analytics"
 import { COOKIE_PREFERENCES_EVENT } from "@/lib/cookie-consent"
 import { buildWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp"
 
@@ -153,7 +154,13 @@ export function Footer() {
                     </p>
                     <p className="flex items-center gap-2">
                       <MessageCircle size={17} className="shrink-0 text-brand-gold-light" aria-hidden="true" />
-                      <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-brand-gold-light">
+                      <a
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackGtagEvent("clique_telefone")}
+                        className="transition-colors duration-200 hover:text-brand-gold-light"
+                      >
                         (24) 99828-0363
                       </a>
                     </p>
