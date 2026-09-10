@@ -34,7 +34,7 @@ export function FinalCtaSection() {
           <CTAButton
             href={whatsappHref}
             variant="brand"
-            onClick={() => trackGtagEvent("contato_whatsapp")}
+            onClick={() => trackGtagEvent("contato_whatsapp", undefined, { useBeacon: true })}
           >
             <span className="inline-flex items-center gap-2">
               <MessageCircle className="h-4 w-4" aria-hidden="true" />

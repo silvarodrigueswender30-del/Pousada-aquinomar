@@ -158,7 +158,7 @@ export function Footer() {
                         href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackGtagEvent("clique_telefone")}
+                        onClick={() => trackGtagEvent("clique_telefone", undefined, { useBeacon: true })}
                         className="transition-colors duration-200 hover:text-brand-gold-light"
                       >
                         (24) 99828-0363

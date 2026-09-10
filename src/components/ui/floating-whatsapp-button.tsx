@@ -88,7 +88,7 @@ export function FloatingWhatsappButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale conosco pelo WhatsApp"
-        onClick={() => trackGtagEvent("contato_whatsapp")}
+        onClick={() => trackGtagEvent("contato_whatsapp", undefined, { useBeacon: true })}
         className="w-16 h-16 flex items-center justify-center rounded-full bg-brand-cta hover:brightness-90 text-white transition duration-300 border border-brand-cta-light/30 shadow-[0_0_20px_color-mix(in_oklab,var(--color-cta)_25%,transparent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-cta-light"
       >
         <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
